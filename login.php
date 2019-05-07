@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Iniciar sesion</title>
+    <title>Iniciar sesión</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"></script>
@@ -32,9 +32,9 @@
               </div>
 
               <div class="custom-checkbox mb-3 text-center" >
-                <a href="registrarme.html" id="aClass">Registrarme</a>
+                <a href="registrarme.php" id="aClass">Registrarme</a>
               </div>
-              <button class="btn btn-lg btn-secondary btn-block" type="submit">Iniciar sesion</button>  
+              <button class="btn btn-lg btn-secondary btn-block" type="submit">Iniciar sesión</button>  
             </form>
           </div>
         </div>

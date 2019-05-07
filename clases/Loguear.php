@@ -4,6 +4,8 @@ require_once('UsuarioValido.php');
 require_once('UsuarioAdministrador.php');
 require_once('UsuarioInvalido.php');
 
+session_start();
+
 class Loguear{
     
     public function __construct(){
@@ -30,6 +32,7 @@ class Loguear{
             $usuario = new UsuarioInvalido();    
         }
 
+        $_SESSION($idUsuario);
         return $usuario;
     }
 }

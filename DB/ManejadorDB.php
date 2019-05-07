@@ -10,7 +10,7 @@ class ManejadorDB{
         try {
             $this->pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $passwordDB);
 
-            // activar notificaciones de errores
+            //Activar notificaciones de errores
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);        
         } catch (Exception $e) {
             echo 'Conexión rechazad: ' . $e->getMessage(); 
