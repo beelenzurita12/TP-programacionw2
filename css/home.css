@@ -1,0 +1,35 @@
+*{
+    /* border:1px solid; */
+    margin:0px;
+    padding:0px;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.dropdown-menu{
+    top: 14px !important;
+    left: -90px !important;
+}
+
+.header{
+    margin-top:3%;
+}
+
+.body{
+    margin-top:5%;
+}
+
+ul{
+    list-style: none;
+    padding-left:10px;
+}
+
+.articulo{
+    margin:1%;
+}
+
+.card-img-top{
+    height:27vh;
+}

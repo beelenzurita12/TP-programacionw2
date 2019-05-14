@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registrarme</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel='stylesheet' type='text/css' media='screen' href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"></script>
-    <link rel='stylesheet' type='text/css' media='screen' href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-    <link rel='stylesheet' type='text/css' media='screen' href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js">
+    <link rel='stylesheet' type='text/css' media='screen' href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
     <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
 </head>
