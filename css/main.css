@@ -1,4 +1,4 @@
-:root {
+  :root {
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
   }
@@ -131,12 +131,12 @@
     background-repeat: no-repeat;
   }
   .div-form{
-      margin-top: 90px;
+      margin-top: 120px;
   }
   .form-label-group>label{
     text-align: left!important;
   }
-#check{
+  #check{
     text-align: left!important;
     margin-left: 40px;
   }
@@ -145,4 +145,5 @@
     font-weight: 300;
     font-size: 1.5rem;
     letter-spacing: .1rem;
+    margin-top: 12px;
   }

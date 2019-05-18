@@ -52,19 +52,18 @@
 	font-size: 80px;
 	width: 170px;
     height: 170px;
-    line-height: 170px;
+    line-height: 170px!important;
 	margin: 20px auto;
-	display: block;
+	display: block!important;
 	padding: 0;
 	text-align: center;
 	border-radius: 100%;
-	background-color: #B71C1C;
+	background-color: #d43f3f;
 	color: #fff;
 }
 
 /* Redes sociales (footer) y descargar apps */
 .footer{
-	background-color: #3C3C3C;
 	color: #fff;
 	padding: 30px 0;
     position: relative;
@@ -116,7 +115,4 @@
 }
 .text-h2{
 	margin: 50px;
-}
-..icon-index {
-	line-height: 170px!important;
 }

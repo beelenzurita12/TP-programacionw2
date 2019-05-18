@@ -1,6 +1,6 @@
 <?php
 
-require_once('DB/ManejadorDB.php');
+require_once('./DB/ManejadorDB.php');
 
 class Credenciales{
     private $usuario;
