@@ -1,6 +1,6 @@
 <?php
 
-require_once('./DB/ManejadorDB.php');
+require_once(__DIR__ . "/../DB/UsuarioDB.php");
 
 class Credenciales{
     private $usuario;
@@ -12,8 +12,8 @@ class Credenciales{
     }
 
     public function tipoDeCredenciales(){
-        $conexion = new ManejadorDB();
+        $usuario = new UsuarioDB();
 
-        return $conexion->buscarUsario($this->usuario, $this->password);
+        return $usuario->buscarUsario($this->usuario, $this->password);
     }
 }

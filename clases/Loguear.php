@@ -1,8 +1,8 @@
 <?php
 
-require_once('./UsuarioValido.php');
-require_once('./UsuarioAdministrador.php');
-require_once('./UsuarioInvalido.php');
+require_once(__DIR__ . './UsuarioValido.php');
+require_once(__DIR__ . './UsuarioAdministrador.php');
+require_once(__DIR__ . './UsuarioInvalido.php');
 
 session_start();
 
@@ -12,7 +12,7 @@ class Loguear{
 
     }
 
-    public function logearUsuario($tipoDeCredencial){
+    public function loguearUsuario($tipoDeCredencial){
         $usuario;
 
         if($tipoDeCredencial['isValid']){
@@ -32,7 +32,7 @@ class Loguear{
             $usuario = new UsuarioInvalido();    
         }
 
-        $_SESSION($idUsuario);
+        $_SESSION['idUsuario'] = $idUsuario;
         return $usuario;
     }
 }

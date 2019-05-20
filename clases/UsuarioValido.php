@@ -65,6 +65,11 @@ class UsuarioValido{
     }
 
     public function redireccionar(){
-        header('location:home.php');
+		$home = "home/index.php";
+
+		$_SESSION['estaLogeado'] = $tipoDeCredencial['isValid'];
+		$_SESSION['idUsuario'] = $tipoDeCredenciales['idUsuario'];
+		
+        header("location:$home");
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
-require_once('./clases/Credenciales.php');
-require_once('./clases/Loguear.php');
+require_once(__DIR__ . './clases/Credenciales.php');
+require_once(__DIR__ . './clases/Loguear.php');
 
 $usuario = $_POST['usuario'];
 $password = $_POST['password'];

@@ -10,39 +10,48 @@
 
   <title>Compra-rapido.com</title>
 
+  <!-- Nuestro css -->
+  <link rel="stylesheet" href="../css/main2.css">
+
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="../css/modern-business.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 </head>
 
 <body>
-
-  <?php
+  <!-- session start y declarar variables -->
+  <?php 
     session_start();
 
-    $estaLogueado = $_SESSION['estaLogueado'];
+    $estaLogueado = $_SESSION['estaLogeado'];
+  
   ?>
-  <!-- Navigation -->
+
+
+  <!-- Navegacion -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Compra-rapido.com</a>
+      <a class="navbar-brand" href="./index.html"><i class="fas fa-shopping-cart"></i> Compra-rapido.com</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          
           <li class="nav-item">
-            <a class="nav-link" href="about.html">Login</a>
+            <a class="nav-link" href="../login.php">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Slider -->
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -51,24 +60,24 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+        <!-- Primera imagen -->
+        <div class="carousel-item active" style="background-image: url('../img/slider1.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Compra</h3>
             <p>This is a description for the first slide.</p>
           </div>
         </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <!-- Segunda imagen -->
+        <div class="carousel-item" style="background-image: url('../img/slider1.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Vende</h3>
             <p>This is a description for the second slide.</p>
           </div>
         </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <!-- Tercera imagen -->
+        <div class="carousel-item" style="background-image: url('../img/slider1.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Inventa algo aca jeje</h3>
+            <h3>Disfruta</h3>
             <p>This is a description for the third slide.</p>
           </div>
         </div>
@@ -84,170 +93,276 @@
     </div>
   </header>
 
-  <!-- Page Content -->
+  <!-- Contenido de la pagina -->
   <div class="container">
 
-    <h1 class="my-4">La web de compra y venta más popular de Latinoamerica</h1>
+  <!-- Categorias mas populares -->
+  <section class="section section-3">
+    <h2 class="text-center text-h2">Todas las categorías que imaginas</h2>
+    <div class="container">
+      <div class="full-width container-category">
+        <a href="#!" id="categori-1">
+          <i class="fa fa-car" aria-hidden="true"></i>
+          <span>VEHÍCULOS</span>
+        </a>
+        <a href="#!" id="categori-2">
+          <i class="fa fa-building" aria-hidden="true"></i>
+          <span>INMOBILIARIA</span>
+        </a>
+        <a href="#!" id="categori-3">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          <span>HOGAR</span>
+        </a>
+        <a href="#!" id="categori-4">
+          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+          <span>MODA Y BELLEZA</span>
+        </a>
+        <a href="#!" id="categori-5">
+          <i class="fa fa-child" aria-hidden="true"></i>
+          <span>PARA NIÑOS Y BEBES</span>
+        </a>
+        <a href="#!" id="categori-6">
+          <i class="fa fa-plug" aria-hidden="true"></i>
+          <span>ELECTRÓNICA</span>
+        </a>
+        <a href="#!" id="categori-7">
+          <i class="fa fa-bicycle" aria-hidden="true"></i>
+          <span>OCIO Y DEPORTE</span>
+        </a>
+        <a href="#!" id="categori-8">
+          <i class="fa fa-paw" aria-hidden="true"></i>
+          <span>MASCOTAS Y ANIMALES</span>
+        </a>
+        <a href="#!" id="categori-9">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          <span>TRABAJO Y FORMACIÓN</span>
+        </a>
+        <a href="#!" id="categori-10">
+          <i class="fa fa-suitcase" aria-hidden="true"></i>
+          <span>NEGOCIOS Y SERVICIOS</span>
+        </a>
+        <a href="#!" id="categori-11">
+          <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+          <span>OTROS</span>
+        </a>
+        <a href="#!" id="categori-12">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <span>TODAS LAS CATEGORIAS</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Marketing Icons Section -->
-    <div class="row">
-      <div class="col-lg-4 mb-4">
+    <!-- Presentacion de algunos productos -->
+    <h2 class="text-center text-h2">Te puede interesar</h2>
+
+    <div class="row section-3">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
+          <a href="#!"><img class="card-img-top" src="../img/producto1.jpg" alt=""></a>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <h4 class="card-title">
+              <a href="#!">Producto 1</a>
+            </h4>
+            <p class="card-text">$2.500</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 mb-4">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
+          <a href="#!"><img class="card-img-top" src="../img/producto1.jpg" alt=""></a>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <h4 class="card-title">
+              <a href="#!">Producto 2</a>
+            </h4>
+            <p class="card-text">$2.500</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 mb-4">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
+          <a href="#!"><img class="card-img-top" src="../img/producto1.jpg" alt=""></a>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <h4 class="card-title">
+              <a href="#!">Producto 3</a>
+            </h4>
+            <p class="card-text">$2.500</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#!"><img class="card-img-top" src="../img/producto2.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#!">Producto 4</a>
+            </h4>
+            <p class="card-text">$2.500</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#!"><img class="card-img-top" src="../img/producto2.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#!">Producto 5</a>
+            </h4>
+            <p class="card-text">$2.500</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#!"><img class="card-img-top" src="../img/producto2.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#!">Producto 6</a>
+            </h4>
+            <p class="card-text">$2.500</p>
           </div>
         </div>
       </div>
     </div>
-    <!-- /.row -->
 
-    <!-- Portfolio Section -->
-    <h2>Portfolio Heading</h2>
-
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 1</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+    <!-- Frases motivadoras -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <i class="fas fa-flag-checkered icon-index" aria-hidden="true"></i>
+            <p class="lead">
+              Olvídate del miedo a equivocarte y lánzate a por lo que quieres. Ya no importa lo que tienes, sino lo que puedes llegar a hacer.
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <i class="fas fa-gamepad icon-index" aria-hidden="true"></i>
+            <p class="lead">
+              Disfruta hasta de tus cambios de opinión y vive todas las oportunidades que quieras, sin complejos.
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <i class="far fa-money-bill-alt icon-index" aria-hidden="true"></i>
+            <p class="lead">
+              Compra lo que te queda por vivir y vende lo que ya has vivido de la forma más rápida y cómoda que existe.
+            </p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 2</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 3</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 4</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 5</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 6</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
+    </section>
 
     <hr>
 
-    <!-- Call to Action Section -->
-    <div class="row mb-4">
-      <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+    <!-- Formas de pago, envios, etc. -->
+    <div class="row section-3">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h5 class="card-header"><i class="fas fa-credit-card"></i> Pagá con tarjeta o en efectivo</h5>
+          <div class="card-body">
+            <p class="card-text">Con Mercado Pago, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+            <a href="#!">Cómo pagar con Mercado Pago</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h5 class="card-header"><i class="fas fa-truck"></i> Envío gratis desde $ 1.999</h5>
+          <div class="card-body">
+            <p class="card-text">Solo por estar registrado en Mercado Libre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
+            <a href="#!">Conocé más sobre este beneficio</a>
+         </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h5 class="card-header"><i class="fas fa-shield-alt"></i> Seguridad, de principio a fin</h5>
+          <div class="card-body">
+            <p class="card-text">¿No te gusta? ¡Devolvelo! En Mercado Libre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+            <a href="#!">Cómo te protegemos</a>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
-  <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-5 bg-dark full-width footer">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <h4 class="text-light text-center">Síguenos en las redes sociales</h4>
+          <ul class="list-unstyled fullwidth text-center footer-social">
+            <li>
+              <a href="#!">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fab fa-google-plus" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+					<h4 class="text-light text-center">Descárgate nuestras apps gratuitas</h4>
+					<ul class="list-unstyled fullwidth text-center footer-app-store">
+						<li>
+							<a href="#!">
+                <i class="fab fa-apple" aria-hidden="true"></i> App Store
+							</a>
+						</li>
+						<li>
+							<a href="#!">
+                <i class="fab fa-android" aria-hidden="true"></i> Play Store
+							</a>
+						</li>
+						<li>
+							<a href="#!">
+                <i class="fab fa-windows" aria-hidden="true"></i> Windows Store
+							</a>
+						</li>
+					</ul>
+        </div>
+      </div>
     </div>
-    <!-- /.container -->
+    <br>
+			<div class="col-xs-12">
+				<ul class="list-unstyled text-center full-width footer-copyright">
+					<li>&copy; 2019 Company</li>
+					<li><a href="#!">Condiciones de uso</a></li>
+					<li><a href="#!">Ayuda</a></li>
+					<li><a href="#!">Políticas de uso</a></li>
+					<li><a href="#!">Apps</a></li>
+				</ul>
+			</div>
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
