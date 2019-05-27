@@ -14,10 +14,11 @@ class Loguear{
 
     public function loguearUsuario($tipoDeCredencial){
         $usuario;
-
+        
         if($tipoDeCredencial['isValid']){
             $idUsuario = $tipoDeCredencial['idUsuario'];
             $tipoUsuario = $tipoDeCredencial['tipoUsuario'];
+            $nombre = $tipoDeCredencial['nombre'];
 
             switch($tipoUsuario){
                 case "comun":
@@ -32,7 +33,11 @@ class Loguear{
             $usuario = new UsuarioInvalido();    
         }
 
+        $_SESSION['tipoUsuario'] = $tipoUsuario;
+        $_SESSION['estaLogeado'] = $tipoDeCredencial['isValid'];
         $_SESSION['idUsuario'] = $idUsuario;
+        $_SESSION['nombre'] = $nombre;
+
         return $usuario;
     }
 }

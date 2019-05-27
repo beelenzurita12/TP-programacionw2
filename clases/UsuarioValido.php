@@ -9,15 +9,9 @@ class UsuarioValido{
     private $email;
     private $password;
 
-    public function __construct($idUsuario = ""){
-        $this->idUsuario = $idUsuario;
-    }
-
-    public function setUsuarioValido($nombre, $apellido, $email, $password){
-    	$this->nombre = $nombre;
-    	$this->apellido = $apellido;
-    	$this->email = $email;
-    	$this->password = $password;
+    public function __construct($idUsuario = false){
+		$this->idUsuario = $idUsuario;
+		
     }
 
     public function validarNombre(){
@@ -66,9 +60,6 @@ class UsuarioValido{
 
     public function redireccionar(){
 		$home = "home/index.php";
-
-		$_SESSION['estaLogeado'] = $tipoDeCredencial['isValid'];
-		$_SESSION['idUsuario'] = $tipoDeCredenciales['idUsuario'];
 		
         header("location:$home");
     }

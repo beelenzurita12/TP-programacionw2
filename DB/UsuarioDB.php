@@ -9,8 +9,8 @@ class UsuarioDB extends ManejadorDB{
 
 	}
 
-	public function buscarUsario($usuario, $password){
-		$selectUsuario = 'SELECT id, count(*) as existeUsuario, tipoUsuario FROM usuario WHERE usuario = :nombreUsuario AND password = :password';
+	public function retornarUsario($usuario, $password){
+		$selectUsuario = 'SELECT id, count(*) as existeUsuario, tipoUsuario, nombre FROM usuario WHERE usuario = :nombreUsuario AND password = :password';
 		$connection = $this->getConnection();
         
         try {
@@ -18,11 +18,11 @@ class UsuarioDB extends ManejadorDB{
             $resultadoSelect = $querySelect->execute([":nombreUsuario" => $usuario, ":password" => $password]);
             
             while($resultadoFila = $querySelect->fetch(PDO::FETCH_ASSOC)){
-                var_dump($resultadoFila);
                 if($resultadoFila['existeUsuario'] == '1'){
                     return Array(
                         "idUsuario" => $resultadoFila['id'],
                         "tipoUsuario" => $resultadoFila['tipoUsuario'],
+                        "nombre" => $resultadoFila['nombre'],
                         "isValid" => true
                     );
     
