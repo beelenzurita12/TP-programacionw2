@@ -12,7 +12,7 @@ class Controller_inicio extends Controller{
 
     //aquí irán los acction de la URL
     public function index(){
-        $data["estaLogueado"] = false;
+        $data["estaLogueado"] = $_SESSION["estaLogueado"];
         $this->view->generate("inicio_view.php", "template_view.php", $data);
     }
 }
