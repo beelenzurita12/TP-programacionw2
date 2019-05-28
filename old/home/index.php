@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Compra-rapido.com</title>
+  <title>Social Market</title>
 
   <!-- Nuestro css -->
   <link rel="stylesheet" href="../css/main2.css">
@@ -26,45 +26,28 @@
 
 <body>
   <!-- session start y declarar variables -->
-  <?php
+  <?php 
     session_start();
 
-    $estaLogueado = $_SESSION['estaLogeado'] || false;
+    $estaLogueado = $_SESSION['estaLogeado'];
+  
   ?>
 
 
   <!-- Navegacion -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="./index.html"><i class="fas fa-shopping-cart"></i> Compra-rapido.com</a>
+      <a class="navbar-brand" href="./index.php"><i class="fas fa-shopping-cart"></i> Social Market</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-
-          <?php
-            if($estaLogueado){
-              echo '<div class="dropdown">
-                        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown button
-                        </button> -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="../images/man.png" alt="perfil">
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="' . __DIR__ . "" . '">Salir</a>
-                        </div>
-                    </div>';
-            }else {
-              echo '<a class="nav-link" href="../login.php">Login</a>';
-              
-            }
-          ?>
-
+            <a class="nav-link" href="../login.php">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../registrarme.php">Registrarme</a>
           </li>
         </ul>
       </div>
@@ -117,8 +100,8 @@
   <div class="container">
 
   <!-- Categorias mas populares -->
+  <h2 class="text-center text-h2">Todas las categorías que imaginas</h2>
   <section class="section section-3">
-    <h2 class="text-center text-h2">Todas las categorías que imaginas</h2>
     <div class="container">
       <div class="full-width container-category">
         <a href="#!" id="categori-1">
@@ -175,7 +158,6 @@
 
     <!-- Presentacion de algunos productos -->
     <h2 class="text-center text-h2">Te puede interesar</h2>
-
     <div class="row section-3">
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
@@ -246,41 +228,37 @@
     </div>
 
     <!-- Frases motivadoras -->
-    <section class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <i class="fas fa-flag-checkered icon-index" aria-hidden="true"></i>
-            <p class="lead">
-              Olvídate del miedo a equivocarte y lánzate a por lo que quieres. Ya no importa lo que tienes, sino lo que puedes llegar a hacer.
-            </p>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <i class="fas fa-gamepad icon-index" aria-hidden="true"></i>
-            <p class="lead">
-              Disfruta hasta de tus cambios de opinión y vive todas las oportunidades que quieras, sin complejos.
-            </p>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <i class="far fa-money-bill-alt icon-index" aria-hidden="true"></i>
-            <p class="lead">
-              Compra lo que te queda por vivir y vende lo que ya has vivido de la forma más rápida y cómoda que existe.
-            </p>
-          </div>
-        </div>
+    <section class="row section-3 margin">
+      <div class="col-xs-12 col-sm-4">
+        <i class="fas fa-flag-checkered icon-index" aria-hidden="true"></i>
+        <p class="lead">
+          Olvídate del miedo a equivocarte y lánzate a por lo que quieres. Ya no importa lo que tienes, sino lo que puedes llegar a hacer.
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <i class="fas fa-gamepad icon-index" aria-hidden="true"></i>
+        <p class="lead">
+          Disfruta hasta de tus cambios de opinión y vive todas las oportunidades que quieras, sin complejos.
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <i class="far fa-money-bill-alt icon-index" aria-hidden="true"></i>
+        <p class="lead">
+          Compra lo que te queda por vivir y vende lo que ya has vivido de la forma más rápida y cómoda que existe.
+        </p>
       </div>
     </section>
 
     <hr>
 
     <!-- Formas de pago, envios, etc. -->
-    <div class="row section-3">
+    <div class="row section-3 margin">
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
           <h5 class="card-header"><i class="fas fa-credit-card"></i> Pagá con tarjeta o en efectivo</h5>
           <div class="card-body">
-            <p class="card-text">Con Mercado Pago, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
-            <a href="#!">Cómo pagar con Mercado Pago</a>
+            <p class="card-text">Con Social Market, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+            <a href="#!">¿Cómo pagar con Social Market?</a>
           </div>
         </div>
       </div>
@@ -289,7 +267,7 @@
         <div class="card h-100">
           <h5 class="card-header"><i class="fas fa-truck"></i> Envío gratis desde $ 1.999</h5>
           <div class="card-body">
-            <p class="card-text">Solo por estar registrado en Mercado Libre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
+            <p class="card-text">Solo por estar registrado en Social Market tenés envíos gratis en miles de productos. Es un beneficio que ayuda, y mucho.</p>
             <a href="#!">Conocé más sobre este beneficio</a>
          </div>
         </div>
@@ -299,8 +277,8 @@
         <div class="card h-100">
           <h5 class="card-header"><i class="fas fa-shield-alt"></i> Seguridad, de principio a fin</h5>
           <div class="card-body">
-            <p class="card-text">¿No te gusta? ¡Devolvelo! En Mercado Libre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
-            <a href="#!">Cómo te protegemos</a>
+            <p class="card-text">¿No te gusta? ¡Devolvelo! En Social Market, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+            <a href="#!">¿Cómo te protegemos?</a>
           </div>
         </div>
       </div>

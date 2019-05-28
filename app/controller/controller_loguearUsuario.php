@@ -1,33 +1,33 @@
 <?php
 
-class Controller_loguearUsuario extends Controller {
-	private $usuario;
-	private $password;
+	class Controller_loguearUsuario extends Controller {
 
-	public function __construct(){
-		parent::__construct();
+		private $usuario;
+		private $password;
 
-	}
+		public function __construct(){
+			parent::__construct();
+		}
 
-	public function verificar(){
-		$usuario = $_POST["usuario"];
-		$password = $_POST["password"];
+		public function verificar(){
 
-		$existeUsuario = $this->model->validar($usuario, $password);
+			$usuario = $_POST["usuario"];
+			$password = $_POST["password"];
 
-		if($existeUsuario['isValid']){
-			$_SESSION['estaLogueado'] = $existeUsuario["isValid"];
-			$_SESSION['idUsuario'] = $existeUsuario["idUsuario"];
-			$_SESSION['tipoUsuario'] = $existeUsuario["tipoUsuario"];
-			$_SESSION['nombre'] = $existeUsuario["nombre"];
+			$existeUsuario = $this->model->validar($usuario, $password);
 
-			$url = $GLOBALS["root"];
-			header("location: $url" . "inicio");
+			if($existeUsuario['isValid']){
+				$_SESSION['estaLogueado'] = $existeUsuario["isValid"];
+				$_SESSION['idUsuario'] = $existeUsuario["idUsuario"];
+				$_SESSION['tipoUsuario'] = $existeUsuario["tipoUsuario"];
+				$_SESSION['nombre'] = $existeUsuario["nombre"];
 
-		} else {
-			$_SESSION['estaLogueado'] = false;
+				$url = $GLOBALS["root"];
+				header("location: $url" . "inicio");
+
+			} else {
+				$_SESSION['estaLogueado'] = false;
+			}
 		}
 	}
-}
-
 ?>

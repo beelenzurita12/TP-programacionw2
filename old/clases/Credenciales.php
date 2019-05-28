@@ -12,9 +12,8 @@ class Credenciales{
     }
 
     public function tipoDeCredenciales(){
-        $connection = new UsuarioDB();
+        $usuario = new UsuarioDB();
 
-        // retorna un array asociativo con nombre, id y si es valido
-        return $connection->retornarUsario($this->usuario, $this->password);
+        return $usuario->buscarUsario($this->usuario, $this->password);
     }
 }

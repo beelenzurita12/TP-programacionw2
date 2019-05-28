@@ -113,6 +113,12 @@
 	font-weight: 300;
 	margin: 5px;
 }
+
+/* Espacio entre las distintas secciones */
 .text-h2{
-	margin: 50px;
+	margin: 35px;
+}
+.margin{
+	margin-top: 25px;
+	margin-bottom: 25px;
 }

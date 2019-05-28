@@ -1,31 +1,31 @@
 <?php
 
-class Model{
-	 private $connection;
+    class Model{
+
+	    private $connection;
     
-    public function __construct(){
-        //Crea tu propio archivo de configuración a corde a tu configuración de Mysql
-        $configData = parse_ini_file(__DIR__ . '/../app/config/database_config.ini');
-        $host = $configData['host'];
-        $dbname = $configData['dbname'];
-        $user = $configData['user'];
-        $password = $configData['password'];
+        public function __construct(){
 
-        try {
-            $this->connection = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            // Crea tu propio archivo de configuración acorde a tu configuración de Mysql
+            $configData = parse_ini_file(__DIR__ . '/../app/config/database_config.ini');
+            $host = $configData['host'];
+            $dbname = $configData['dbname'];
+            $user = $configData['user'];
+            $password = $configData['password'];
 
-            //Activar notificaciones de errores
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
+            try {
+                $this->connection = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
-        } catch (Exception $e) {
-            echo 'Conexión rechazad: ' . $e->getMessage(); 
+                // Activar notificaciones de errores
+                $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
+
+            } catch (Exception $e) {
+                echo 'Conexión rechazad: ' . $e->getMessage(); 
+            }
+        }
+
+        protected function getConnection(){
+            return $this->connection;
         }
     }
-
-    protected function getConnection(){
-        return $this->connection;
-    }
-}
-
-
 ?>

@@ -8,10 +8,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Compra-rapido.com</title>
+  <title>Social Market</title>
 
   <!-- Nuestro css -->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root'] . "public/css/main2.css"?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $GLOBALS['root'] . "public/css/main.css"?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $GLOBALS['root'] . "public/css/home.css"?>" type="text/css">
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo $GLOBALS['root'] . "public/bootstrap/css/bootstrap.min.css"?>" rel="stylesheet" type="text/css">
@@ -25,10 +27,11 @@
 </head>
 
 <body>
-  <!-- Navegacion -->
+
+  <!-- Navegation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="./index.html"><i class="fas fa-shopping-cart"></i> Compra-rapido.com</a>
+      <a class="navbar-brand" href="#!"><i class="fas fa-shopping-cart"></i> Social Market</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,9 +47,7 @@
     </div>
   </nav>
   
-    <?php 
-		include_once $vistaSolicitada;
-	?>
+    <?php include_once $vistaSolicitada; ?>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark full-width footer">

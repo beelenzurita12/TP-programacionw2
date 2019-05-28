@@ -5,4 +5,4 @@
     
 ```
 
-# El login_view hay que convertirlo en modal 
+# El login_view hay que convertirlo en model
