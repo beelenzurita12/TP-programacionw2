@@ -13,7 +13,6 @@
   <!-- Nuestro css -->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root'] . "public/css/main2.css"?>" type="text/css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root'] . "public/css/main.css"?>" type="text/css">
-  <link rel="stylesheet" href="<?php echo $GLOBALS['root'] . "public/css/home.css"?>" type="text/css">
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo $GLOBALS['root'] . "public/bootstrap/css/bootstrap.min.css"?>" rel="stylesheet" type="text/css">
@@ -31,7 +30,7 @@
   <!-- Navegation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#!"><i class="fas fa-shopping-cart"></i> Social Market</a>
+      <a class="navbar-brand" href="<?php echo $GLOBALS['root'] . "inicio/"?>"><i class="fas fa-shopping-cart"></i> Social Market</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -125,6 +124,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="<?php echo $GLOBALS['root'] . "public/bootstrap/js/jquery/jquery.min.js"?>"></script>
   <script src="<?php echo $GLOBALS['root'] . "public/bootstrap/js/bootstrap.bundle.min.js"?>"></script>
+  <script src="<?php echo $GLOBALS['root'] . "public/JS/Location.js"?>"></script>
 
 </body>
 

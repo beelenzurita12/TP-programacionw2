@@ -7,7 +7,7 @@
         public function __construct(){
 
             // Crea tu propio archivo de configuración acorde a tu configuración de Mysql
-            $configData = parse_ini_file(__DIR__ . '/../app/config/database_config.ini');
+            $configData = parse_ini_file(__DIR__ . '/../app/config/configDatabase.ini');
             $host = $configData['host'];
             $dbname = $configData['dbname'];
             $user = $configData['user'];
@@ -20,7 +20,7 @@
                 $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
 
             } catch (Exception $e) {
-                echo 'Conexión rechazad: ' . $e->getMessage(); 
+                echo 'Conexión rechazada: ' . $e->getMessage(); 
             }
         }
 

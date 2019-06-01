@@ -11,6 +11,7 @@
 
         // Aquí irán los acction de la URL
         public function index(){
+            var_dump($_SESSION);
             $data["estaLogueado"] = $_SESSION["estaLogueado"] || false;
             $this->view->generate("inicio_view.php", "template_view.php", $data);
         }
