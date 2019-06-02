@@ -15,6 +15,8 @@
 			$password = $_POST["password"];
 
 			$existeUsuario = $this->model->validar($usuario, $password);
+			
+			$url = $GLOBALS["root"];
 
 			if($existeUsuario['isValid']){
 				$_SESSION['estaLogueado'] = $existeUsuario["isValid"];
@@ -22,11 +24,11 @@
 				$_SESSION['tipoUsuario'] = $existeUsuario["tipoUsuario"];
 				$_SESSION['nombre'] = $existeUsuario["nombre"];
 
-				$url = $GLOBALS["root"];
 				header("location: $url" . "inicio");
 
 			} else {
 				$_SESSION['estaLogueado'] = false;
+				header("location: $url" . "login");
 			}
 		}
 	}

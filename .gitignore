@@ -2,3 +2,4 @@ DB/configDatabase.ini
 vendor/
 /*.ini
 *.ini
+app/config/**
