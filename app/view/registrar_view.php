@@ -4,7 +4,8 @@
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center"><i class="fas fa-shopping-cart"></i> Social Market</h5>
-          <p class="lead">Completa tus datos</p>
+          <h5 class="text-info">Completa tus datos</h5>
+          <br>
           <form class="form-signin" id="form-div" action="registrarUsuario.php" method="POST">
             <div class="form-label-group">
               <input name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre" required autofocus>
