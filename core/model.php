@@ -7,7 +7,7 @@
         public function __construct(){
 
             // Crea tu propio archivo de configuración acorde a tu configuración de Mysql
-            $configData = parse_ini_file(__DIR__ . '/../app/config/configDatabase.ini');
+            $configData = parse_ini_file(__DIR__ . '/../app/config/database_config.ini');
             $host = $configData['host'];
             $dbname = $configData['dbname'];
             $user = $configData['user'];
