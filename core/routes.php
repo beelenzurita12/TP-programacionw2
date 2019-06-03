@@ -74,8 +74,8 @@
         }
 
         public function executeActionFromController($controller, $action){
-            var_dump($controller);
-            var_dump($action);
+            // var_dump($controller);
+            // var_dump($action);
             if(method_exists($controller, $action)){
                 $controller->$action();
 

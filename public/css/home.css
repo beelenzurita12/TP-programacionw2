@@ -8,9 +8,13 @@ a{
     text-decoration: none !important;
 }
 
+.nav-item.show{
+    position:relative !important;
+}
+
 .dropdown-menu{
     top: 14px !important;
-    left: -90px !important;
+    /* left: -90px !important; */
 }
 
 .header{

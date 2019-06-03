@@ -149,7 +149,13 @@
     letter-spacing: .1rem;
     margin-top: 12px;
   }
-  .dropdown-menu{
-    top: 60px !important;
-    left: 135vh !important;
+
+  .nav-item.show{
+    position:relative;
   }
+
+.alert{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}

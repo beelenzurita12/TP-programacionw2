@@ -7,7 +7,15 @@
         }
 
         public function index(){
-            $this->view->generate("login_view.php", "template_view.php");
+            $urlRoot = $GLOBALS['root'];
+            $estaLogueado = !empty($_SESSION['estaLogueado']) ? $_SESSION['estaLogueado'] : false;
+
+            if($estaLogueado){
+                header("location: $urlRoot" . "inicio");
+                
+            }else {
+                $this->view->generate("login_view.php", "template_view.php");
+            }
         }
     }
 ?>

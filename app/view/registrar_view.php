@@ -1,3 +1,15 @@
+<?php 
+  if($data['submit']){
+    $className = $data['className'];
+    $mensaje = $data['mensaje'];
+
+    echo "<div class='$className'>
+            $mensaje  
+          </div>";
+  }
+
+?>
+
 <div class="row align-items-center">
   <div class="col-12 text-center">
     <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
@@ -6,7 +18,7 @@
           <h5 class="card-title text-center"><i class="fas fa-shopping-cart"></i> Social Market</h5>
           <h5 class="text-info">Completa tus datos</h5>
           <br>
-          <form class="form-signin" id="form-div" action="registrarUsuario.php" method="POST">
+          <form class="form-signin" id="form-div" action="<?php echo $GLOBALS['root'] . 'registrar/registrar_usuario' ?>" method="POST">
             <div class="form-label-group">
               <input name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre" required autofocus>
               <label for="inputNombre">Nombre</label>

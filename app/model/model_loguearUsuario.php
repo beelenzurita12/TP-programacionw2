@@ -6,13 +6,13 @@
 		    parent::__construct();
 	    }
 
-	    public function validar($usuario, $password){
-		    $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, id FROM usuario WHERE usuario = :nombreUsuario AND password = :password";
+	    public function validar($email, $password){
+		    $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, id FROM usuario WHERE email = :email AND password = :password";
 		    $connection = $this->getConnection();
 
 		    try {
                 $querySelect = $connection->prepare($selectUsuario);
-                $resultadoSelect = $querySelect->execute([":nombreUsuario" => $usuario, ":password" => $password]);
+                $resultadoSelect = $querySelect->execute([":email" => $email, ":password" => $password]);
             
                 while($resultadoFila = $querySelect->fetch(PDO::FETCH_ASSOC)){
                     if($resultadoFila['existeUsuario'] == '1'){

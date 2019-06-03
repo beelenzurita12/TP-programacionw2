@@ -7,16 +7,15 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->urlRoot = $GLOBALS['root'];
 		}
 
 		public function verificar(){
 
-			$usuario = $_POST["usuario"];
+			$email = $_POST["email"];
 			$password = $_POST["password"];
 
-			$existeUsuario = $this->model->validar($usuario, $password);
-			
-			$url = $GLOBALS["root"];
+			$existeUsuario = $this->model->validar($email, $password);
 
 			if($existeUsuario['isValid']){
 				$_SESSION['estaLogueado'] = $existeUsuario["isValid"];
@@ -24,12 +23,18 @@
 				$_SESSION['tipoUsuario'] = $existeUsuario["tipoUsuario"];
 				$_SESSION['nombre'] = $existeUsuario["nombre"];
 
-				header("location: $url" . "inicio");
-
+				header("location: $this->urlRoot" . "inicio");
+				
 			} else {
 				$_SESSION['estaLogueado'] = false;
-				header("location: $url" . "login");
+				// header("location: $this->urlRoot" . "login");
 			}
+		}
+
+		public function desloguearUsuario(){
+			$_SESSION['estaLogueado'] = false;
+
+			header("location: $this->urlRoot" . "inicio");
 		}
 	}
 ?>

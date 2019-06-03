@@ -1,6 +1,7 @@
 <?php
+    $estaLogueado = $_SESSION ? $_SESSION['estaLogueado'] : false;
 
-    if($data["estaLogueado"]){
+    if($estaLogueado){
         echo '<div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
@@ -16,7 +17,7 @@
                       <a class="dropdown-item" href="#!">Tus anuncios</a>
                       <a class="dropdown-item" href="#!">Mensajes</a>
                       <a class="dropdown-item" href="#!">Configuración</a>
-                      <a class="dropdown-item" href="' . $GLOBALS['root'] . 'login/">Salir</a>
+                      <a class="dropdown-item" href="' . $GLOBALS['root'] . 'loguearUsuario/desloguearUsuario">Salir</a>
                     </div>
                   </li>
                 </ul>

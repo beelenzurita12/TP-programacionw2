@@ -8,7 +8,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Primera imagen -->
-        <div class="carousel-item active" style="background-image: url('public/image/slider1.jpg')">
+        <div class="carousel-item active" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/slider1.jpg" ?>')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Compra</h3>
             <p>This is a description for the first slide.</p>

@@ -6,8 +6,8 @@
           <h5 class="card-title text-center"><i class="fas fa-shopping-cart"></i> Social Market</h5>
           <form class="form-signin" action="<?php echo $GLOBALS['root'] . "loguearUsuario/verificar" ?>" method="post">
             <div class="form-label-group">
-              <input name="usuario" type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
-              <label for="inputUsuario">Usuario</label>
+              <input name="email" type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
+              <label for="inputUsuario">Email</label>
             </div>
             <div class="form-label-group">
               <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus>
