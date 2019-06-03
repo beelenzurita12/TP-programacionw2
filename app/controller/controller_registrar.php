@@ -1,18 +1,19 @@
-<?php 
+<?php
+
 	class Controller_registrar extends Controller{
 		
 		private $urlRoot;
 		private $nombre;
-	    private $apellido;
-	    private $dni;
-	    private $calle;
-	    private $nroCalle;
-	    private $localidad;
-	    private $telefono;
-	    private $cuil;
-        private $email;
-	    private $password;
-	    private $passwordRepetida;
+	  private $apellido;
+		private $dni;
+	  private $calle;
+	  private $nroCalle;
+	  private $localidad;
+	  private $telefono;
+	  private $cuil;
+    private $email;
+	  private $password;
+	  private $passwordRepetida;
 
 		public function __construct(){
 			parent::__construct();
@@ -22,14 +23,14 @@
 		public function index(){
 			$estaLogueado = !empty($_SESSION['estaLogueado']) ? $_SESSION['estaLogueado'] : false;
 
-            if($estaLogueado){
+        if($estaLogueado){
 					header("location: $this->urlRoot" . "inicio");
 				
-            }else {
-				$data = ["submit" => false];
+        } else{
+					$data = ["submit" => false];
 
-				$this->view->generate("registrar_view.php", "template_view.php", $data);
-			}
+					$this->view->generate("registrar_view.php", "template_view.php", $data);
+				}
 		}
 
 		public function registrar_usuario(){
@@ -48,25 +49,25 @@
 			$inputValido = $this->setUsuario($nombre, $apellido, $dni, $calle, $nroCalle, $localidad, $telefono, $cuil, $email, $password, $passwordRepetida);
 
 			if($inputValido['valido']){
-				//aquí se envía el correo al usuario para confirmar cuenta
+				// Aquí se envía el correo al usuario para confirmar cuenta.
 
-				//¿es correcto que en caso de error 505 se redireccione en el mismo model?
-				var_dump($this);
+				// ¿Es correcto que en caso de error 505 se redireccione en el mismo model?
+				// var_dump($this);
 				$this->model->registrarUsuario($nombre, $apellido, $dni, $calle, $nroCalle, $localidad, $telefono, $cuil, $email, $password);
 
 				$data = ["submit"=> true, 
-					"mensaje" => "Registro Exitoso",
+					"mensaje" => "Registro realizado con éxito.",
 					"className" => "alert alert-success"];
 
 				$this->view->generate("registrar_view.php", "template_view.php", $data);
 
-			}else {
-				//envíar cual dato está incorrecto en $data
+			} else{
+				// Enviar qué dato está incorrecto en $data.
 				$campoErroneo = $inputValido['campoErroneo'];
 				$mensajeErroneo = $inputValido['mensajeErroneo'];
 
 				$data = ["submit"=> true, 
-					"mensaje" => "El campo $campoErroneo debe $mensajeErroneo", 
+					"mensaje" => "El campo $campoErroneo debe $mensajeErroneo.",
 					"className" => "alert alert-danger"];
 
 				$this->view->generate("registrar_view.php", "template_view.php", $data);
@@ -99,7 +100,7 @@
 			}
 
 			if(!$this->validarTelefono($telefono)){
-				return ["valido" => false, "campoErroneo" => "telefono", "mensajeErroneo" => "tener solo "];
+				return ["valido" => false, "campoErroneo" => "telefono", "mensajeErroneo" => "tener solo números"];
 			}
 
 			if(!$this->validarCuil($cuil)){
@@ -107,124 +108,125 @@
 			}
 
 			if(!$this->validarEmail($email)){
-				return ["valido" => false, "campoErroneo" => "email", "mensajeErroneo" => "tener un formáto de emai válido"];
+				return ["valido" => false, "campoErroneo" => "email", "mensajeErroneo" => "tener un formato de email válido"];
 			}
 
 			if(!$this->validarPassword($password, $passwordRepetida)){
-				return ["valido" => false, "campoErroneo" => "password", "mensajeErroneo" => "tener entre 8 y 12 caracteres alfanuméricos"];
+				return ["valido" => false, "campoErroneo" => "password", "mensajeErroneo" => "coincidir con el campo passwordRepetida"];
 			}
 
-			//Si todo marcha OK retorna un true
+			// Si todo marcha OK retorna un true.
 			return ["valido" => true];
 		}
 		
-		public function validarNombre($nombre){
-    	    if(preg_match("/^[a-zA-Z-ñ]+$/", $nombre)){
-				$this->nombre = $nombre;
-				return true;
+			// Validar nombre
+			public function validarNombre($nombre){
+    	  if(preg_match("/^[a-zA-Z-ñ]+$/", $nombre)){
+					$this->nombre = $nombre;
+						return true;
 				
-    	    } else{
-    		    return false;
-    	    }
-        }
+    	  } else{
+    		  	return false;
+    	  }
+      }
 
 	    // Validar apellido
-        public function validarApellido($apellido){
-    	    if(preg_match("/^[a-zA-Z-ñ]+$/", $apellido)){
-				$this->apellido = $apellido;
-				return true;
+      public function validarApellido($apellido){
+    	  if(preg_match("/^[a-zA-Z-ñ]+$/", $apellido)){
+					$this->apellido = $apellido;
+						return true;
 
-    	    } else{
-    		    return false;
-    	    }	
-        }
+    	  } else{
+    		  	return false;
+    	  }	
+      }
 
 	    // Validar dni
 	    public function validarDni($dni){
-		    if(preg_match("/^\d{6,8}$/", $dni)){
-				$this->dni = $dni;
-				return true;
+		  	if(preg_match("/^\d{6,8}$/", $dni)){
+					$this->dni = $dni;
+						return true;
 
 		    } else{
-			    return false;
+			    	return false;
 		    }
 	    }
 
 	    // Validar calle
 	    public function validarCalle($calle){
 		    if(preg_match("/^[a-zA-Z0-9-ñ, ]*$/", $calle)){
-				$this->calle = $calle;
-			    return true;
+					$this->calle = $calle;
+			    	return true;
 
 		    } else{
-			    return false;
+			    	return false;
 		    }
 	    }
 
 	    // Validad nroCalle
 	    public function validarNroCalle($nroCalle){
 		    if(preg_match("/^[0-9]{1,5}$/", $nroCalle)){
-				$this->nroCalle = $nroCalle;
-			    return true;
+					$this->nroCalle = $nroCalle;
+			    	return true;
 
 		    } else{
-			    return false;
+			    	return false;
 		    }
 	    }
 
 	    // Validar localidad
 	    public function validarLocalidad($localidad){
 		    if(preg_match("/^[a-zA-Z0-9-ñ, ]*$/", $localidad)){
-				$this->localidad = $localidad;
-			    return true;
+					$this->localidad = $localidad;
+			    	return true;
 
 		    } else{
-			    return false;
+			    	return false;
 		    }
 	    }
 
 	    // Validar teléfono
 	    public function validarTelefono($telefono){
 		    if(preg_match("/^[0-9-\ ]{1,12}$/", $telefono)){
-				$this->telefono = $telefono;
-			    return true;
+					$this->telefono = $telefono;
+			    	return true;
 
 		    } else{
-			    return false;
+			    	return false;
 		    }
 	    }
 
 	    // Validar cuil
 	    public function validarCuil($cuil){
 		    if(preg_match("/^[0-9]{2}-[0-9]{8}-[0-9]$/", $cuil)){
-				$this->cuil = $cuil;
-			    return true;
+					$this->cuil = $cuil;
+			    	return true;
 
 		    } else{
-			    return false;
+			    	return false;
 		    }
 	    }
 
 	    // Validar email
-        public function validarEmail($email){
-    	    if(preg_match("/^\w+@\w+\.(com|ar|net)$/", $email)){
-				$this->email = $email;
-    		    return true;
+      	public function validarEmail($email){
+    	  	if(preg_match("/^\w+@\w+\.(com|ar|net)$/", $email)){
+						$this->email = $email;
+    		    	return true;
 
     	    } else{
-    		    return false;
+    		    	return false;
     	    }
-        }
+      	}
 
 	    // Validar password
-        public function validarPassword($password, $passwordRepetida){
-    	    if($password == $passwordRepetida){
-				$this->password = $password;
-    		    return true;
+      	public function validarPassword($password, $passwordRepetida){
+    	  	if($password == $passwordRepetida){
+						$this->password = $password;
+    		    	return true;
 
-    	    } else{
-    		    return false;
-    	    }
-        }
+    	  	} else{
+    		    	return false;
+					}
+      	}
 	}
 ?>

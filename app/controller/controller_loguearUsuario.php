@@ -2,7 +2,7 @@
 
 	class Controller_loguearUsuario extends Controller {
 
-		private $usuario;
+		private $email;
 		private $password;
 
 		public function __construct(){

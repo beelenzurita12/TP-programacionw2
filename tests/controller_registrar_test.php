@@ -20,7 +20,7 @@ class simpleTestRegistrar extends \PHPUnit\Framework\TestCase{
         $nombreCorrecto = $this->controllerRegistrar->validarNombre("ricardo");
         $nombreConNumerosAlPrincipio = $this->controllerRegistrar->validarNombre("45ricardo");
         $nombreConNumerosAlMedio = $this->controllerRegistrar->validarNombre("ric34ardo");
-        $nombreConNumerosAlFinal = $this->controllerRegistrar->validarNombre("124ricardo");
+        $nombreConNumerosAlFinal = $this->controllerRegistrar->validarNombre("ricardo124");
         $nombreConEspacios = $this->controllerRegistrar->validarNombre("ric ardo");
         
         $this->assertTrue($nombreCorrecto);
@@ -33,10 +33,10 @@ class simpleTestRegistrar extends \PHPUnit\Framework\TestCase{
 
     public function testQueValidaElApellido(){
         $apellidoCorrecto = $this->controllerRegistrar->validarApellido("pérez");
-        $apellidoConNumerosAlPrincipio = $this->controllerRegistrar->validarApellido("45ricardo");
-        $apellidoConNumerosAlMedio = $this->controllerRegistrar->validarApellido("ric34ardo");
-        $apellidoConNumerosAlFinal = $this->controllerRegistrar->validarApellido("ricardo788");
-        $apellidoConEspacios = $this->controllerRegistrar->validarApellido("ric ardo");
+        $apellidoConNumerosAlPrincipio = $this->controllerRegistrar->validarApellido("45pérez");
+        $apellidoConNumerosAlMedio = $this->controllerRegistrar->validarApellido("pé34rez");
+        $apellidoConNumerosAlFinal = $this->controllerRegistrar->validarApellido("pérez788");
+        $apellidoConEspacios = $this->controllerRegistrar->validarApellido("pé rez");
 
         $this->assertTrue($apellidoCorrecto);
 
@@ -96,7 +96,7 @@ class simpleTestRegistrar extends \PHPUnit\Framework\TestCase{
 
     public function testQueValidaTelefono(){
         $telefonoCorrecto = $this->controllerRegistrar->validarTelefono("11 63537883");
-        $telefonoConLetrasAlPrincipio = $this->controllerRegistrar->validarTelefono("f34 34342");
+        $telefonoConLetrasAlPrincipio = $this->controllerRegistrar->validarTelefono("f34 3434254");
         $telefonoConLetrasAlMedio = $this->controllerRegistrar->validarTelefono("11 635gg378");
         $telefonoConLetrasAlFinal = $this->controllerRegistrar->validarTelefono("11 635378ge");
 

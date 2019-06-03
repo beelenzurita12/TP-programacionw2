@@ -1,13 +1,13 @@
-<?php 
-  if($data['submit']){
-    $className = $data['className'];
-    $mensaje = $data['mensaje'];
+<?php
 
-    echo "<div class='$className'>
-            $mensaje  
-          </div>";
-  }
+    if($data['submit']){
+      $className = $data['className'];
+      $mensaje = $data['mensaje'];
 
+      echo "<div class='$className'>
+              $mensaje  
+            </div>";
+    }
 ?>
 
 <div class="row align-items-center">

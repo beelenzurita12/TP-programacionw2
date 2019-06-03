@@ -1,4 +1,4 @@
-<!-- Slider -->
+  <!-- Slider -->
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -15,14 +15,14 @@
           </div>
         </div>
         <!-- Segunda imagen -->
-        <div class="carousel-item" style="background-image: url('public/image/slider1.jpg')">
+        <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/slider1.jpg" ?>')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Vende</h3>
             <p>This is a description for the second slide.</p>
           </div>
         </div>
         <!-- Tercera imagen -->
-        <div class="carousel-item" style="background-image: url('public/image/slider1.jpg')">
+        <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/slider1.jpg" ?>')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Disfruta</h3>
             <p>This is a description for the third slide.</p>
@@ -105,7 +105,7 @@
     <div class="row section-3">
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="public/image/producto1.jpg" alt=""></a>
+          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto1.jpg" ?>" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#!">Producto 1</a>
@@ -116,7 +116,7 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="public/image/producto1.jpg" alt=""></a>
+          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto1.jpg" ?>" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#!">Producto 2</a>
@@ -127,7 +127,7 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="public/image/producto1.jpg" alt=""></a>
+          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto1.jpg" ?>" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#!">Producto 3</a>
@@ -138,7 +138,7 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="public/image/producto2.jpg" alt=""></a>
+          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto2.jpg" ?>" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#!">Producto 4</a>
@@ -149,7 +149,7 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="public/image/producto2.jpg" alt=""></a>
+          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto2.jpg" ?>" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#!">Producto 5</a>
@@ -160,7 +160,7 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="public/image/producto1.jpg" alt=""></a>
+          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto2.jpg" ?>" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#!">Producto 6</a>

@@ -1,10 +1,11 @@
 <?php
+
     $estaLogueado = $_SESSION ? $_SESSION['estaLogueado'] : false;
 
     if($estaLogueado){
         echo '<div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
+                  <li class="nav-item ad">
                     <a class="nav-link" href="' . $GLOBALS['root'] . 'agregar_articulo/">Pon tu anuncio</a>
                   </li>
                   <li class="nav-item">
