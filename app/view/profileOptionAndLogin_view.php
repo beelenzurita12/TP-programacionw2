@@ -14,6 +14,7 @@
                     </a>
                     
                     <div class="dropdown-menu" aria-labelledby = "dropdownMenuLink">
+                    <div class="dropdown-item welcome">Bienvenido ' . $_SESSION['nombre'] . ' </div>
                       <a class="dropdown-item" href="#!">Tu perfil</a>
                       <a class="dropdown-item" href="#!">Tus anuncios</a>
                       <a class="dropdown-item" href="#!">Mensajes</a>

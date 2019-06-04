@@ -3,28 +3,7 @@
     --input-padding-y: .75rem;
   }
   
-  body {
-    /* background-attachment: fixed; */
-    height: 100vh;
-    min-height: 500px;
-    background: url("../img/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: hsla(0,0%,100%,0.30);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat; */
-    /* background: linear-gradient(to right, #0062E6, #33AEFF); */
-  }
-  
+  /* ================================ Formato de login y registrarme */
   .card-signin {
     border: 0;
     border-radius: 1rem;
@@ -78,7 +57,6 @@
     display: block;
     width: 100%;
     margin-bottom: 0;
-    /* Override default `<label>` margin */
     line-height: 1.5;
     color: #495057;
     border: 1px solid transparent;
@@ -117,31 +95,24 @@
     font-size: 12px;
     color: #777;
   }
+
   #aClass{
     color: #495057!important;
   }
+
   #aClass:hover{
     color: black!important;
   }
-  .masthead {
-    /* height: 100vh; */
-    min-height: 500px;
-    background-image: url("../img/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .div-form{
-    margin-top: 90px;
-    margin-bottom: 90px;
-  }
+
   .form-label-group>label{
     text-align: left!important;
   }
+
   #check{
     text-align: left!important;
     margin-left: 40px;
   }
+
   .card-titleRegistrarme{
     font-family: 'Hammersmith One', sans-serif;
     font-weight: 300;
@@ -149,10 +120,22 @@
     letter-spacing: .1rem;
     margin-top: 12px;
   }
-  .dropdown-menu{
-    top: 60px !important;
-    left: 135vh !important;
+
+  /* ================================ Espacio del header y footer con el login */
+  .div-form{
+    margin-top: 90px;
+    margin-bottom: 90px;
   }
+
+  /* ================================ Menu desplegable del avatar */
+  .nav-item.show{
+    position: relative;
+  }
+
+  .dropdown-menu.show{
+    margin-top: 7px;
+  }
+
   .alert{
     width: 40%;
     margin-left: auto;
@@ -160,6 +143,11 @@
     margin-top: 50px;
     text-align: center;
   }
-  .ad{
+
+  .welcome{
+    border-bottom:1px solid grey !important;
+  }
+
+  .nav-item.ad{
     margin-right: 10px;
   }

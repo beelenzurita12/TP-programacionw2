@@ -9,12 +9,12 @@
 		public function registrarUsuario($nombre, $apellido, $dni, $calle, $nroCalle, $localidad, $telefono, $cuil, $email, $password){
 			$connection = $this->getConnection();
 
-			$insert = "INSERT INTO usuario (nombre, apellido, dni, calle, localidad, telefono, cuil, email, password)";
-			$insert .= "VALUES (:nombre, :apellido, :dni, :calle, :localidad, :telefono, :cuil, :email, :password)";
+			$insert = "INSERT INTO usuario (nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password)";
+			$insert .= "VALUES (:nombre, :apellido, :dni, :calle, :nroCalle, :localidad, :telefono, :cuil, :email, :password)";
 
 			$query = $connection->prepare($insert);
 			$respuesta = $query->execute([':nombre' => $nombre, ':apellido' => $apellido, ':dni' => $dni,
-									  	  ':calle' => $calle, ':localidad' => $localidad, ':telefono' => $telefono,
+									  	  ':calle' => $calle, ':nroCalle' => $nroCalle, ':localidad' => $localidad, ':telefono' => $telefono,
 								          ':cuil' => $cuil, ':email' => $email, ':password' => $password]);
 		
 			if($respuesta){

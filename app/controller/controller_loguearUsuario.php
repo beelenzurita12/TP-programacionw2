@@ -27,7 +27,7 @@
 				
 			} else {
 				$_SESSION['estaLogueado'] = false;
-				// header("location: $this->urlRoot" . "login");
+				header("location: $this->urlRoot" . "login");
 			}
 		}
 
