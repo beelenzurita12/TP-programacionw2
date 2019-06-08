@@ -151,3 +151,12 @@
   .nav-item.ad{
     margin-right: 10px;
   }
+  /* Carousel post_view */
+
+  .post-container{
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  .title-h2{
+    margin-bottom: 30px;
+  }
