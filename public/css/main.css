@@ -123,7 +123,7 @@
 
   /* ================================ Espacio del header y footer con el login */
   .div-form{
-    margin-top: 90px;
+    /* margin-top: 90px; */
     margin-bottom: 90px;
   }
 
@@ -161,3 +161,209 @@
   .title-h2{
     margin-bottom: 30px;
   }
+  .buscador-container{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .form-buscador.form-buscador{
+    width: 100%;
+  }
+  #input-buscador{
+    width: 300px;
+    margin-right: 10px;
+  }
+  /* commercial/ mis publicaciones */
+  /*============================
+=========commercial.html*/
+.full-width{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.post{
+	border: 1px solid #ECEEEF;
+	height: 270px;
+	width: 250px;
+	display: inline-block;
+	margin: 5px;
+	position: relative;
+	float: left;
+	color: #9199A1;
+}
+.post:hover{
+	color: #9199A1;
+	background-color: #F5F5F5;
+}
+.post-img,
+.post-info{
+	position: relative;
+	left: 0;
+}
+.post > figure,
+.post > img,
+.post-img{
+	height: 186px;
+	top: 0;
+}
+.post > figure > img,
+.post-img > img{
+	width: 100%;
+	height: 100%;
+}
+.post-info{
+	height: 82px;
+	bottom: 0;
+	padding: 5px;
+}
+.post-info-title{ font-size: 14px; }
+.post-info-price{
+	color: #F09000;
+	font-size: 16px;
+	font-weight: 600;
+}
+.post-info-zone,
+.post-info-date,
+.post-info-like{
+	position: absolute;
+}
+.post-info-zone,
+.post-info-date{
+	bottom: 7px;
+	font-size: 12px;
+}
+.post-info-zone{ left: 7px; }
+.post-info-date{ right: 7px; }
+.post-info-like{
+	right: 7px;
+	top: 7px;
+	height: 25px;
+	width: 25px;
+	line-height: 27px;
+	text-align: center;
+	border-radius: 100%;
+	background-color: #fff;
+	cursor: pointer;
+}
+.post-block{
+	display: block;
+	float: none;
+	width: 100%;
+	height: 186px;
+}
+.post-block .post-img,
+.post-block .post-info{
+	height: 186px;
+	position: absolute;
+	top: 0;
+}
+.post-block .post-img{
+	width: 250px;
+	left: 0;
+	z-index: 2;
+}
+.post-block .post-info{
+	right: 0;
+	width: 100%;
+	padding: 15px;
+	padding-left: 265px;
+	z-index: 1;
+}
+.post-block .post-info-zone{ left: 15px; }
+.post-block .post-info-date{ right: 15px; }
+.post-user-info{
+	margin: 7px 0;
+	background-color: #F5F5F5;
+	padding: 10px;
+}
+.post-user-info i.NavBar-Nav-icon,
+.post-user-info img.NavBar-Nav-icon{
+	cursor: inherit;
+	height: 70px;
+	width: 70px;
+	line-height: 70px;
+	font-size: 40px;
+	margin: 7px auto;
+	display: block;
+}
+.post-user-info p{
+	height: 32px;
+	line-height: 32px;
+	margin: 5px 0;
+	text-align: center;
+}
+.div-table{
+	display: table;
+	height: auto;
+}
+.div-table-row,
+.div-table-cell{
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+}
+.div-table-row{
+	display: table-row;
+}
+.div-table-cell{
+	display: table-cell;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+}
+.div-table-cell-c{
+	background-color: #F5F5F5;
+	color: #333;
+}
+.custom-input-file{
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+  line-height: 150px;
+  text-align: center;
+  font-size: 70px;
+  color: #E1E1E1;
+  border-radius: 100%;
+  border: 2px dashed #E1E1E1;
+  display: block;
+  margin: 0 auto;
+}
+.custom-input-file .input-file {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 10000px;
+  border: 10000px solid transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  right: -1000px;
+  top: -1000px;
+  cursor: pointer;
+}
+.media-object{
+width: 64px;
+height: 64px;
+border-radius: 100%;
+}
+.res-msj{
+margin-top: 10px;
+display: none;
+}
+
+.divider{
+	width: 95%;
+	display: block;
+	margin: 5px auto;
+	height: 0;
+	border-top: 1px solid #E1E1E1;
+}
+.mispublicaciones-container{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.tus-anuncios-h2{
+  margin-left: 20px;
+}
