@@ -35,22 +35,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <form action="" class="form-inline">
+				<input type="text" id="input-buscador" class="form-control" placeholder="Estoy buscando...">
+				<button type="submit" class="btn btn-dark">Buscar</button>
+			</form>
+
           <?php include __DIR__ . "/profileOptionAndLogin_view.php"; ?>
           
-    </div>
+    </div>				
   </nav>
-  <div class="container buscador-container">
-			<div class="row">
-				<div class="col-8">
-					<form action="" class="form-inline text-center">
-						<div class="form-group">
-							<input type="text" id="input-buscador" class="form-control input-lg" placeholder="Estoy buscando...">
-						</div>
-						<button type="submit" class="btn btn-dark btn-lg">Buscar</button>
-					</form>
-				</div>
-			</div>
-		</div>
   
     <?php include_once $vistaSolicitada; ?>
 

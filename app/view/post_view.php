@@ -1,5 +1,28 @@
 <div class="container post-container">
 	<div class="row">
+		<div class="col-xs-12 col-sm-4">
+			<div class="full-width div-table">
+				<div class="full-width div-table-row">
+					<div class="div-table-cell div-table-cell-xs">
+						<a href="#!" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
+					</div>
+				</div>
+			</div>
+			<div class="full-width" style="padding:10px; background-color: #F5F5F5; margin: 7px 0;">
+				<p class="lead text-center"><strong>{{Titulo y modelo}}</strong></p>
+				<p class="lead text-center" style="color: #F09000;"><strong>{{$7,000}}</strong></p>
+			</div>
+			<div class="full-width post-user-info">
+				<div>
+					<p class="full-width lead"><i class="fas fa-user" aria-hidden="true"></i> {{Nombre usuario}}</p>
+					<p class="full-width lead"><i class="fas fa-mobile" aria-hidden="true"></i> {{12345678}}</p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<a href="#!" class="btn btn-success btn-block">ENVIAR MENSAJE</a>
+			<a href="#!" class="btn btn-success btn-block">LLAMAR</a>
+			<a href="<?php echo $GLOBALS['root'] . "misPublicaciones/" ?>">¿ES TUYO? GESTIONAR ESTE ANUNCIO</a>
+		</div>
 		<div class="col-xs-12 col-sm-8">
 			<h2 class="title-h2">{{Titulo del producto}}</h2>
 			<div id="slider-commercial" class="carousel slide" data-ride="carousel">
@@ -28,29 +51,6 @@
 				<p class="lead">
 					<strong>Publicado: {{Fecha}}</strong>
 				</p>
-		</div>
-		<div class="col-xs-12 col-sm-4">
-			<div class="full-width div-table">
-				<div class="full-width div-table-row">
-					<div class="div-table-cell div-table-cell-xs">
-						<a href="#!" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
-					</div>
-				</div>
-			</div>
-			<div class="full-width" style="padding:10px; background-color: #F5F5F5; margin: 7px 0;">
-				<p class="lead text-center"><strong>{{Titulo y modelo}}</strong></p>
-				<p class="lead text-center" style="color: #F09000;"><strong>{{$7,000}}</strong></p>
-			</div>
-			<div class="full-width post-user-info">
-				<div>
-					<p class="full-width lead"><i class="fas fa-user" aria-hidden="true"></i> {{Nombre usuario}}</p>
-					<p class="full-width lead"><i class="fas fa-mobile" aria-hidden="true"></i> {{12345678}}</p>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<a href="#!" class="btn btn-success btn-block">ENVIAR MENSAJE</a>
-			<a href="#!" class="btn btn-success btn-block">LLAMAR</a>
-			<a href="#!">¿ES TUYO? GESTIONAR ESTE ANUNCIO</a>
 		</div>
 	</div>
 </div>
