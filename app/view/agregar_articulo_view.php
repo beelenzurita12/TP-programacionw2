@@ -5,30 +5,42 @@
        			<div class="card-body">
 					<h4 class="text-center">Pon tu anuncio gratis</h4>
 					<br>
-					<form class="form-signin" enctype="multipart/form-data">
+					<form action="<?php echo $GLOBALS['root'] . 'agregar_articulo/agregar'; ?>" class="form-signin" enctype="multipart/form-data" method="post">
 						<h4 class="text-info">Detalles de tu anuncio</h4>
 						<div class="form-group">
 							<label class="col-sm-3">Código postal</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" placeholder="Código postal" required autofocus>
+								<input name="codigoPostal" type="text" class="form-control" placeholder="Código postal" required autofocus>
 							</div>
           				</div>
           				<div class="form-group">
 							<label class="col-sm-3">Título del anuncio</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" placeholder="Título del anuncio" required autofocus>
+								<input name="nombre" type="text" class="form-control" placeholder="Título del anuncio" required autofocus>
 							</div>
           				</div>
 						<div class="form-group">
 							<label class="col-sm-3">Descripción</label>
 							<div class="col-sm-7">
-								<textarea class="form-control" rows="3" placeholder="Descripción" required autofocus></textarea>
+								<textarea name="descripcion" class="form-control" rows="3" placeholder="Descripción" required autofocus></textarea>
 							</div>
           				</div>
 						<div class="form-group">
 							<label class="col-sm-3">Precio</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" placeholder="Precio" required autofocus>
+								<input name="precio" type="text" class="form-control" placeholder="Precio" required autofocus>
+							</div>
+          				</div>
+						<div class="form-group">
+							<label class="col-sm-3">Categoria</label>
+							<div class="col-sm-7">
+								<input name="categoria" type="text" class="form-control" placeholder="Categoria" required autofocus>
+							</div>
+          				</div>
+						<div class="form-group">
+							<label class="col-sm-3">Cantidad</label>
+							<div class="col-sm-7">
+								<input name="cantidad" type="number" class="form-control" placeholder="Cantidad" required autofocus>
 							</div>
           				</div>
 						<br>
@@ -36,7 +48,7 @@
 						<p>¡Los anuncios con fotos reciben 7 veces más contactos!</p>
 						<div class="form-group">
 							<div class="text-muted text-center">
-								<input type="file" multiple="multiple" min="1" max="10"/>
+								<input name="imagenes" type="file" multiple="multiple" min="1" max="10"/>
 							</div>
 							<br>
 							<p class="text-muted text-center">¡Selecciona hasta 10 fotos! <i class="far fa-images"></i></p>
@@ -46,35 +58,35 @@
 							<label class="col-sm-3">Eres</label>
 							<div class="col-sm-7">
 								<label>
-									<input type="checkbox" value="option1"> Particular
+									<input name="tipoVendedor" type="radio" value="option1"> Particular
 								</label>
 								<label>
-									<input type="checkbox" value="option2"> Profesional
+									<input name="tipoVendedor" type="radio" value="option2"> Profesional
 								</label>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">Tu nombre</label>
 							<div class="col-sm-7">
-						    	<input type="text" class="form-control" placeholder="Nombre">
+						    	<input name="vendedor" type="text" class="form-control" placeholder="Nombre">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">Email</label>
 							<div class="col-sm-7">
-						    	<input type="email" class="form-control" placeholder="Email">
+						    	<input name="email" type="email" class="form-control" placeholder="Email">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">Repetir Email</label>
 							<div class="col-sm-7">
-						    	<input type="email" class="form-control" placeholder="Repetir Email">
+						    	<input name="emailRepetido" type="email" class="form-control" placeholder="Repetir Email">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">Teléfono</label>
 							<div class="col-sm-7">
-						    	<input type="tel" class="form-control" placeholder="Teléfono">
+						    	<input name="telefono" type="tel" class="form-control" placeholder="Teléfono">
 							</div>
 						</div>
 						<p class="text-center">

@@ -31,8 +31,6 @@ create table producto (
 	primary key(id)
 );
 
-drop table imagen;
-
 create table imagen (
 	id int auto_increment,
 	idProducto int not null,
