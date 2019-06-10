@@ -32,15 +32,27 @@
 							</div>
           				</div>
 						<div class="form-group">
-							<label class="col-sm-3">Categoria</label>
-							<div class="col-sm-7">
-								<input name="categoria" type="text" class="form-control" placeholder="Categoria" required autofocus>
-							</div>
-          				</div>
-						<div class="form-group">
 							<label class="col-sm-3">Cantidad</label>
 							<div class="col-sm-7">
 								<input name="cantidad" type="number" class="form-control" placeholder="Cantidad" required autofocus>
+							</div>
+          				</div>
+						<div class="form-group">
+							<label class="col-sm-3">Categoria</label>
+							<div class="col-sm-7">
+								<select name="categoria" class="form-control" placeholder="Categoria" required autofocus>
+    								<option>Vehículos</option>
+    								<option>Inmobiliaria</option>
+    								<option>Hogar</option>
+    								<option>Moda y belleza</option>
+									<option>Para niños y bebes</option>
+									<option>Electrónica</option>
+									<option>Ocio y deporte</option>
+									<option>Mascotas y animales</option>
+									<option>Trabajo y formación</option>
+									<option>Negocios y servicios</option>
+									<option>Otros</option>
+  								</select>
 							</div>
           				</div>
 						<br>
@@ -57,11 +69,11 @@
 						<div class="form-group">
 							<label class="col-sm-3">Eres</label>
 							<div class="col-sm-7">
-								<label>
-									<input name="tipoVendedor" type="radio" value="option1"> Particular
+								<label class="option1">
+									<input name="tipoVendedor" type="radio"> Particular
 								</label>
-								<label>
-									<input name="tipoVendedor" type="radio" value="option2"> Profesional
+								<label class="option2">
+									<input name="tipoVendedor" type="radio"> Profesional
 								</label>
 							</div>
 						</div>

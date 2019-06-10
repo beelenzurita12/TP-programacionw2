@@ -16,15 +16,15 @@ class SimpleAgregarTest extends \PHPUnit\Framework\TestCase{
 
     public function testQueValidaInputPost(){
         $inputsCorrectos = ["nombre" => "un nombre", "descripcion" => " una descripcion", "precio" => "154", 
-        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/152/1999"];
+        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/15/1999"];
         
         $sonValidos = $this->controllerAgregar->validarInputsPost($inputsCorrectos);
 
         $inputsSinNombre = ["nombre" => "", "descripcion" => " una descripcion", "precio" => "154", 
-        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/152/1999"];
+        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/15/1999"];
         
         $inputsSinOtros = ["nombre" => "un nombre", "descripcion" => "", "precio" => "", 
-        "cantidad" => "34", "categoria" => "", "fecha_publicacion" => "15/152/1999"];
+        "cantidad" => "34", "categoria" => "", "fecha_publicacion" => "15/15/1999"];
         
         $esValidoSinNombre = $this->controllerAgregar->validarInputsPost($inputsSinNombre);
         $esValidoSinVarios = $this->controllerAgregar->validarInputsPost($inputsSinOtros);
@@ -32,15 +32,15 @@ class SimpleAgregarTest extends \PHPUnit\Framework\TestCase{
         $this->assertTrue($sonValidos);
 
         $this->assertFalse($esValidoSinNombre);
-        $this->assertFalse($esValidoSinVarios); // validar que no se permita campos con espacio
+        $this->assertFalse($esValidoSinVarios); // Validar que no se permita campos con espacio.
     }
 
     public function testQueValidaInputSinEspacios(){
         $inputsCorrectos = ["nombre" => "un nombre", "descripcion" => " una descripcion", "precio" => "154", 
-        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/152/1999"];
+        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/15/1999"];
         
         $inputsConEspacio = ["nombre" => "un nombre", "descripcion" => "  ", "precio" => "154", 
-        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/152/1999"];
+        "cantidad" => "34", "categoria" => "electro", "fecha_publicacion" => "15/15/1999"];
         
         $inputsValido = $this->controllerAgregar->validarQueNoTenganSoloEspacios($inputsCorrectos);
         

@@ -168,6 +168,11 @@
     margin-right: 5px;
   }
 
+  /* ================================ Espacio entre los tipos de vendedor */
+  .option2{
+    margin-left: 10px;
+  }
+
   /* ================================ Mis publicaciones */
 .full-width{
 	width: 100%;
@@ -223,10 +228,25 @@
 	font-weight: 600;
 }
 
-.post-info-zone,
-.post-info-date,
+.post-info-editar,
+.post-info-eliminar,
 .post-info-like{
 	position: absolute;
+}
+
+.post-info-editar,
+.post-info-eliminar{
+	bottom: 7px;
+	font-size: 12px;
+}
+.post-info-editar{ left: 10px; }
+.post-info-eliminar{ right: 10px; }
+.post-info-like{
+	right: 7px;
+	top: 10px;
+	width: 25px;
+	text-align: center;
+	cursor: pointer;
 }
 
 .post-block{
@@ -257,6 +277,8 @@
 	z-index: 1;
 }
 
+.post-block .post-info-editar{ left: 15px; }
+.post-block .post-info-eliminar{ right: 15px; }
 .post-user-info{
 	margin: 7px 0;
 	background-color: #F5F5F5;
@@ -339,14 +361,14 @@
 }
 
 .media-object{
-width: 64px;
-height: 64px;
-border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
 }
 
 .res-msj{
-margin-top: 10px;
-display: none;
+  margin-top: 10px;
+  display: none;
 }
 
 .divider{
@@ -363,5 +385,6 @@ display: none;
 }
 
 .tus-anuncios-h2{
-  margin-left: 20px;
+  margin-top: 50px;
+  margin-left: 30px;
 }

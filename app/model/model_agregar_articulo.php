@@ -7,7 +7,7 @@
 	    }
 
 	    public function agregarProducto(){
-            $insertSql = "INSERT INTO producto (nombre, descripcion, precio, cantidad, categoria, fecha_publicacion ) VALUES";
+            $insertSql = "INSERT INTO producto (nombre, descripcion, precio, cantidad, categoria, fecha_publicacion) VALUES";
             $insertSql .= "(:nombre, :descripcion, :precio, :cantidad, :categoria, :fecha_publicacion)";
 
             $insertImage = "INSERT INTO imagen (idProducto, imagen) VALUES (:id, :imagen)";
@@ -25,6 +25,6 @@
             } catch (Exception $e) {
                 echo 'error: ' . $e->getMessage();
             }
-	    }
+        }
     }
 ?>

@@ -78,7 +78,7 @@
 				return $inputsConSoloEspacios;
 
 			} else {
-				return; //los dos concatenados
+				return; // Los dos concatenados.
 			}
 		}
     }

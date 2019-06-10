@@ -22,8 +22,17 @@
 						</div>
 					</div>
 					<div class="full-width list-group" style="border-radius: 0;">
-						<a href="perfil.html" class="list-group-item">
-						  	<i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil
+						<a href="#!" class="list-group-item">
+						  	<i class="fas fa-user fa-fw" aria-hidden="true"></i> Tu perfil
+						</a>
+						<a href="#!" class="list-group-item active">
+						  	<i class="fas fa-object-group fa-fw" aria-hidden="true"></i> Tus anuncios
+						</a>
+						<a href="#!" class="list-group-item">
+							  <i class="far fa-comment-dots fa-fw" aria-hidden="true"></i> Mensajes
+						</a>
+						<a href="#!" class="list-group-item">
+						  	<i class="fas fa-cogs fa-fw" aria-hidden="true"></i> Configuración
 						</a>
 					</div>
 				</div>
@@ -39,6 +48,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -49,6 +61,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -59,6 +74,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -69,6 +87,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -79,6 +100,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -89,6 +113,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -99,6 +126,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -109,6 +139,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -119,6 +152,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -129,6 +165,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -139,6 +178,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 					<div class="full-width post">
@@ -149,6 +191,9 @@
 						<div class="full-width post-info">
 							<a href="#!" class="full-width post-info-title">Título del anuncio</a>
 							<p class="full-width post-info-price">$7,000</p>
+							<a href="#!" class="post-info-editar">Editar</a>
+							<a href="#!" class="post-info-eliminar">Eliminar</a>
+							<i class="far fa-heart post-info-like"></i>
 						</div>
 					</div>
 				</div>
