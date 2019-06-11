@@ -12,8 +12,9 @@
 
         public function agregar(){
         	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-				var_dump($_FILES["imagenes"]['tmp_name']);
-				var_dump($_POST);
+				// var_dump($_FILES["imagenes"]['tmp_name']);
+				// var_dump($_FILES);
+				// var_dump($_POST);
 				// move_uploaded_file($_FILES['imagenes']['tmp_name'], __DIR__ . "/../../upload/" . $_FILES['imagenes']['name']);
 				
 				$inputsValidos = $this->validarInputsPost($_POST);
@@ -21,9 +22,11 @@
 
         		if($inputsValidos["inputsValido"] && $tieneEspacios["inputsValido"]){
 					$this->model->agregarProducto();
+					$data = false;
 
         		} else {
-					$data = $this->retornarInputsInvalidos($inputsValidos["inputs"], $tieneEspacios["inputs"]);
+					$data["invalidos"] = $this->retornarInputsInvalidos($inputsValidos["inputs"], $tieneEspacios["inputs"]);
+					$data["post"] = $_POST;
 				}
 				
 				$this->view->generate("agregar_articulo_view.php", "template_view.php", $data);

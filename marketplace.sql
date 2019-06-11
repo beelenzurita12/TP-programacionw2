@@ -21,6 +21,7 @@ create table usuario (
 
 create table producto (
 	id int auto_increment,
+    idUsuario int not null,
 	nombre varchar(50) not null,
 	descripcion text not null,
 	precio float not null,
@@ -28,7 +29,8 @@ create table producto (
 	categoria varchar(15) not null,
 	fecha_publicacion datetime not null,
 	duracion_publicacion int,
-	primary key(id)
+	primary key(id),
+    foreign key(idUsuario) references usuario(id)
 );
 
 create table imagen (

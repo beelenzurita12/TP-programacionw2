@@ -168,11 +168,6 @@
     margin-right: 5px;
   }
 
-  /* ================================ Espacio entre los tipos de vendedor */
-  .option2{
-    margin-left: 10px;
-  }
-
   /* ================================ Mis publicaciones */
 .full-width{
 	width: 100%;
@@ -381,7 +376,7 @@
 
 .mispublicaciones-container{
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 130px;
 }
 
 .tus-anuncios-h2{

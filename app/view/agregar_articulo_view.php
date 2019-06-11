@@ -10,48 +10,62 @@
 						<div class="form-group">
 							<label class="col-sm-3">Código postal</label>
 							<div class="col-sm-7">
-								<input name="codigoPostal" type="text" class="form-control" placeholder="Código postal" required autofocus>
+								<input name="codigoPostal" type="text" class="form-control" 
+										placeholder="Código postal" 
+										value="<?php echo !empty($data["post"]) ? $data["post"]["codigoPostal"] : ""; ?>"
+										required autofocus>
 							</div>
           				</div>
           				<div class="form-group">
 							<label class="col-sm-3">Título del anuncio</label>
 							<div class="col-sm-7">
-								<input name="nombre" type="text" class="form-control" placeholder="Título del anuncio" required autofocus>
+								<input name="nombre" type="text" class="form-control" 
+										placeholder="Título del anuncio" 
+										value="<?php echo !empty($data["post"]) ? $data["post"]["nombre"] : ""; ?>"
+										required autofocus>
 							</div>
           				</div>
 						<div class="form-group">
 							<label class="col-sm-3">Descripción</label>
 							<div class="col-sm-7">
-								<textarea name="descripcion" class="form-control" rows="3" placeholder="Descripción" required autofocus></textarea>
+								<textarea name="descripcion" class="form-control" rows="3" placeholder="Descripción" required autofocus>
+								<?php echo !empty($data["post"]) ? $data["post"]["descripcion"] : "";?></textarea>
 							</div>
           				</div>
 						<div class="form-group">
 							<label class="col-sm-3">Precio</label>
 							<div class="col-sm-7">
-								<input name="precio" type="text" class="form-control" placeholder="Precio" required autofocus>
+								<input name="precio" type="text" class="form-control" 
+										placeholder="Precio" 
+										value="<?php echo !empty($data["post"]) ? $data["post"]["precio"] : ""; ?>"
+										required autofocus>
 							</div>
           				</div>
 						<div class="form-group">
 							<label class="col-sm-3">Cantidad</label>
 							<div class="col-sm-7">
-								<input name="cantidad" type="number" class="form-control" placeholder="Cantidad" required autofocus>
+								<input name="cantidad" type="number" class="form-control" 
+										placeholder="Cantidad" 
+										value="<?php echo !empty($data["post"]) ? $data["post"]["cantidad"] : ""; ?>"
+										required autofocus>
 							</div>
           				</div>
 						<div class="form-group">
 							<label class="col-sm-3">Categoria</label>
 							<div class="col-sm-7">
 								<select name="categoria" class="form-control" placeholder="Categoria" required autofocus>
-    								<option>Vehículos</option>
-    								<option>Inmobiliaria</option>
-    								<option>Hogar</option>
-    								<option>Moda y belleza</option>
-									<option>Para niños y bebes</option>
-									<option>Electrónica</option>
-									<option>Ocio y deporte</option>
-									<option>Mascotas y animales</option>
-									<option>Trabajo y formación</option>
-									<option>Negocios y servicios</option>
-									<option>Otros</option>
+									<?php 
+										$categorias = ["Vehículos", "Inmobiliaria", "Hogar", "Moda y belleza", "Para niños y bebes", "Electrónica", "Ocio y deporte", "Mascotas y animales", "Trabajo y formación", "Negocios y servicios", "Otros"];
+										
+										for($i = 0; $i < sizeof($categorias) ; $i++){
+											if(!empty($data["post"]) && $data["post"]["categoria"] == $categorias[$i]){
+												echo "<option selected>" . $categorias[$i] . "</option>";
+
+											} else {
+												echo "<option>" . $categorias[$i] . "</option>";
+											}
+										}
+									?>
   								</select>
 							</div>
           				</div>
@@ -65,42 +79,7 @@
 							<br>
 							<p class="text-muted text-center">¡Selecciona hasta 10 fotos! <i class="far fa-images"></i></p>
 						</div>
-						<h4 class="text-info">Datos para que te contacten</h4>
-						<div class="form-group">
-							<label class="col-sm-3">Eres</label>
-							<div class="col-sm-7">
-								<label class="option1">
-									<input name="tipoVendedor" type="radio"> Particular
-								</label>
-								<label class="option2">
-									<input name="tipoVendedor" type="radio"> Profesional
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3">Tu nombre</label>
-							<div class="col-sm-7">
-						    	<input name="vendedor" type="text" class="form-control" placeholder="Nombre">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3">Email</label>
-							<div class="col-sm-7">
-						    	<input name="email" type="email" class="form-control" placeholder="Email">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3">Repetir Email</label>
-							<div class="col-sm-7">
-						    	<input name="emailRepetido" type="email" class="form-control" placeholder="Repetir Email">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3">Teléfono</label>
-							<div class="col-sm-7">
-						    	<input name="telefono" type="tel" class="form-control" placeholder="Teléfono">
-							</div>
-						</div>
+						<br>
 						<p class="text-center">
 							<button class="btn btn-lg btn-secondary" type="submit">Publicar</button>
 						</p>

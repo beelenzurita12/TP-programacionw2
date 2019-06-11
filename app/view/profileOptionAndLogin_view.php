@@ -16,7 +16,7 @@
                     <div class="dropdown-menu" aria-labelledby = "dropdownMenuLink">
                     <div class="dropdown-item welcome">Bienvenido ' . $_SESSION['nombre'] . ' </div>
                       <a class="dropdown-item" href="#!">Tu perfil</a>
-                      <a class="dropdown-item" href="' . $GLOBALS['root'] . 'misPublicaciones/">Tus anuncios</a>
+                      <a class="dropdown-item" href="' . $GLOBALS['root'] . 'mis_publicaciones/">Tus anuncios</a>
                       <a class="dropdown-item" href="#!">Mensajes</a>
                       <a class="dropdown-item" href="#!">Configuración</a>
                       <a class="dropdown-item" href="' . $GLOBALS['root'] . 'loguearUsuario/desloguearUsuario">Salir</a>
