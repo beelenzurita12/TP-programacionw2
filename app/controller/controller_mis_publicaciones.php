@@ -18,6 +18,20 @@
         	} else {
         		header("location:" . $GLOBALS["root"]);	
         	}
+		}
+		
+		public function editar(){
+            $estaLogueado = $_SESSION["estaLogueado"];
+        	$idProducto = $_GET["id"];
+
+        	if($estaLogueado){
+        		$idUsuario = $_SESSION["idUsuario"];
+
+        		$this->model->editarProducto($idProducto);
+        		$publicaciones["post"] = $this->model->obtenerProductos($idUsuario);
+
+        		$this->view->generate("editar_producto_view.php", "template_view.php", $publicaciones);
+        	}
         }
 
         public function eliminar(){

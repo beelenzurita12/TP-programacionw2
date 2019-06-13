@@ -17,6 +17,20 @@
 		    return $queryProducto->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function editarProducto($idProducto){
+            $updateImagen = "UPDATE imagen SET imagen = :imagen WHERE idProducto = :idProducto";
+            $updateProducto = "UPDATE producto SET nombre = :nombre, descripcion = :descripcion, precio = :precio, cantidad = :cantidad, categoria = :categoria";
+            $updateProducto .= "WHERE id = :idProducto";
+
+            $conexion = $this->getConnection();
+
+            $updateImagen = $conexion->prepare($updateImagen);
+            $updateProducto = $conexion->prepare($updateProducto);
+
+            $updateImagen->execute([":idProducto" => $idProducto]);
+            $updateProducto->execute([":idProducto" => $idProducto]);
+        }
+
         public function eliminarProducto($idProducto){
             $deleteImagen = "DELETE FROM imagen WHERE idProducto = :idProducto";
 		    $deleteProducto = "DELETE FROM producto WHERE id = :idProducto";

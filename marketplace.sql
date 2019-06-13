@@ -36,7 +36,7 @@ create table producto (
 create table imagen (
 	id int auto_increment,
 	idProducto int not null,
-	imagen blob not null,
+	imagen longblob not null,
 	primary key(id),
 	foreign key(idProducto) references producto(id)
 );

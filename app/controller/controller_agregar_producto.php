@@ -1,13 +1,13 @@
 <?php
 
-    class Controller_agregar_articulo extends Controller{
+    class Controller_agregar_producto extends Controller{
 
         public function __construct(){
             parent::__construct();
         }
 
         public function index(){
-            $this->view->generate("agregar_articulo_view.php", "template_view.php");
+            $this->view->generate("agregar_producto_view.php", "template_view.php");
         }
 
         public function agregar(){
@@ -29,7 +29,7 @@
 					$data["post"] = $_POST;
 				}
 				
-				$this->view->generate("agregar_articulo_view.php", "template_view.php", $data);
+				$this->view->generate("agregar_producto_view.php", "template_view.php", $data);
         	}
         }
 
