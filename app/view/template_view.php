@@ -35,8 +35,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <form action="" class="form-inline">
-				<input type="text" id="input-buscador" class="form-control" placeholder="Estoy buscando...">
+      <form action="<?php echo $GLOBALS['root'] . 'resultados_de_busqueda/buscar' ?>" method="POST" class="form-inline">
+				<input type="text" id="input-buscador" class="form-control" placeholder="Estoy buscando..." name="busqueda">
 				<button type="submit" class="btn btn-dark">Buscar</button>
 			</form>
 
