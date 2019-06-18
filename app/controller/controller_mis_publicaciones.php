@@ -11,8 +11,8 @@
 
         	if($estaLogueado){
         		$idUsuario = $_SESSION["idUsuario"];
-        		$publicaciones = $this->model->obtenerProductos($idUsuario);
-
+				$publicaciones = $this->model->obtenerProductos($idUsuario);
+				
         		$this->view->generate("mis_publicaciones_view.php", "template_view.php", $publicaciones);
 
         	} else {

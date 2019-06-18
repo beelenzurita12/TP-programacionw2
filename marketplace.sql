@@ -3,7 +3,7 @@ create database marketplace;
 use marketplace;
 
 create table usuario (
-    id int(11) auto_increment,
+    idUsuario int(11) auto_increment,
     tipoUsuario varchar(15) not null,
     nombre varchar(15) not null,
     apellido varchar(15) not null,
@@ -15,12 +15,11 @@ create table usuario (
     cuil varchar(15) not null,
     email varchar(50) not null,
     password varchar(13) not null,
-    passwordRepetida varchar(13) not null,
-    primary key(id)
+    primary key(idUsuario)
 );
 
 create table producto (
-	id int auto_increment,
+	idProducto int auto_increment,
     idUsuario int not null,
 	nombre varchar(50) not null,
 	descripcion text not null,
@@ -29,16 +28,16 @@ create table producto (
 	categoria varchar(15) not null,
 	fecha_publicacion datetime not null,
 	duracion_publicacion int,
-	primary key(id),
-    foreign key(idUsuario) references usuario(id)
+	primary key(idProducto),
+    foreign key(idUsuario) references usuario(idUsuario)
 );
 
 create table imagen (
-	id int auto_increment,
+	idImagen int auto_increment,
 	idProducto int not null,
-	imagen longblob not null,
-	primary key(id),
-	foreign key(idProducto) references producto(id)
+	imagen varchar(100) not null,
+	primary key(idImagen),
+	foreign key(idProducto) references producto(idProducto)
 );
 
 insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password, passwordRepetida) values 

@@ -7,7 +7,19 @@
         }
 
         public function index(){
-            $this->view->generate("agregar_producto_view.php", "template_view.php");
+			$estaLogueado = $_SESSION['estaLogueado'];
+
+			if($estaLogueado && !empty($_GET['id'])){
+				$idProducto = $_GET['id'];
+
+				$resultadoProducto = $this->model->obtenerProducto($idProducto);
+				$producto["post"] = $resultadoProducto[0];
+				
+				$this->view->generate("agregar_producto_view.php", "template_view.php", $producto);
+
+			} else {
+				$this->view->generate("agregar_producto_view.php", "template_view.php");
+			}
         }
 
         public function agregar(){

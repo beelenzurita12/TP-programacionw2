@@ -8,13 +8,6 @@
 					<form action="<?php echo $GLOBALS['root'] . 'agregar_producto/agregar'; ?>" class="form-signin" enctype="multipart/form-data" method="post">
 						<h4 class="text-info">Detalles de tu anuncio</h4>
 						<div class="form-group">
-							<label class="col-sm-3">Código postal</label>
-							<div class="col-sm-7">
-								<input name="codigoPostal" type="text" class="form-control" 
-										placeholder="Código postal" 
-										value="<?php echo !empty($data["post"]) ? $data["post"]["codigoPostal"] : ""; ?>"
-										required autofocus>
-							</div>
           				</div>
           				<div class="form-group">
 							<label class="col-sm-3">Título del anuncio</label>
@@ -74,7 +67,7 @@
 						<p>¡Los anuncios con fotos reciben 7 veces más contactos!</p>
 						<div class="form-group">
 							<div class="text-muted text-center">
-								<input name="imagenes" type="file" multiple="multiple" min="1" max="10"/>
+								<input name="imagenes[]" type="file" multiple="multiple" min="1" max="10"/>
 							</div>
 							<br>
 							<p class="text-muted text-center">¡Selecciona hasta 10 fotos! <i class="far fa-images"></i></p>

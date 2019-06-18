@@ -3,3 +3,4 @@ vendor/
 /*.ini
 *.ini
 app/config/**
+/upload/

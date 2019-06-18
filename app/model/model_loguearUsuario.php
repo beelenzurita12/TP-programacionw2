@@ -7,7 +7,7 @@
 	    }
 
 	    public function validar($email, $password){
-		    $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, id FROM usuario WHERE email = :email AND password = :password";
+		    $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, idUsuario FROM usuario WHERE email = :email AND password = :password";
 		    $connection = $this->getConnection();
 
 		    try {
@@ -17,7 +17,7 @@
                 while($resultadoFila = $querySelect->fetch(PDO::FETCH_ASSOC)){
                     if($resultadoFila['existeUsuario'] == '1'){
                         return Array(
-                            "idUsuario" => $resultadoFila['id'],
+                            "idUsuario" => $resultadoFila['idUsuario'],
                             "tipoUsuario" => $resultadoFila['tipoUsuario'],
                             "nombre" => $resultadoFila['nombre'],
                             "isValid" => true
