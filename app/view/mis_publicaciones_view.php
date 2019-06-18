@@ -1,6 +1,6 @@
 <section class="full-width section">
-	<div class="container mispublicaciones-container">
-    <h2 class="tus-anuncios-h2">Tus anuncios</h2>
+	<div class="container section-container">
+    <h2 class="title-section-h2">Tus anuncios</h2>
 		<div class="row">
 			<div class="col-xs-12 col-sm-4 col-md-3">
 				<div class="full-width user-menu-xs">
@@ -25,7 +25,7 @@
 						<a href="#!" class="list-group-item">
 						  	<i class="fas fa-user fa-fw" aria-hidden="true"></i> Tu perfil
 						</a>
-						<a href="#!" class="list-group-item active">
+						<a href="#!" class="list-group-item">
 						  	<i class="fas fa-object-group fa-fw" aria-hidden="true"></i> Tus anuncios
 						</a>
 						<a href="#!" class="list-group-item">
@@ -57,7 +57,7 @@
 											<figure class='full-width post-img'>
 												<!-- Tamaño de la imagen 248x186 pixeles -->
 												<img src='" . $src . "' alt='' class='img-responsive'>
-											</figure> 
+											</figure>
 											<div class='full-width post-info'>
 												<a href='#!' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
 												<p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>

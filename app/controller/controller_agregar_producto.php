@@ -36,9 +36,7 @@
 	
 					$this->view->generate("editar_producto_view.php", "template_view.php", $publicaciones);
 				}
-
 			}
-
 		}
 
         public function agregar(){

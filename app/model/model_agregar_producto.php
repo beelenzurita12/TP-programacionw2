@@ -52,9 +52,9 @@
 
             $updateProducto = $conexion->prepare($updateProducto);
             $updateProducto->execute([":nombre" => $_POST["nombre"], ":descripcion" => $_POST["descripcion"],
-                ":precio" => $_POST["precio"], ":cantidad" => $_POST["cantidad"], ":categoria" => $_POST["categoria"], ":idProducto" => $idProducto]);
+            ":precio" => $_POST["precio"], ":cantidad" => $_POST["cantidad"], ":categoria" => $_POST["categoria"], ":idProducto" => $idProducto]);
 
-            // eliminar las imagenes
+            // Eliminar las imagenes
             if(!empty($_FILES['imagenes']['name'])){
 
             }else {

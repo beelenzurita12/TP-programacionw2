@@ -7,8 +7,6 @@
 					<br>
 					<form action="<?php echo $GLOBALS['root'] . $data["submit"]; ?>" class="form-signin" enctype="multipart/form-data" method="post">
 						<h4 class="text-info">Detalles de tu anuncio</h4>
-						<div class="form-group">
-          				</div>
           				<div class="form-group">
 							<label class="col-sm-3">Título del anuncio</label>
 							<div class="col-sm-7">
@@ -21,8 +19,7 @@
 						<div class="form-group">
 							<label class="col-sm-3">Descripción</label>
 							<div class="col-sm-7">
-								<textarea name="descripcion" class="form-control" rows="3" placeholder="Descripción" required autofocus>
-								<?php echo !empty($data["post"]) ? $data["post"]["descripcion"] : "";?></textarea>
+								<textarea name="descripcion" class="form-control" rows="3" placeholder="Descripción" required autofocus><?php echo !empty($data["post"]) ? $data["post"]["descripcion"] : "";?></textarea>
 							</div>
           				</div>
 						<div class="form-group">

@@ -17,7 +17,5 @@
 
 		    return $queryProducto->fetchAll(PDO::FETCH_ASSOC);
         }
-
-        
     }
 ?>

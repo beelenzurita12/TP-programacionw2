@@ -4,7 +4,7 @@
 			<div class="full-width div-table">
 				<div class="full-width div-table-row">
 					<div class="div-table-cell div-table-cell-xs">
-						<a href="#!" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
+						<a href="<?php echo $GLOBALS['root'] . "resultados_de_busqueda/" ?>" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
 					</div>
 				</div>
 			</div>
@@ -21,7 +21,7 @@
 			<div class="clearfix"></div>
 			<a href="#!" class="btn btn-success btn-block">ENVIAR MENSAJE</a>
 			<a href="#!" class="btn btn-success btn-block">LLAMAR</a>
-			<a href="<?php echo $GLOBALS['root'] . "misPublicaciones/" ?>">¿ES TUYO? GESTIONAR ESTE ANUNCIO</a>
+			<a href="<?php echo $GLOBALS['root'] . "mis_publicaciones/" ?>">¿ES TUYO? GESTIONAR ESTE ANUNCIO</a>
 		</div>
 		<div class="col-xs-12 col-sm-8">
 			<h2 class="title-h2">{{Titulo del producto}}</h2>
