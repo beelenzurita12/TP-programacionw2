@@ -14,21 +14,35 @@
 
 				$resultadoProducto = $this->model->obtenerProducto($idProducto);
 				$producto["post"] = $resultadoProducto[0];
-				
+				$producto["submit"] = "agregar_producto/editar";
+
 				$this->view->generate("agregar_producto_view.php", "template_view.php", $producto);
 
 			} else {
-				$this->view->generate("agregar_producto_view.php", "template_view.php");
+				$data["submit"] = "agregar_producto/agregar";
+				$this->view->generate("agregar_producto_view.php", "template_view.php", $data);
 			}
-        }
+		}
+		
+		public function editar(){
+			$estaLogueado = $_SESSION["estaLogueado"];
+
+			if($_SERVER["REQUEST_METHOD"] == "POST"){
+				if($estaLogueado){
+					$idUsuario = $_SESSION["idUsuario"];
+	
+					$this->model->editarProducto();
+					$publicaciones["post"] = $this->model->obtenerProductos($idUsuario);
+	
+					$this->view->generate("editar_producto_view.php", "template_view.php", $publicaciones);
+				}
+
+			}
+
+		}
 
         public function agregar(){
-        	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-				// var_dump($_FILES["imagenes"]['tmp_name']);
-				// var_dump($_FILES);
-				// var_dump($_POST);
-				// move_uploaded_file($_FILES['imagenes']['tmp_name'], __DIR__ . "/../../upload/" . $_FILES['imagenes']['name']);
-				
+        	if($_SERVER['REQUEST_METHOD'] == 'POST'){				
 				$inputsValidos = $this->validarInputsPost($_POST);
 				$tieneEspacios = $this->validarQueNoTenganSoloEspacios($_POST);
 

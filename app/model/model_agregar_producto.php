@@ -44,5 +44,23 @@
                 echo 'error: ' . $e->getMessage();
             }
         }
+
+        public function editarProducto(){
+            $updateProducto = "UPDATE producto SET nombre = :nombre, descripcion = :descripcion, precio = :precio, cantidad = :cantidad, categoria = :categoria";
+            $updateProducto .= "WHERE id = :idProducto";
+            $conexion = $this->getConnection();
+
+            $updateProducto = $conexion->prepare($updateProducto);
+            $updateProducto->execute([":nombre" => $_POST["nombre"], ":descripcion" => $_POST["descripcion"],
+                ":precio" => $_POST["precio"], ":cantidad" => $_POST["cantidad"], ":categoria" => $_POST["categoria"], ":idProducto" => $idProducto]);
+
+            // eliminar las imagenes
+            if(!empty($_FILES['imagenes']['name'])){
+
+            }else {
+
+            }
+
+        }
     }
 ?>

@@ -18,11 +18,11 @@
 
         public function buscar(){
         	$busqueda = $_POST["busqueda"];
-            //var_dump($_POST);
-            $this->model->buscarProductos($busqueda);
-            $publicaciones["POST"] = $this->model->buscarProductos($busqueda);
 
-            $this->view->generate("resultados_de_busqueda.php", "template_view.php", $publicaciones);
+            $this->model->buscarProductos($busqueda);
+            $publicaciones = $this->model->buscarProductos($busqueda);
+
+            $this->view->generate("resultados_de_busqueda_view.php", "template_view.php", $publicaciones);
         	
         }
     }

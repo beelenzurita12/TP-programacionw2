@@ -5,7 +5,7 @@
        			<div class="card-body">
 					<h4 class="text-center">Pon tu anuncio gratis</h4>
 					<br>
-					<form action="<?php echo $GLOBALS['root'] . 'agregar_producto/agregar'; ?>" class="form-signin" enctype="multipart/form-data" method="post">
+					<form action="<?php echo $GLOBALS['root'] . $data["submit"]; ?>" class="form-signin" enctype="multipart/form-data" method="post">
 						<h4 class="text-info">Detalles de tu anuncio</h4>
 						<div class="form-group">
           				</div>
