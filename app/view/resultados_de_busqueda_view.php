@@ -48,14 +48,14 @@
 				<!-- Contenido -->
 				<div class="full-width container-post">
 				<?php
-
+				
 					for($i = 0 ; $i < sizeof($data); $i++){
 						$imagen = $data[$i]['imagen'];
 						// Read image path, convert to base64 encoding
-						$imageData = base64_encode(file_get_contents(__DIR__ . "/../../upload/$imagen"));
+						$imageData = base64_encode(file_get_contents(__DIR__ . "/../../public/upload/$imagen"));
 
 						// Format the image SRC:  data:{mime};base64,{data};
-						$src = 'data: '.mime_content_type(__DIR__ . "/../../upload/$imagen").';base64,'.$imageData;
+						$src = 'data: '.mime_content_type(__DIR__ . "/../../public/upload/$imagen").';base64,'.$imageData;
 
 						// Echo out a sample image
 						// $imagenHTML =  '<img src="' . $src . '">';
@@ -66,7 +66,7 @@
 												<img src='" . $src . "' alt='' class='img-responsive'>
 											</figure> 
 											<div class='full-width post-info'>
-												<a href='" . $GLOBALS["root"] . "post/' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
+											<a href='" . $GLOBALS["root"] . "post/index?idProducto=" . $data[$i]['idProducto'] . "' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
 												<p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>
 												
 												<i class='far fa-heart post-info-like'></i>

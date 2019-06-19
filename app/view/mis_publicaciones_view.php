@@ -41,17 +41,13 @@
 				<!-- Contenido -->
 				<div class="full-width container-post">
 				<?php
+				
+					include_once __DIR__ . "/../helper/parse_imagen.php";
 
 					for($i = 0 ; $i < sizeof($data); $i++){
 						$imagen = $data[$i]['imagen'];
-						// Read image path, convert to base64 encoding
-						$imageData = base64_encode(file_get_contents(__DIR__ . "/../../upload/$imagen"));
 
-						// Format the image SRC:  data:{mime};base64,{data};
-						$src = 'data: '.mime_content_type(__DIR__ . "/../../upload/$imagen").';base64,'.$imageData;
-
-						// Echo out a sample image
-						// $imagenHTML =  '<img src="' . $src . '">';
+						$src = parseImagen($imagen);
 
 						$publicacion = "<div class='full-width post'>
 											<figure class='full-width post-img'>
@@ -59,7 +55,7 @@
 												<img src='" . $src . "' alt='' class='img-responsive'>
 											</figure>
 											<div class='full-width post-info'>
-												<a href='#!' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
+											<a href='" . $GLOBALS["root"] . "post/index?idProducto=" . $data[$i]["idProducto"] . "' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
 												<p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>
 												<a href='" . $GLOBALS["root"] . "agregar_producto/index?id=" . $data[$i]["idProducto"] . "' class='post-info-editar'>Editar</a>
 												<a href='" . $GLOBALS["root"] . "mis_publicaciones/eliminar?id=" . $data[$i]["idProducto"] . "' class='post-info-eliminar'>Eliminar</a>
@@ -69,7 +65,6 @@
 
 						echo $publicacion;
 					}
-
 				?>
 				</div>
 			</div>

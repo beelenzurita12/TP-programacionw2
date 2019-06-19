@@ -1,6 +1,5 @@
-DB/configDatabase.ini
 vendor/
 /*.ini
 *.ini
 app/config/**
-/upload/
+public/upload/

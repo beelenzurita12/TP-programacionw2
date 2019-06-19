@@ -20,7 +20,7 @@
         	}
 		}
 		
-		public function editar(){
+		/*public function editar(){
             $estaLogueado = $_SESSION["estaLogueado"];
         	$idProducto = $_GET["id"];
 
@@ -32,7 +32,7 @@
 
         		$this->view->generate("editar_producto_view.php", "template_view.php", $publicaciones);
         	}
-        }
+        }*/
 
         public function eliminar(){
             $estaLogueado = $_SESSION["estaLogueado"];

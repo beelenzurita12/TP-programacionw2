@@ -19,7 +19,7 @@
 
         public function eliminarProducto($idProducto){
             $deleteImagen = "DELETE FROM imagen WHERE idProducto = :idProducto";
-		    $deleteProducto = "DELETE FROM producto WHERE id = :idProducto";
+		    $deleteProducto = "DELETE FROM producto WHERE idProducto = :idProducto";
 
 		    $conexion = $this->getConnection();
 

@@ -34,7 +34,7 @@
                 for($i = 0; $i < count($_FILES['imagenes']['name']); $i++){
                     $filename = $fecha . "-" . $_FILES['imagenes']['name'][$i];
 
-                    move_uploaded_file($_FILES['imagenes']['tmp_name'][$i], __DIR__ . "/../../upload/$filename");
+                    move_uploaded_file($_FILES['imagenes']['tmp_name'][$i], __DIR__ . "/../../public/upload/$filename");
 
                     $queryImage = $connection->prepare($insertImage);
                     $queryImage->execute([":id" => $idProducto, ":imagen" => $filename]);
