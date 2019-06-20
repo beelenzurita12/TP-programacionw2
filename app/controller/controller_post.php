@@ -14,14 +14,21 @@
 
     		$idProducto = $_GET['idProducto'];
     		$idUsuario = $_SESSION['idUsuario'];
-    		// $idUsuario = 435;
+			//$idUsuario = 435;
+			
+			$producto = $this->model->obtenerProducto($idProducto);
+			
+			if(empty($producto)){
+				$this->view->generate("404_view.php", "template_view.php");
 
-    		$producto = $this->model->obtenerProducto($idProducto);
-    		// var_dump($producto);
+			} else {
+				$producto['nombreUsuario'] = $_SESSION['nombre'];
+				
+				$producto['mismoUsuario'] = $this->model->esPropietarioDeLaPublicacion($idUsuario, $idProducto);
+	
+				$this->view->generate("post_view.php", "template_view.php", $producto);
+			}
 
-    		$producto['otroUsuario'] = !$this->model->esPropietarioDeLaPublicacion($idUsuario, $idProducto);
-
-    		$this->view->generate("post_view.php", "template_view.php", $producto);
         }
     }
 ?>

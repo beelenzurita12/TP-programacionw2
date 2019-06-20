@@ -42,23 +42,19 @@
 				<div class="full-width container-post">
 				<?php
 				
-					include_once __DIR__ . "/../helper/parse_imagen.php";
-
 					for($i = 0 ; $i < sizeof($data); $i++){
-						$imagen = $data[$i]['imagen'];
-
-						$src = parseImagen($imagen);
+						$imagen = $GLOBALS['root'] . "public/upload/" . $data[$i]['imagen'];
 
 						$publicacion = "<div class='full-width post'>
 											<figure class='full-width post-img'>
 												<!-- Tamaño de la imagen 248x186 pixeles -->
-												<img src='" . $src . "' alt='' class='img-responsive'>
+												<img src='" . $imagen . "' alt='' class='img-responsive'>
 											</figure>
 											<div class='full-width post-info'>
 											<a href='" . $GLOBALS["root"] . "post/index?idProducto=" . $data[$i]["idProducto"] . "' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
 												<p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>
-												<a href='" . $GLOBALS["root"] . "agregar_producto/index?id=" . $data[$i]["idProducto"] . "' class='post-info-editar'>Editar</a>
-												<a href='" . $GLOBALS["root"] . "mis_publicaciones/eliminar?id=" . $data[$i]["idProducto"] . "' class='post-info-eliminar'>Eliminar</a>
+												<a href='" . $GLOBALS["root"] . "producto/index?id=" . $data[$i]["idProducto"] . "' class='post-info-editar'>Editar</a>
+												<a href='" . $GLOBALS["root"] . "producto/eliminar?id=" . $data[$i]["idProducto"] . "' class='post-info-eliminar'>Eliminar</a>
 												<i class='far fa-heart post-info-like'></i>
 											</div>
 										</div>";

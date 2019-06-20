@@ -58,18 +58,18 @@
 			</div>
 			<div class="full-width post-user-info">
 				<div>
-					<p class="full-width lead"><i class="fas fa-user" aria-hidden="true"></i> {{Nombre usuario}}</p>
+					<p class="full-width lead"><i class="fas fa-user" aria-hidden="true"></i><?php echo $data['nombreUsuario']; ?></p>
 					<p class="full-width lead"><i class="fas fa-mobile" aria-hidden="true"></i> {{12345678}}</p>
 				</div>
 			</div>
 			<div class="clearfix"></div>
 			<?php 
-				if($data["otroUsuario"]){
-					echo '<a href="#!" class="btn btn-success btn-block">Comprar</a>';
-				
+				if($data["mismoUsuario"]){
+					echo '<a href="' . $GLOBALS['root'] . 'producto/index?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Editar</a>';
+					echo '<a href="' . $GLOBALS['root'] . 'producto/eliminar?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Eliminar</a>';
+					
 				} else {
-					echo '<a href="#!" class="btn btn-success btn-block">Editar</a>';
-					echo '<a href="#!" class="btn btn-success btn-block">Eliminar</a>';
+					echo '<a href="#!" class="btn btn-success btn-block">Comprar</a>';
 				}
 			?>
 		</div>

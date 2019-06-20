@@ -16,18 +16,5 @@
 
 		    return $queryProducto->fetchAll(PDO::FETCH_ASSOC);
         }
-
-        public function eliminarProducto($idProducto){
-            $deleteImagen = "DELETE FROM imagen WHERE idProducto = :idProducto";
-		    $deleteProducto = "DELETE FROM producto WHERE idProducto = :idProducto";
-
-		    $conexion = $this->getConnection();
-
-		    $queryImagen = $conexion->prepare($deleteImagen);
-		    $queryProducto = $conexion->prepare($deleteProducto);
-
-		    $queryImagen->execute([":idProducto" => $idProducto]);
-		    $queryProducto->execute([":idProducto" => $idProducto]);
-        }
     }
 ?>

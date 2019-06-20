@@ -1,6 +1,6 @@
 <?php
 
-    class Controller_agregar_producto extends Controller{
+    class Controller_producto extends Controller{
 
         public function __construct(){
             parent::__construct();
@@ -9,33 +9,21 @@
         public function index(){
 			$estaLogueado = $_SESSION['estaLogueado'];
 
-			if($estaLogueado && !empty($_GET['id'])){
+			if($estaLogueado && isset($_GET['id'])){
 				$idProducto = $_GET['id'];
 
 				$resultadoProducto = $this->model->obtenerProducto($idProducto);
 				$producto["post"] = $resultadoProducto[0];
-				$producto["submit"] = "agregar_producto/editar";
+				$producto["submit"] = "producto/editar?id=" . $idProducto;
 
 				$this->view->generate("agregar_producto_view.php", "template_view.php", $producto);
 
-			} else {
-				$data["submit"] = "agregar_producto/agregar";
+			} else if($estaLogueado){
+				$data["submit"] = "producto/agregar";
 				$this->view->generate("agregar_producto_view.php", "template_view.php", $data);
-			}
-		}
-		
-		public function editar(){
-			$estaLogueado = $_SESSION["estaLogueado"];
 
-			if($_SERVER["REQUEST_METHOD"] == "POST"){
-				if($estaLogueado){
-					$idUsuario = $_SESSION["idUsuario"];
-	
-					$this->model->editarProducto();
-					$publicaciones["post"] = $this->model->obtenerProductos($idUsuario);
-	
-					$this->view->generate("editar_producto_view.php", "template_view.php", $publicaciones);
-				}
+			} else {
+				header("location: " . $GLOBALS['root'] . "inicio");
 			}
 		}
 
@@ -54,6 +42,42 @@
 				}
 				
 				$this->view->generate("agregar_producto_view.php", "template_view.php", $data);
+        	}
+		}
+
+		public function editar(){
+			if(empty($_POST)){
+				header("location: " . $GLOBALS['root'] . "inicio");
+
+			} else {
+				$inputsValidos = $this->validarInputsPost($_POST);
+				$tieneEspacios = $this->validarQueNoTenganSoloEspacios($_POST);
+
+        		if($inputsValidos["inputsValido"] && $tieneEspacios["inputsValido"]){
+					$idProducto = $_GET['id'];
+					$this->model->editarProducto($idProducto); // YA ESTÁ CREADO REVISAR!!!
+					$data = false;
+
+        		} else {
+					$data["invalidos"] = $this->retornarInputsInvalidos($inputsValidos["inputs"], $tieneEspacios["inputs"]);
+					$data["post"] = $_POST;
+				}
+				
+				$this->view->generate("agregar_producto_view.php", "template_view.php", $data);
+			}
+		}
+		
+		public function eliminar(){
+            $estaLogueado = $_SESSION["estaLogueado"];
+        	$idProducto = $_GET["id"];
+
+        	if($estaLogueado){
+        		$idUsuario = $_SESSION["idUsuario"];
+
+        		$this->model->eliminarProducto($idProducto);
+        		$publicaciones = $this->model->obtenerProductos($idUsuario);
+
+        		$this->view->generate("mis_publicaciones_view.php", "template_view.php", $publicaciones);
         	}
         }
 

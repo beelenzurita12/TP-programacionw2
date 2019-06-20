@@ -48,7 +48,7 @@
 		    $queryUsuario = $this->getConnection()->prepare($selectUsuario);
 		    $queryUsuario->execute([":idUsuario" => $idUsuario, ":idProducto" => $idProducto]);
 
-		    $resultado = $queryUsuario->fetchall(PDO::FETCH_ASSOC);
+			$resultado = $queryUsuario->fetchall(PDO::FETCH_ASSOC);
 		
 		    if($resultado[0]['esPropietario'] > 0){
 			    return true;

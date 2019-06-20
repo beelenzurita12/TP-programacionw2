@@ -5,13 +5,15 @@
 
     class Controller_inicio extends Controller{
     
-        public function __construct(){
-            parent::__construct();
+        public function __constructor(){
+            
         }
 
         // Aquí irán los acction de la URL
         public function index(){
-            $this->view->generate("inicio_view.php", "template_view.php");
+            $productos = $this->model->obtenerProductos();
+            
+            $this->view->generate("inicio_view.php", "template_view.php", $productos);
         }
     }
 ?>

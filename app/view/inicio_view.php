@@ -103,72 +103,9 @@
     <!-- Presentacion de algunos productos -->
     <h2 class="text-center text-h2">Te puede interesar</h2>
     <div class="row section-3">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto1.jpg" ?>" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#!">Producto 1</a>
-            </h4>
-            <p class="card-text">$2.500</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto1.jpg" ?>" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#!">Producto 2</a>
-            </h4>
-            <p class="card-text">$2.500</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto1.jpg" ?>" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#!">Producto 3</a>
-            </h4>
-            <p class="card-text">$2.500</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto2.jpg" ?>" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#!">Producto 4</a>
-            </h4>
-            <p class="card-text">$2.500</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto2.jpg" ?>" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#!">Producto 5</a>
-            </h4>
-            <p class="card-text">$2.500</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#!"><img class="card-img-top" src="<?php echo $GLOBALS['root'] . "public/image/producto2.jpg" ?>" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#!">Producto 6</a>
-            </h4>
-            <p class="card-text">$2.500</p>
-          </div>
-        </div>
-      </div>
+      <?php
+        include_once __DIR__ . "/componentes/componente_productos_card_view.php";
+      ?>
     </div>
 
     <!-- Frases motivadoras -->
