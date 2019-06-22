@@ -41,19 +41,20 @@
 						<a href="#!" class="list-group-item">
 							<i class="fa fa-shopping-basket fa-fw" aria-hidden="true"></i> Otros
 						</a>
+						<a href="#!" class="list-group-item">
+							<i class="fa fa-star fa-fw" aria-hidden="true"></i> Todas las categorías
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<!-- Contenido -->
 				<div class="full-width container-post">
-				
 				<?php 
 				
 					include_once __DIR__ . "/componentes/componente_productos_card_view.php";
 				
-				?>
-
+				?>	
 				</div>
 			</div>
         </div>
