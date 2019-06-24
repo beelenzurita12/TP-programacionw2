@@ -127,7 +127,12 @@
     margin-bottom: 90px;
   }
 
-  /* ================================ Menu desplegable del avatar */
+  /* ================================ Menu desplegable del avatar Y SHOPING CAR */
+  
+  .navbar-nav{
+    align-items:center;
+  }
+
   .nav-item.show{
     position: relative;
   }
@@ -150,6 +155,26 @@
 
   .nav-item.ad{
     margin-right: 10px;
+  }
+
+  .shoping-car{
+    font-size: 2.5rem !important;
+    margin-left: 2rem;
+  }
+
+  .shoping-car-contador{
+    background-color: white;
+    color: #343a40;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight:bold;
+    position: relative;
+    width: 1.5rem;
+    border-radius: 50%;
+    text-align:center;
+    position: relative;
+    top: -26px;
+    left: -19px;
   }
 
   /* ================================ Slider post_view */

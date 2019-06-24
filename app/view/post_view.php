@@ -70,6 +70,7 @@
 					
 				} else {
 					echo '<a href="#!" class="btn btn-success btn-block">Comprar</a>';
+					echo '<a href="' . $GLOBALS['root'] . 'carrito_compra/agregar?id='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar Al carrito<i class="fas fa-shopping-cart"></i></a>';
 				}
 			?>
 		</div>

@@ -8,7 +8,7 @@
                   <li class="nav-item ad">
                     <a class="nav-link" href="' . $GLOBALS['root'] . 'producto/">Pon tu anuncio</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item ad">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <img src="' . $GLOBALS["root"] . 'public/image/man.png" alt="">
                     </a>
@@ -21,6 +21,12 @@
                       <a class="dropdown-item" href="#!">Configuración</a>
                       <a class="dropdown-item" href="' . $GLOBALS['root'] . 'loguearUsuario/desloguearUsuario">Salir</a>
                     </div>
+                  </li>
+                  <li class="nav-item ad">
+                  <a class="navbar-brand shoping-car" href="' . $GLOBALS['root'] . '">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="shoping-car-contador">' . $_SESSION['productosEnCarrito'] . '</div>
+                    </a>
                   </li>
                 </ul>
               </div>';
