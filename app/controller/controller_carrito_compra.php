@@ -7,7 +7,7 @@ class Controller_carrito_compra extends Controller{
     }
 
     public function index(){
-
+        $this->view->generate("carrito_view.php", "template_view.php");
     }
 
     public function agregar(){

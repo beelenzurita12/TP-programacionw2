@@ -408,3 +408,23 @@
 .title-section-h2{
   margin-top: 60px;
 }
+.tus-anuncios-h2{
+  margin-top: 50px;
+  margin-left: 30px;
+}
+.carrito-table{
+  margin-bottom: 50px!important;
+}
+.tus-anuncios-h3{
+  
+  margin-left: 30px;
+}
+.botoncito{
+  margin: 50px;
+  float: right;
+  margin-right: 25%;
+}
+.clear{
+  clear: both;
+ 
+}
