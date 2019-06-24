@@ -22,7 +22,6 @@
             $publicaciones = $this->model->buscarProductos($busqueda);
 
             $this->view->generate("resultados_de_busqueda_view.php", "template_view.php", $publicaciones);
-
         }
     }
 ?>

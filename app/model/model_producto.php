@@ -67,7 +67,6 @@
                 
                 $fecha = date("y-m-d-H-i-s");
                 $this->insertarImagen($idProducto, $conexion, $fecha);
-                
             }
         }
 

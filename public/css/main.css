@@ -199,10 +199,10 @@
 
 .post{
 	border: 1px solid #ECEEEF;
-	height: 270px;
+	height: 280px;
 	width: 250px;
 	display: inline-block;
-	margin: 5px;
+	margin: 10px;
 	position: relative;
 	color: #9199A1;
 }
@@ -226,7 +226,7 @@
 .post > figure,
 .post > img,
 .post-img{
-	height: 186px;
+	height: 190px;
 	top: 0;
 }
 
@@ -237,15 +237,15 @@
 }
 
 .post-info{
-	height: 82px;
+	height: 90px;
 	bottom: 0;
-	padding: 5px;
+	padding: 10px;
 }
 
-.post-info-title{ font-size: 14px; }
+.post-info-title{ font-size: 16px; }
 .post-info-price{
 	color: #F09000;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 600;
 }
 
@@ -406,5 +406,5 @@
 }
 
 .title-section-h2{
-  margin-top: 80px;
+  margin-top: 60px;
 }

@@ -4,7 +4,6 @@
 
         public function __constructor(){
             parent::__constructor();
-
         }   
         
         public function obtenerProductos(){

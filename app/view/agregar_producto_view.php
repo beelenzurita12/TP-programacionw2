@@ -1,6 +1,6 @@
 <div class="row align-items-center">
   	<div class="col-12">
-    	<div class="col-sm-9 col-md-7 col-lg-7 mx-auto">
+    	<div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
       		<div class="card card-signin my-5">
        			<div class="card-body">
 					<h4 class="text-center">Pon tu anuncio gratis</h4>
