@@ -72,7 +72,7 @@
               <input type="checkbox" class="custom-control-input" id="customCheck1">
               <label class="custom-control-label" for="customCheck1">Acepto los términos y condiciones.</label>
             </div>
-            <button class="btn btn-lg btn-secondary btn-block" type="submit">Crear cuenta</button>  
+            <button class="btn btn-lg btn-secondary btn-block" type="submit">Crear cuenta</button>
           </form>
         </div>
       </div>

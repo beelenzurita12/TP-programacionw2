@@ -1,195 +1,187 @@
-  :root {
-    --input-padding-x: 1.5rem;
-    --input-padding-y: .75rem;
-  }
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
   
-  /* ================================ Formato de login y registrarme */
-  .card-signin {
-    border: 0;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  }
+/* ================================ Formato de login y registrarme */
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
   
-  .card-signin .card-title {
-    font-family: 'Hammersmith One', sans-serif;
-    margin-bottom: 2rem;
-    font-weight: 300;
-    font-size: 1.5rem;
-    letter-spacing: .1rem;
-  }
+.card-signin .card-title {
+  font-family: 'Hammersmith One', sans-serif;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+}
   
-  .card-signin .card-body {
-    padding: 2rem;
-  }
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
   
-  .form-signin {
-    width: 100%;
-  }
+.form-signin .btn {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 100%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  padding: 1rem;
+  transition: all 0.2s;
+}
   
-  .form-signin .btn {
-    font-family: 'Hammersmith One', sans-serif;
-    font-size: 100%;
-    border-radius: 5rem;
-    letter-spacing: .1rem;
-    padding: 1rem;
-    transition: all 0.2s;
-  }
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
   
-  .form-label-group {
-    position: relative;
-    margin-bottom: 1rem;
-  }
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
   
-  .form-label-group input {
-    height: auto;
-    border-radius: 2rem;
-  }
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
   
-  .form-label-group>input,
-  .form-label-group>label {
-    padding: var(--input-padding-y) var(--input-padding-x);
-  }
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
   
-  .form-label-group>label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    margin-bottom: 0;
-    line-height: 1.5;
-    color: #495057;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    transition: all .1s ease-in-out;
-  }
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
   
-  .form-label-group input::-webkit-input-placeholder {
-    color: transparent;
-  }
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
   
-  .form-label-group input:-ms-input-placeholder {
-    color: transparent;
-  }
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
   
-  .form-label-group input::-ms-input-placeholder {
-    color: transparent;
-  }
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
   
-  .form-label-group input::-moz-placeholder {
-    color: transparent;
-  }
+.form-label-group input::placeholder {
+  color: transparent;
+}
   
-  .form-label-group input::placeholder {
-    color: transparent;
-  }
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
   
-  .form-label-group input:not(:placeholder-shown) {
-    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
-    padding-bottom: calc(var(--input-padding-y) / 3);
-  }
-  
-  .form-label-group input:not(:placeholder-shown)~label {
-    padding-top: calc(var(--input-padding-y) / 3);
-    padding-bottom: calc(var(--input-padding-y) / 3);
-    font-size: 12px;
-    color: #777;
-  }
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
 
-  #aClass{
-    color: #495057!important;
-  }
+#aClass{
+  color: #495057!important;
+}
 
-  #aClass:hover{
-    color: black!important;
-  }
+#aClass:hover{
+  color: black!important;
+}
 
-  .form-label-group>label{
-    text-align: left!important;
-  }
+.form-label-group>label{
+  text-align: left!important;
+}
 
-  #check{
-    text-align: left!important;
-    margin-left: 40px;
-  }
+#check{
+  text-align: left!important;
+  margin-left: 40px;
+}
 
-  .card-titleRegistrarme{
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 300;
-    font-size: 1.5rem;
-    letter-spacing: .1rem;
-    margin-top: 12px;
-  }
+/* ================================ Espacio del header y footer con el login */
+.div-form{
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
 
-  /* ================================ Espacio del header y footer con el login */
-  .div-form{
-    margin-top: 90px;
-    margin-bottom: 90px;
-  }
+/* ================================ Menu desplegable del avatar y carrito de compras en el navbar */
+.navbar-nav{
+  align-items:center;
+}
 
-  /* ================================ Menu desplegable del avatar Y SHOPING CAR */
-  
-  .navbar-nav{
-    align-items:center;
-  }
+.nav-item.show{
+  position: relative;
+}
 
-  .nav-item.show{
-    position: relative;
-  }
+.dropdown-menu.show{
+  margin-top: 7px;
+}
 
-  .dropdown-menu.show{
-    margin-top: 7px;
-  }
+.alert{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
+}
 
-  .alert{
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    text-align: center;
-  }
+.welcome{
+  border-bottom: 1px solid grey !important;
+}
 
-  .welcome{
-    border-bottom:1px solid grey !important;
-  }
+.nav-item.ad{
+  margin-right: 10px;
+}
 
-  .nav-item.ad{
-    margin-right: 10px;
-  }
+.shopping-cart{
+  font-size: 1.5rem !important;
+  margin-left: 1.5rem;
+}
 
-  .shoping-car{
-    font-size: 2.5rem !important;
-    margin-left: 2rem;
-  }
+.shopping-cart-contador{
+  background-color: white;
+  color: #343a40;
+  display: inline-block;
+  font-size: 14px;
+  font-weight:bold;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  top: -14px;
+  left: -16px;
+}
 
-  .shoping-car-contador{
-    background-color: white;
-    color: #343a40;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight:bold;
-    position: relative;
-    width: 1.5rem;
-    border-radius: 50%;
-    text-align:center;
-    position: relative;
-    top: -26px;
-    left: -19px;
-  }
+/* ================================ Slider post_view */
+.post-container{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
 
-  /* ================================ Slider post_view */
-  .post-container{
-    margin-bottom: 40px;
-    margin-top: 40px;
-  }
+/* ================================ Buscador */
+#input-buscador{
+  width: 300px;
+  margin-right: 5px;
+}
 
-  /* ================================ Buscador */
-  #input-buscador{
-    width: 300px;
-    margin-right: 5px;
-  }
-
-  /* ================================ Mis publicaciones - Resultados de busqueda */
+/* ================================ Mis publicaciones - Resultados de busqueda */
 .full-width{
 	width: 100%;
 	margin: 0;
@@ -408,23 +400,14 @@
 .title-section-h2{
   margin-top: 60px;
 }
-.tus-anuncios-h2{
-  margin-top: 50px;
-  margin-left: 30px;
-}
-.carrito-table{
-  margin-bottom: 50px!important;
-}
-.tus-anuncios-h3{
-  
-  margin-left: 30px;
-}
+
+/* ================================ Vista del carrito de compras */
 .botoncito{
-  margin: 50px;
+  margin: 10px;
   float: right;
-  margin-right: 25%;
+  margin-right: 285px;
 }
+
 .clear{
   clear: both;
- 
 }

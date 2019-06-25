@@ -14,7 +14,7 @@
                     </a>
                     
                     <div class="dropdown-menu" aria-labelledby = "dropdownMenuLink">
-                    <div class="dropdown-item welcome">Bienvenido ' . $_SESSION['nombre'] . ' </div>
+                      <div class="dropdown-item welcome">Bienvenido ' . $_SESSION['nombre'] . ' </div>
                       <a class="dropdown-item" href="#!">Tu perfil</a>
                       <a class="dropdown-item" href="' . $GLOBALS['root'] . 'mis_publicaciones/">Tus anuncios</a>
                       <a class="dropdown-item" href="#!">Mensajes</a>
@@ -23,9 +23,9 @@
                     </div>
                   </li>
                   <li class="nav-item ad">
-                  <a class="navbar-brand shoping-car" href="' . $GLOBALS['root'] . '">
-                    <i class="fas fa-shopping-cart"></i>
-                    <div class="shoping-car-contador">' . $_SESSION['productosEnCarrito'] . '</div>
+                    <a class="navbar-brand shopping-cart" href="' . $GLOBALS['root'] . 'carrito_de_compras/">
+                      <i class="fas fa-shopping-cart"></i>
+                      <div class="shopping-cart-contador">' . $_SESSION['productosEnCarrito'] . '</div>
                     </a>
                   </li>
                 </ul>

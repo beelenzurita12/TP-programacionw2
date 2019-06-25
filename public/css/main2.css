@@ -2,6 +2,7 @@
 .container-category{
 	text-align: center;
 }
+
 .container-category a{
 	text-decoration: none;
 	width: 150px;
@@ -15,6 +16,7 @@
 	transition: all .3s ease-in-out;
 	position: relative;
 }
+
 .container-category a:hover{ color: #FFF; }
 .container-category i,
 .container-category span{
@@ -24,16 +26,19 @@
 	position: absolute;
 	left: 0;
 }
+
 .container-category i{
 	height: 90px;
 	line-height: 90px;
 	top: 0;
 	font-size: 40px;
 }
+
 .container-category span{
 	height: 60px;
 	bottom: 0;
 }
+
 #categori-1:hover{ background-color: #E65100; border-color: #E65100; }
 #categori-2:hover{ background-color: #B71C1C; border-color: #B71C1C; }
 #categori-3:hover{ background-color: #1A237E; border-color: #1A237E; }
@@ -67,14 +72,17 @@
 	color: #fff;
     position: relative;
 }
+
 .footer ul li,
 .social-post li{
 	display: inline-block;
 }
+
 .footer ul li a{
 	text-decoration: none;
 	color: #fff;
 }
+
 .footer-social li a i{
 	width: 40px;
 	height: 40px;
@@ -85,10 +93,12 @@
 	border: 1px solid #FFF;
 	transition: all .3s ease-in-out;
 }
+
 .footer-social li a i:hover,
 .footer-app-store li a:hover{
 	transform: scale(1.2);
 }
+
 .footer-social li a i.fa-facebook:hover{ background-color: #2B4073; }
 .footer-social li a i.fa-linkedin:hover{ background-color: #278DD8; }
 .footer-social li a i.fa-google-plus:hover{ background-color: #C63E24; }
@@ -106,6 +116,7 @@
 	display: block;
 	margin: 8px;
 }
+
 .footer-app-store li a:hover{ background-color: #76797C; }
 .footer-copyright li{
 	font-size: 14px;
@@ -117,6 +128,7 @@
 .text-h2{
 	margin: 35px;
 }
+
 .margin{
 	margin-top: 25px;
 	margin-bottom: 25px;

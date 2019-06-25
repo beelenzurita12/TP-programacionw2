@@ -10,7 +10,6 @@
                             <div class='full-width post-info'>
                             <a href='" . $GLOBALS["root"] . "post/index?idProducto=" . $data[$i]['idProducto'] . "' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
                                 <p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>
-                                
                                 <i class='far fa-heart post-info-like'></i>
                             </div>
                         </div>";

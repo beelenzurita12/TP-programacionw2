@@ -8,21 +8,21 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Primera imagen -->
-        <div class="carousel-item active" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/slider1.jpg" ?>')">
+        <div class="carousel-item active" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background4.jpg" ?>')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Compra</h3>
             <p>This is a description for the first slide.</p>
           </div>
         </div>
         <!-- Segunda imagen -->
-        <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/slider1.jpg" ?>')">
+        <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background4.jpg" ?>')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Vende</h3>
             <p>This is a description for the second slide.</p>
           </div>
         </div>
         <!-- Tercera imagen -->
-        <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/slider1.jpg" ?>')">
+        <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background4.jpg" ?>')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Disfruta</h3>
             <p>This is a description for the third slide.</p>
@@ -138,7 +138,7 @@
         <div class="card h-100">
           <h5 class="card-header"><i class="fas fa-credit-card"></i> Pagá con tarjeta o en efectivo</h5>
           <div class="card-body">
-            <p class="card-text">Con Social Market, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+            <p>Con Social Market, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
             <a href="#!">¿Cómo pagar con Social Market?</a>
           </div>
         </div>
@@ -148,7 +148,7 @@
         <div class="card h-100">
           <h5 class="card-header"><i class="fas fa-truck"></i> Envío gratis desde $ 1.999</h5>
           <div class="card-body">
-            <p class="card-text">Solo por estar registrado en Social Market tenés envíos gratis en miles de productos. Es un beneficio que ayuda, y mucho.</p>
+            <p>Solo por estar registrado en Social Market tenés envíos gratis en miles de productos.</p>
             <a href="#!">Conocé más sobre este beneficio</a>
          </div>
         </div>
@@ -158,7 +158,7 @@
         <div class="card h-100">
           <h5 class="card-header"><i class="fas fa-shield-alt"></i> Seguridad, de principio a fin</h5>
           <div class="card-body">
-            <p class="card-text">¿No te gusta? ¡Devolvelo! En Social Market, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+            <p>¿No te gusta? ¡Devolvelo! En Social Market, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
             <a href="#!">¿Cómo te protegemos?</a>
           </div>
         </div>

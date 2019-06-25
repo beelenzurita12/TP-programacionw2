@@ -16,7 +16,7 @@
             <div class="custom-checkbox mb-3 text-center" >
               <a href="<?php echo $GLOBALS['root'] . "registrar/" ?>" id="aClass">Registrarme</a>
             </div>
-            <button class="btn btn-lg btn-secondary btn-block" type="submit">Iniciar sesión</button>  
+            <button class="btn btn-lg btn-secondary btn-block" type="submit">Iniciar sesión</button>
           </form>
         </div>
       </div>
