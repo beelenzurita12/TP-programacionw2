@@ -1,10 +1,10 @@
 <section class="full-width section">
-	<div class="container section-container">
+	<div class="container">
     <h2 class="title-section-h2">Resultados de tu búsqueda</h2>
-		<div class="row">
+		<div class="row products-container">
 			<div class="col-xs-12 col-sm-4 col-md-3">
 				<div class="full-width user-menu-xs">
-					<div class="full-width post-user-info" style="margin: 0 !important;">
+					<div class="full-width post-user-info">
 						<h5 class="text-center">Categorías</h5>
 					</div>
 					<div class="full-width list-group" style="border-radius: 0;">
@@ -48,8 +48,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-9">
-				<!-- Contenido -->
-				<div class="full-width container-post">
+				<div class="full-width">
 				<?php 
 				
 					include_once __DIR__ . "/componentes/componente_productos_card_view.php";

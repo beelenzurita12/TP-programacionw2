@@ -64,14 +64,13 @@
 					<p class="full-width lead"><i class="fas fa-mobile" aria-hidden="true"></i> {{12345678}}</p>
 				</div>
 			</div>
-			<div class="clearfix"></div>
 			<?php 
 				if($data["mismoUsuario"]){
 					echo '<a href="' . $GLOBALS['root'] . 'producto/index?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Editar</a>';
 					echo '<a href="' . $GLOBALS['root'] . 'producto/eliminar?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Eliminar</a>';
 					
 				} else {
-					echo '<a href="#!" class="btn btn-success btn-block">Comprar</a>';
+					echo '<a href="#!" class="btn btn-success btn-block">Comprar ahora</a>';
 					echo '<a href="' . $GLOBALS['root'] . 'carrito_de_compras/agregar?idProducto='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar al carrito <i class="fas fa-shopping-cart"></i></a>';
 				}
 			?>

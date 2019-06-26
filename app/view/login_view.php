@@ -1,5 +1,5 @@
 <div class="row align-items-center">
-  <div class="col-12 text-center div-form">
+  <div class="col-12 text-center login-container">
     <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
       <div class="card card-signin my-5">
         <div class="card-body">

@@ -4,9 +4,9 @@
       <div class="card card-signin my-5">
         <div class="card-body">
             <div><i class="far fa-5x fa-frown" style="color:#d9534f"></i></div><br>
-            <h1>ERROR 404</h1>
+            <h1 class="error_404">ERROR 404</h1>
             <p>No se encontró la página solicitada.</p>
-            <p><a class="btn btn-primary" href="<?php echo $GLOBALS['root'] . "inicio/"?>"><i class="fa fa-home"></i> Menú principal</a></p>
+            <p><a class="btn btn-primary" href="<?php echo $GLOBALS['root'] . "inicio/"?>"><i class="fa fa-home"></i> Volver al inicio</a></p>
         </div>
       </div>
     </div>

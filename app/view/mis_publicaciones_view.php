@@ -1,11 +1,10 @@
 <section class="full-width section">
-	<div class="container section-container">
+	<div class="container">
     <h2 class="title-section-h2">Tus anuncios</h2>
-		<div class="row">
+		<div class="row products-container">
 			<div class="col-xs-12 col-sm-4 col-md-3">
 				<div class="full-width user-menu-xs">
-					<div class="full-width post-user-info" style="margin: 0 !important;">
-						<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
+					<div class="full-width post-user-info">
 						<img src="<?php echo $GLOBALS['root'] . "public/image/man.png" ?>" class="NavBar-Nav-icon" alt="User">
 						<p class="full-width"><small>{{Nombre de usuario}}</small></p>
 						<div class="full-width div-table">
@@ -38,30 +37,28 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-9">
-				<!-- Contenido -->
-				<div class="full-width container-post">
-				<?php
-				
-					for($i = 0 ; $i < sizeof($data); $i++){
-						$imagen = $GLOBALS['root'] . "public/upload/" . $data[$i]['imagen'];
+				<div class="full-width">
+					<?php
+					
+						for($i = 0; $i < sizeof($data); $i++){
+							$imagen = $GLOBALS['root'] . "public/upload/" . $data[$i]['imagen'];
 
-						$publicacion = "<div class='full-width post'>
-											<figure class='full-width post-img'>
-												<!-- Tamaño de la imagen 248x186 pixeles -->
-												<img src='" . $imagen . "' alt='' class='img-responsive'>
-											</figure>
-											<div class='full-width post-info'>
-											<a href='" . $GLOBALS["root"] . "post/index?idProducto=" . $data[$i]["idProducto"] . "' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
-												<p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>
-												<a href='" . $GLOBALS["root"] . "producto/index?id=" . $data[$i]["idProducto"] . "' class='post-info-editar'>Editar</a>
-												<a href='" . $GLOBALS["root"] . "producto/eliminar?id=" . $data[$i]["idProducto"] . "' class='post-info-eliminar'>Eliminar</a>
-												<i class='far fa-heart post-info-like'></i>
-											</div>
-										</div>";
+							$publicacion = "<div class='full-width post'>
+												<figure class='full-width post-img'>
+													<img src='" . $imagen . "' alt='' class='img-responsive'>
+												</figure>
+												<div class='full-width post-info'>
+													<a href='" . $GLOBALS["root"] . "post/index?idProducto=" . $data[$i]["idProducto"] . "' class='full-width post-info-title'>" . $data[$i]["nombre"] . "</a>
+													<p class='full-width post-info-price'>$" . $data[$i]["precio"] . "</p>
+													<a href='" . $GLOBALS["root"] . "producto/index?id=" . $data[$i]["idProducto"] . "' class='post-info-editar'>Editar</a>
+													<a href='" . $GLOBALS["root"] . "producto/eliminar?id=" . $data[$i]["idProducto"] . "' class='post-info-eliminar'>Eliminar</a>
+													<i class='far fa-heart post-info-like'></i>
+												</div>
+											</div>";
 
-						echo $publicacion;
-					}
-				?>
+							echo $publicacion;
+						}
+					?>
 				</div>
 			</div>
         </div>

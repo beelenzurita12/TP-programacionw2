@@ -1,13 +1,13 @@
 <?php
 
-    class Controller_404 extends Controller{
+    class Controller_envio extends Controller{
     
         public function __construct(){
             parent::__construct();
         }
 
         public function index(){
-            $this->view->generate("404_view.php", "template_view.php");
+            $this->view->generate("envio_view.php", "template_view.php");
         }
     }
 ?>
