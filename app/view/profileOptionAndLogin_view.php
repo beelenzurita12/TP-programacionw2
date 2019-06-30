@@ -10,7 +10,7 @@
                   </li>
                   <li class="nav-item ad">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="' . $GLOBALS["root"] . 'public/image/man.png" alt="">
+                      <img src="' . $GLOBALS["root"] . 'public/image/man.png" alt="User">
                     </a>
                     
                     <div class="dropdown-menu" aria-labelledby = "dropdownMenuLink">

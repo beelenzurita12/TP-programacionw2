@@ -28,7 +28,6 @@
 	
 				$this->view->generate("post_view.php", "template_view.php", $producto);
 			}
-
         }
     }
 ?>

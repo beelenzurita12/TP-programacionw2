@@ -196,8 +196,8 @@
 
 .post{
 	border: 1px solid #ECEEEF;
-	height: 280px;
-	width: 250px;
+	height: 260px;
+	width: 240px;
 	display: inline-block;
 	margin: 10px;
 	position: relative;
@@ -371,4 +371,9 @@
   margin: 10px;
   float: right;
   margin-right: 285px;
+}
+
+/* ================================ Comentarios */
+.avatar {
+  width: 60px; 
 }
