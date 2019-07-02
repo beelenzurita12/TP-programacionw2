@@ -6,6 +6,8 @@
 body {
   padding-top: 56px;
   font-family: 'Open Sans';
+  display: grid;
+  min-height: 100vh;
 }
 
 .carousel-item {

@@ -13,7 +13,7 @@
             if($estaLogueado){
                 header("location: $urlRoot" . "inicio");
                 
-            }else {
+            } else {
                 $this->view->generate("login_view.php", "template_view.php");
             }
         }

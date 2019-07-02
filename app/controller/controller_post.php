@@ -13,8 +13,8 @@
         	}
 
     		$idProducto = $_GET['idProducto'];
-    		// $idUsuario = $_SESSION['idUsuario'];
-			$idUsuario = 435;
+    		$idUsuario = $_SESSION['idUsuario'];
+			// $idUsuario = 435;
 			
 			$producto = $this->model->obtenerProducto($idProducto);
 			

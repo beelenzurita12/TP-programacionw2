@@ -1,6 +1,6 @@
-/* Mantener el footer siempre abajo (contenido - header - footer) */
-.main-container{
-	min-height: calc(100vh - 62px - 255px);
+/* Espacio entre el contenido y el footer */
+.main-container {
+	margin-bottom: 50px;
 }
 
 /* Categorias */
@@ -75,8 +75,7 @@
 /* Redes sociales (footer) y descargar apps */
 .footer{
 	color: #fff;
-	position: relative;
-	height: 255px;
+	align-self: flex-end;
 }
 
 .footer ul li,

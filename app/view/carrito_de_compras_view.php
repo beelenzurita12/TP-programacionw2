@@ -41,7 +41,7 @@
 														
 										echo $publicacion;
 
-										//cuando ya no haya más productos por renderizar se hace el total definitivo
+										// Cuando ya no haya más productos por renderizar, se hace el total definitivo
 										if($i == $cantidadProductos -1){
 											echo "<tr>
 													<th scope='row'></th>
@@ -54,9 +54,8 @@
 										}
 									}
 								?>
-								
 							</tbody>
-						</table>	
+						</table>
 					</div>
 				</div>
 			</div>
