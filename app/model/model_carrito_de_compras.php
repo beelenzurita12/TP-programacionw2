@@ -6,6 +6,19 @@ class Model_carrito_de_compras extends Model{
         parent::__constructor();
     }
 
+    public function obtenerProductosCarrito($idUsuario){
+        $selectProductos = "SELECT p.nombre, p.precio, c.id as idCarrito, count(c.idProducto) as cantidad FROM carrito c ";
+        $selectProductos .= "INNER JOIN producto p ON c.idProducto = p.idProducto WHERE c.idUsuario = :idUsuario GROUP BY p.idProducto";
+        $conexion = $this->getConnection();
+
+        $queryProducto = $conexion->prepare($selectProductos);
+        $queryProducto->execute([":idUsuario" => $idUsuario]);
+
+        $resultado = $queryProducto->fetchAll(PDO::FETCH_ASSOC);
+
+        return $resultado;
+    }
+
     public function existeElProducto($idProducto = false){
         if($idProducto){
             $countProducto = "SELECT count(*) as existeProducto FROM producto WHERE idProducto = :idProducto";
@@ -24,6 +37,26 @@ class Model_carrito_de_compras extends Model{
         }
 
         return false;
+    }
+
+    public function existeElProductoEnCarrito($idUsuario, $idCarrito = false){
+        if(!$idCarrito){
+            return false;
+        }
+
+        $selectProducto = "SELECT count(*) as existe FROM carrito WHERE id = :idCarrito AND idUsuario = :usuario";
+        $conexion = $this->getConnection();
+
+        $queryProducto = $conexion->prepare($selectProducto);
+        $queryProducto->execute([":idCarrito" => $idCarrito, ":usuario" => $idUsuario]);
+
+        $resultado = $queryProducto->fetchAll(PDO::FETCH_ASSOC);
+
+        if($resultado[0]['existe'] == 0){
+            return false;
+        }
+
+        return true;
     }
 
     public function agregarAlCarrito($idProducto, $idUsuario){
@@ -46,9 +79,17 @@ class Model_carrito_de_compras extends Model{
         $queryProducto->execute([":idUsuario" => $idUsuario]);
         
         $result = $queryProducto->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
+
         $this->closeConnection();
 
         return $result[0]['total'];
+    }
+
+    public function eliminarProductoDelCarrito($idUsuario, $idCarrito){
+        $deleteProducto = "DELETE FROM carrito WHERE id = :idCarrito AND idUsuario = :idUsuario";
+        $conexion = $this->getConnection();
+
+        $queryDelete = $conexion->prepare($deleteProducto);
+        $queryDelete->execute([":idUsuario" => $idUsuario, ":idCarrito" => $idCarrito]);
     }
 }

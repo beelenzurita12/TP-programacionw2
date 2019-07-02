@@ -7,19 +7,23 @@
 	    }
 
 	    public function validar($email, $password){
-		    $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, idUsuario FROM usuario WHERE email = :email AND password = :password";
+            $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, idUsuario FROM usuario WHERE email = :email AND password = :password";
 		    $connection = $this->getConnection();
 
 		    try {
-                $querySelect = $connection->prepare($selectUsuario);
-                $resultadoSelect = $querySelect->execute([":email" => $email, ":password" => $password]);
+                $queryUsuario = $connection->prepare($selectUsuario);
+                $resultadoSelect = $queryUsuario->execute([":email" => $email, ":password" => $password]);
             
-                while($resultadoFila = $querySelect->fetch(PDO::FETCH_ASSOC)){
+                while($resultadoFila = $queryUsuario->fetch(PDO::FETCH_ASSOC)){
                     if($resultadoFila['existeUsuario'] == '1'){
+
+                        $productosEnCarrito = $this->productosEnCarrito($resultadoFila['idUsuario']);
+
                         return Array(
                             "idUsuario" => $resultadoFila['idUsuario'],
                             "tipoUsuario" => $resultadoFila['tipoUsuario'],
                             "nombre" => $resultadoFila['nombre'],
+                            "productosEnCarrito" => $productosEnCarrito,
                             "isValid" => true
                         );
     
@@ -31,6 +35,17 @@
             } catch (Exception $e) {
                 echo 'error: ' . $e->getMessage();
             }
-	    }
+        }
+        
+        private function productosEnCarrito($idUsuario){
+            $selectCarrito = "SELECT count(*) as cantidad FROM carrito WHERE idUsuario = :idUsuario";
+            $connection = $this->getConnection();
+
+            $queryCarrito = $connection->prepare($selectCarrito);
+            $queryCarrito->execute([":idUsuario" => $idUsuario]);
+            $resultadoCarrito = $queryCarrito->fetchAll(PDO::FETCH_ASSOC);
+
+            return $resultadoCarrito[0]['cantidad'];
+        }
     }
 ?>

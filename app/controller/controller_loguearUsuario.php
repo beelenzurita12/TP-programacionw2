@@ -22,7 +22,7 @@
 				$_SESSION['idUsuario'] = $existeUsuario["idUsuario"];
 				$_SESSION['tipoUsuario'] = $existeUsuario["tipoUsuario"];
 				$_SESSION['nombre'] = $existeUsuario["nombre"];
-				$_SESSION['productosEnCarrito'] = 0; // $existeUsuario["productosEnCarrito"];
+				$_SESSION['productosEnCarrito'] = $existeUsuario["productosEnCarrito"];
 
 				header("location: $this->urlRoot" . "inicio");
 				

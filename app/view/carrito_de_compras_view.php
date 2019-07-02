@@ -20,29 +20,41 @@
 							</thead>
 							<tbody>
 								<?php
-					
+									$cantidadProductos = sizeof($data);
+									$total = 0;
+
 									for($i = 0; $i < sizeof($data); $i++){
+										$totalPorProducto = $data[$i]['cantidad'] * $data[$i]['precio'];
+										$total += $totalPorProducto;
+										$productoNumero = $i + 1;
 
 										$publicacion = "<tr>
-															<th scope='row'>1</th>
-															<td>{{Pelota de futbol}}</td>
-															<td>2</td>
-															<td>$250</td>
-															<td>$500</td>
-															<td><a href='#!' style='color: #e25656;'> <i class='far fa-trash-alt'></i></a></td>
-														</tr>
-														<tr>
-															<th scope='row'></th>
-															<th>Total</th>
-															<td></td>
-															<td></td>
-															<td>$500</td>
-															<td></td>
+															<th scope='row'>" . $productoNumero .  "</th>
+															<td>" . $data[$i]['nombre'] . "</td>
+															<td>" . $data[$i]['cantidad'] . "</td>
+															<td>" . $data[$i]['precio'] . "</td>
+															<td>" . $totalPorProducto . "</td>
+															<td><a href='" . $GLOBALS['root'] . "carrito_de_compras/eliminar_de_carrito?id=" . $data[$i]['idCarrito'] . "' style='color: #e25656;'> 
+															<i class='far fa-trash-alt'></i></a></td>
 														</tr>";
 
+														
 										echo $publicacion;
+
+										//cuando ya no haya más productos por renderizar se hace el total definitivo
+										if($i == $cantidadProductos -1){
+											echo "<tr>
+													<th scope='row'></th>
+													<th>Total</th>
+													<td></td>
+													<td></td>
+													<td>" . $total . "</td>
+													<td></td>
+												</tr>";
+										}
 									}
 								?>
+								
 							</tbody>
 						</table>	
 					</div>
