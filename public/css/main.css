@@ -377,3 +377,9 @@
 .avatar {
   width: 60px; 
 }
+
+/* ================================ Vista admin */
+.icon-admin{
+  font-size: 25px;
+  cursor: pointer;
+}

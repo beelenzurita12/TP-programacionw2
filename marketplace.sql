@@ -52,3 +52,5 @@ create table carrito (
 
 insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password) values 
 ("comun", "Belen", "Zurita", 38709826, "Triunvirato", "3553", "Villa Luzuriaga", "4696-2327", "27-38709654-2", "belenz@gmail.com", "12345678");
+insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password) values 
+("admin", "Admin", "Admin", 38709826, "Triunvirato", "3553", "Villa Luzuriaga", "4696-2327", "27-38709654-2", "admin@admin.com", "admin");
