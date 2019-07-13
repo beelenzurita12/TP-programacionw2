@@ -7,11 +7,16 @@
         }
 
         public function index(){
-            $idUsuario = $_SESSION['idUsuario'];
+            if(!$_SESSION['estaLogueado']){
+                header("location: ". $GLOBALS['root'] . "login/");
 
-            $productos = $this->model->obtenerProductosCarrito($idUsuario);
-
-            $this->view->generate("carrito_de_compras_view.php", "template_view.php", $productos);
+            } else {
+                $idUsuario = $_SESSION['idUsuario'];
+    
+                $productos = $this->model->obtenerProductosCarrito($idUsuario);
+    
+                $this->view->generate("carrito_de_compras_view.php", "template_view.php", $productos);
+            }
         }
 
         public function eliminar_de_carrito(){
@@ -34,23 +39,28 @@
         }
 
         public function agregar(){
-            $existe = $this->model->existeElProducto($_GET['idProducto']);
-
-            /* Le coloqué ! porque me pareció que es más facil de entender que la maraña
-            que se terminaba formando en el model si fuera noExisteElProducto */
-            if(!$existe){
-                $this->view->generate("404_view.php", "template_view.php");
+            if(!$_SESSION["estaLogueado"]){
+                header("location: ". $GLOBALS["root"] . "login/");
 
             } else {
-                $idProducto = $_GET['idProducto'];
-                $idUsuario = $_SESSION['idUsuario'];
-
-                $this->model->agregarAlCarrito($idProducto, $idUsuario);
-                $totalEnCarrito = $this->model->productosEnCarrito($_SESSION['idUsuario']);
-
-                $_SESSION['productosEnCarrito'] = $totalEnCarrito;
-
-                header("Location:" . $_SERVER['HTTP_REFERER']);
+                $existe = $this->model->existeElProducto($_GET['idProducto']);
+    
+                /* Le coloqué ! porque me pareció que es más facil de entender que la maraña
+                que se terminaba formando en el model si fuera noExisteElProducto */
+                if(!$existe){
+                    $this->view->generate("404_view.php", "template_view.php");
+    
+                } else {
+                    $idProducto = $_GET['idProducto'];
+                    $idUsuario = $_SESSION['idUsuario'];
+    
+                    $this->model->agregarAlCarrito($idProducto, $idUsuario);
+                    $totalEnCarrito = $this->model->productosEnCarrito($_SESSION['idUsuario']);
+    
+                    $_SESSION['productosEnCarrito'] = $totalEnCarrito;
+    
+                    header("Location:" . $_SERVER['HTTP_REFERER']);
+                }
             }
         }
     }

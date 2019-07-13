@@ -23,7 +23,7 @@
                 $this->connection = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user, $this->password);
 
                 // Activar notificaciones de errores
-                $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
+                $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
 
             } catch (Exception $e) {
                 echo 'Conexión rechazada: ' . $e->getMessage(); 

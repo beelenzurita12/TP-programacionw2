@@ -34,6 +34,7 @@
 
 		public function desloguearUsuario(){
 			$_SESSION['estaLogueado'] = false;
+			$_SESSION['idUsuario'] = -1;
 
 			header("location: $this->urlRoot" . "inicio");
 		}

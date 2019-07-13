@@ -50,6 +50,27 @@ create table carrito (
     primary key(id)
 );
 
+create table comentario (
+    idComentario int auto_increment,
+    idProducto int not null,
+    idUsuario int not null,
+    comentario varchar(500) not null,
+    fechaPublicacion datetime not null,
+    primary key(idComentario),
+    foreign key(idProducto) references producto(idProducto),
+    foreign key(idUsuario) references usuario(idUsuario)
+);
+
+create table respuesta (
+    idRespuesta int auto_increment,
+    idComentario int not null,
+    respuesta varchar(500) not null,
+    foreign key(idComentario) references comentario(idComentario),
+    primary key(idRespuesta)
+);
+
+create table 
+
 insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password) values 
 ("comun", "Belen", "Zurita", 38709826, "Triunvirato", "3553", "Villa Luzuriaga", "4696-2327", "27-38709654-2", "belenz@gmail.com", "12345678");
 insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password) values 

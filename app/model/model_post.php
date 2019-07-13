@@ -7,8 +7,9 @@
 	    }
 
 	    public function obtenerProducto($idProducto){
-		    $selectProductos = "SELECT p.*, i.* FROM producto as p INNER JOIN imagen as i ";
-	        $selectProductos .= "ON p.idProducto = i.idProducto WHERE p.idProducto = :idProducto";
+		    $selectProductos = "SELECT p.*, i.*, u.nombre as nombreUsuario FROM producto as p INNER JOIN imagen as i ";
+			$selectProductos .= "ON p.idProducto = i.idProducto INNER JOIN usuario u ON p.idUsuario = u.idUsuario";
+			$selectProductos .= " WHERE p.idProducto = :idProducto";
 	        $conexion = $this->getConnection();
 
 	        $queryProducto = $conexion->prepare($selectProductos);
@@ -20,6 +21,7 @@
 	        while($resultadoFila = $queryProducto->fetch(PDO::FETCH_ASSOC)){
 
 	    	    if($i == 0){
+					$resultadoProducto["nombreUsuario"] = $resultadoFila["nombreUsuario"];
 	    		    $resultadoProducto["idProducto"] = $resultadoFila["idProducto"];
 		    	    $resultadoProducto["idUsuario"] = $resultadoFila["idUsuario"];
 		    	    $resultadoProducto["nombre"] = $resultadoFila["nombre"];
@@ -56,6 +58,26 @@
 		    } else {
 			    return false;
 		    }
-	    }
+		}
+
+		public function productosRelacionados($categoria, $idProducto){
+			$selectProductos = "SELECT p.nombre, p.precio, i.imagen FROM producto p";
+			$selectProductos .= " INNER JOIN imagen i ON p.idProducto = i.idProducto ";
+			$selectProductos .= " WHERE p.categoria = :categoria AND p.idProducto != :idProducto ";
+			$selectProductos .= " GROUP BY p.idProducto LIMIT 4";
+
+			$queryProducto = $this->getConnection()->prepare($selectProductos);
+			$queryProducto->execute([":categoria" => $categoria, ":idProducto" => $idProducto]);
+
+			return $queryProducto->fetchAll(PDO::FETCH_ASSOC);
+		}
+		
+		public function obtenerComentarios($idProducto){
+			include_once __DIR__ . "/model_comentarios.php";
+
+			$modelComentarios = new Model_comentarios();
+
+			return $modelComentarios->obtenerComentarios($idProducto);
+		}
     }
 ?>

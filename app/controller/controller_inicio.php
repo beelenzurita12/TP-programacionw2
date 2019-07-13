@@ -11,6 +11,8 @@
 
         // Aquí irán los acction de la URL
         public function index(){
+            $_SESSION["estaLogueado"] = empty($_SESSION["estaLogueado"]) ? false : true;
+            
             $productos = $this->model->obtenerProductos();
             
             $this->view->generate("inicio_view.php", "template_view.php", $productos);
