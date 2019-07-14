@@ -64,8 +64,9 @@
 
     <div class="row">
         <div class="col-md-5 col-sm-offset-7">
-            <button class="btn btn-primary">Calificar</button>
+            <button class="btn btn-primary" id="calificar">Calificar</button>
         </div>
     </div>
 
 </div>
+<script src="<?php echo $GLOBALS["root"] . "public/JS/modalCalificar.js" ?>"></script>
