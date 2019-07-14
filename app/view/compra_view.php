@@ -47,6 +47,28 @@
 			</div>
 		</div>
 
+    <?php 
+      for($i = 0; $i < sizeof($data["mensajes"]); $i++){
+        $mensaje = '<div class="tab-pane fade active show" role="tabpanel" aria-labelledby="comments-tab-classic">
+                      <div class="media">
+                        <img class="avatar mr-3" src=" ' . $GLOBALS['root'] . "public/image/man.png" . '" alt="User">
+                        <div class="media-body">
+                          <div class="d-flex justify-content-between">
+                            <h5 class="mt-0 mb-1 font-weight-bold">' . $data["mensajes"][$i]["nombre"] . ' ' . $data["mensajes"][$i]["apellido"] . '</h5>
+                            <ul class="list-unstyled mb-1 pb-2">
+                              <li class="comment-date font-small font-weight-normal"><i class="far fa-clock pr-2"></i>' . $data["mensajes"][$i]["fechaMensaje"] . '</li>
+                            </ul>
+                          </div>
+                          <p class="font-weight-light mt-2 mb-4">' . $data["mensajes"][$i]["mensaje"] . '</p>
+                        </div>
+                        </div>
+                    </div>';
+
+        echo $mensaje;
+      } 
+    
+    ?>
+
       <!-- sección de comentario -->
     <div class="row">
 			<div class="card-body px-0 coment">
