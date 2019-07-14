@@ -7,7 +7,18 @@
         }
 
         public function index(){
-            $this->view->generate("admin_view.php", "template_view.php");
+
+            $estaLogueado = $_SESSION["estaLogueado"];
+
+        	if($estaLogueado){
+                if($_SESSION['tipoUsuario'] == 'admin'){
+                    $this->view->generate("admin_view.php", "template_view.php");
+                }else{
+                    $this->view->generate("404_view.php", "template_view.php");
+                }
+        	} else {
+        		header("location:" . $GLOBALS["root"]);	
+        	}
         }
     }
 ?>

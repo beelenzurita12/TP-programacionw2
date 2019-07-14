@@ -373,6 +373,15 @@
   border-radius: 4%;
   align-items: center;
 }
+.ventanaCalificar{
+  width: 40%;
+  height: 400px;
+  margin: 7% auto 0 auto;
+}
+.margin-radio{
+margin-right: 20px!important;
+margin-left: 20px;
+}
 
 .ventana p {
   float:left;
