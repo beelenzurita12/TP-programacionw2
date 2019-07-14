@@ -31,4 +31,18 @@ class Model_comentarios extends Model{
 
         return $resultado; 
     }
+
+    public function responderComentario(){
+        
+    }
+
+    public function enviarMensaje($idCompra, $mensaje, $idEmisor, $idReceptor){
+        $insertMensaje = "INSERT INTO mensajeCompra (idCompra, mensaje, fechaMensaje, idEmisor, idReceptor) ";
+        $insertMensaje .= "VALUES (:idCompra, :mensaje, now(), :idEmisor, :idReceptor)";
+        $conexion = $this->getConnection();
+
+        $queryMensaje = $conexion->prepare($insertMensaje);
+        $queryMensaje->execute([":idCompra" => $idCompra, ":mensaje" => $mensaje, 
+        ":idEmisor" => $idEmisor, ":idReceptor" => $idReceptor]);
+    }
 }

@@ -70,7 +70,7 @@
 					echo '<a href="' . $GLOBALS['root'] . 'producto/eliminar?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Eliminar</a>';
 					
 				} else {
-					echo '<a href="#!" class="btn btn-success btn-block">Comprar ahora</a>';
+					echo '<a href="" id="compra" class="btn btn-success btn-block">Comprar ahora</a>';
 					echo '<a href="' . $GLOBALS['root'] . 'carrito_de_compras/agregar?idProducto='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar al carrito <i class="fas fa-shopping-cart"></i></a>';
 				}
 			?>
@@ -82,19 +82,23 @@
       		<div class="card py-3 px-4">
 			  	<div class="full-width">
 				  <?php 
-					  
-					for($i = 0 ; $i < sizeof($data["productosRelacionados"]); $i++){
-						$productoRelacionado = '
-						  <div class="full-width post">
-							<figure class="full-width post-img">
-								<img src="'. $GLOBALS['root'] . "public/upload/" . $data["productosRelacionados"][$i]["imagen"] .'" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="#!" class="full-width post-info-title">'. $data["productosRelacionados"][$i]["nombre"] .'</a>
-								<p class="full-width post-info-price">'. $data["productosRelacionados"][$i]["precio"] .'</p>
-								<i class="far fa-heart post-info-like"></i>
-							</div>
-						</div>';
+					if(sizeof($data["productosRelacionados"]) == 0){
+						$productoRelacionado = "<h2><i>No hay productos relacionados por el momento</i></h2>";
+
+					} else {
+						for($i = 0 ; $i < sizeof($data["productosRelacionados"]); $i++){
+							$productoRelacionado = '
+							  <div class="full-width post">
+								<figure class="full-width post-img">
+									<img src="'. $GLOBALS['root'] . "public/upload/" . $data["productosRelacionados"][$i]["imagen"] .'" alt="" class="img-responsive">
+								</figure>
+								<div class="full-width post-info">
+									<a href="#!" class="full-width post-info-title">'. $data["productosRelacionados"][$i]["nombre"] .'</a>
+									<p class="full-width post-info-price">'. $data["productosRelacionados"][$i]["precio"] .'</p>
+									<i class="far fa-heart post-info-like"></i>
+								</div>
+							</div>';
+					}
 
 						echo $productoRelacionado;
 					}
@@ -146,7 +150,7 @@
 					
 					if($data["mismoUsuario"]){
 						$comentario .= $responder;
-						
+
 					} else{
 						$comentario .= "</div></div></div>";
 					}
@@ -170,3 +174,5 @@
       	</div>
 	</section>
 </div>
+
+<script src="<?php echo $GLOBALS["root"] . "public/JS/modal.js" ?>"></script>

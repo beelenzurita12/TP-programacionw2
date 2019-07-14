@@ -69,7 +69,29 @@ create table respuesta (
     primary key(idRespuesta)
 );
 
-create table 
+create table compra (
+    idCompra int auto_increment,
+    idProducto int not null,
+    cantidad int not null,
+    fecha datetime not null,
+    formaDeEntrega varchar(30),
+    estado varchar(13) not null default "pendiente",
+    foreign key(idProducto) references producto(idProducto),
+    primary key(idCompra)
+);
+
+create table mensajeCompra (
+    idMensaje int auto_increment,
+    idCompra int not null,
+    mensaje varchar(300) not null,
+    idEmisor int not null,
+    idReceptor int not null,
+    fechaMensaje datetime not null,
+    foreign key(idEmisor) references usuario(idUsuario),
+    foreign key(idReceptor) references usuario(idUsuario),
+    foreign key(idCompra) references compra(idCompra),
+    primary key(idMensaje)
+);
 
 insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password) values 
 ("comun", "Belen", "Zurita", 38709826, "Triunvirato", "3553", "Villa Luzuriaga", "4696-2327", "27-38709654-2", "belenz@gmail.com", "12345678");

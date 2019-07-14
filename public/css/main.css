@@ -360,6 +360,39 @@
   margin-top: 60px;
 }
 
+/*================================= Modal */
+.ventana{
+  width: 25%;
+  height: 300px;
+  margin: 15% auto 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1.5%;
+  border-radius: 4%;
+  align-items: center;
+}
+
+.ventana p {
+  float:left;
+}
+
+.form-group{
+  margin-top:1%;
+  width:100%;
+}
+
+.myModal{
+    position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background-color: #070707a6;
+		z-index: 100;
+}
+
 /* ================================ Vista error 404 */
 .error_404{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -373,7 +406,32 @@
   margin-right: 285px;
 }
 
+/*================================= compra */
+
+.product-info{
+  border:.5px solid lightgray;
+  border-radius:5px;
+  margin:5% auto 0 auto;
+  width:70%;
+}
+.card-img{
+  padding:1%;
+  height: 100px;
+}
+.product-text{
+  display:flex;
+  justify-content:center;
+}
+.img-user{
+  border-radius:100%;
+  height: 70px;
+}
+
 /* ================================ Comentarios */
+
+.coment{
+  width:70%;
+}
 .avatar {
   width: 60px; 
 }

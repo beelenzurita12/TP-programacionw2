@@ -18,4 +18,21 @@ class Controller_comentarios extends Controller{
             header("location: " . $GLOBALS["root"] . "post/index?idProducto=" . $_POST["idProducto"]);
         }
     }
+
+    public function mensajeCompra(){
+        if(empty($_SESSION["estaLogueado"])){
+            header("location: " . $GLOBALS["root"] . "login/");
+        }
+
+        if(empty($_POST["mensaje"])){
+            $this->view->generate("404_view.php", "template_view.php");
+        }
+
+        $idUsuarioEmisor = $_SESSION["idUsuario"];
+        $idUsuarioReceptor = $_POST["idUsuarioReceptor"]; // dueño del productor
+
+        $this->model->enviarMensaje($_POST["idCompra"], $_POST["mensaje"], $idUsuarioEmisor, $idUsuarioReceptor);
+
+        header("location: " . $GLOBALS["root"] . "compra/index?idCompra=" . $_POST["idCompra"]);
+    }
 } 
