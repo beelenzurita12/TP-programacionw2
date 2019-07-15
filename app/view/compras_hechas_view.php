@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container mt-4">
     <?php
         for($i = 0; $i < sizeof($data); $i++){
             $compra = '
                 <div class="row">
                     <div class="card mb-3 product-info" style="max-width: 50vw;">
                         <div class="row no-gutters">
-                            <div class="col-sm-3">
-                                <img src="'. $GLOBALS["root"] . "public/upload/" . $data[$i]["imagen"] .'" width="90%" class="card-img" alt="">
+                            <div class="col-sm-3 text-center">
+                                <img src="'. $GLOBALS["root"] . "public/upload/" . $data[$i]["imagen"] .'" width="90%" class="m-3" alt="Img">
                             </div>
                             <div class="col-md-9 product-text">
                                 <div class="card-body">
@@ -24,7 +24,9 @@
         }
 
         if(sizeof($data) == 0){
-            echo "<h2>Aún no tienes compras</h2>";
+            echo "<div class='alert alert-danger' role='alert'>
+                    Aún no tienes compras.
+                  </div>";
         }
     ?>
 </div>

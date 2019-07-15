@@ -67,12 +67,13 @@
 			<?php 
 				if($data["mismoUsuario"]){
 					echo '<a href="' . $GLOBALS['root'] . 'producto/index?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Editar</a>';
-					echo '<a href="' . $GLOBALS['root'] . 'producto/eliminar?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Eliminar</a>';
+					echo '<a href="' . $GLOBALS['root'] . 'producto/eliminar?id=' . $data['idProducto'] . '" class="btn btn-success btn-block" data-toggle="modal" data-target="#optionEliminar">Eliminar</a>';
+					
 					
 				} else {
 					$estaDisabled = $data["cantidad"] == 0  ? "disabled" : "" ;
 
-					echo '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter" '. $estaDisabled .'>Comprar ahora</button>';
+					echo '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#optionComprarAhora" '. $estaDisabled .'>Comprar ahora</button>';
 					echo '<a href="' . $GLOBALS['root'] . 'carrito_de_compras/agregar?idProducto='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar al carrito <i class="fas fa-shopping-cart"></i></a>';
 				}
 			?>
@@ -175,23 +176,50 @@
       	</div>
 	</section>
 </div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<!-- Modal: Eliminar -->
+<div class="modal fade" id="optionEliminar" tabindex="-1" role="dialog" aria-labelledby="optionEliminarTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Comprar ahora</h5>
+        <h5 class="modal-title" id="optionEliminarTitle">Eliminar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?php echo $GLOBALS["root"] . "producto/eliminar?id=" . $data["idProducto"] . "" ?>" method="post">
+			<div class="form-group">
+              <label class="col-form-label">¿Está seguro de que desea eliminar este producto?</label>
+          	</div>
+		  	<div class="modal-footer">
+				<button type="submit" class="btn btn-success">Aceptar</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+		  	</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Comprar ahora -->
+<div class="modal fade" id="optionComprarAhora" tabindex="-1" role="dialog" aria-labelledby="optionComprarAhoraTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="optionComprarAhoraTitle">Comprar ahora</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form action="<?php echo $GLOBALS["root"] . "compra/producto" ?>" method="post">
-					<input type="number" name="idProducto" class="form-control" value="<?php echo $data["idProducto"] ?>" hidden>
-          <div class="form-group">
-            <label for="cantidadProd" class="col-form-label">¿Cuantos productos desea comprar?</label>
-            <input type="number" name="cantidad" class="form-control" id="cantidadProd">
-          </div>
-          <div class="form-group">
+		  	<input type="number" name="idProducto" class="form-control" value="<?php echo $data["idProducto"] ?>" hidden>
+          	<div class="form-group">
+            	<label for="cantidadProd" class="col-form-label">¿Cuantos productos desea comprar?</label>
+            	<input type="number" name="cantidad" class="form-control" id="cantidadProd">
+          	</div>
+          	<div class="form-group">
               <label class="col-form-label">¿Cómo desea recibir el producto?</label>
               <div class="custom-control custom-radio">
                 <input type="radio" id="customRadio1" value="Entrega a domicilio" name="entrega" class="custom-control-input">
@@ -205,11 +233,11 @@
                 <input type="radio" id="customRadio3" name="entrega" value="A acordar con el vendedor" class="custom-control-input">
                 <label class="custom-control-label" for="customRadio3">A acordar con el vendedor</label>
               </div>
-          </div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-						<button type="submit" class="btn btn-success">Comprar</button>
-					</div>
+          	</div>
+		  	<div class="modal-footer">
+				<button type="submit" class="btn btn-success">Comprar</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+		  	</div>
         </form>
       </div>
     </div>
