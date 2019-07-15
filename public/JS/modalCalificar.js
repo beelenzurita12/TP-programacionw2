@@ -1,4 +1,4 @@
-//////////// Modal Calificar //	
+// Modal Calificar //	
 document.getElementById("calificar").addEventListener("click", handleCalificarButton)
 
 function handleCalificarButton(event){
@@ -22,7 +22,7 @@ function handleCalificarButton(event){
     ]
 
     const pRadio = document.createElement("p")
-    pRadio.innerHTML = "<b>Selecciona una opcion para calificar a tu vendedor, teniendo en cuenta que va de 1 para 'Mal vendedor' a 5 para 'Muy buen vendedor'.</b>"
+    pRadio.innerHTML = "<b>Seleccione una opción para calificar al vendedor, teniendo en cuenta que va de 1 para 'Muy mal vendedor' a 5 para 'Muy buen vendedor'.</b>"
 
     let divRadio = document.createElement("div")
     divRadio.className = "form-group"

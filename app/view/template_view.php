@@ -38,7 +38,14 @@
 				<button type="submit" class="btn btn-dark">Buscar</button>
 			</form>
 
-          <?php include __DIR__ . "/profileOptionAndLogin_view.php"; ?>
+        <?php
+          if($_SESSION['tipoUsuario'] == 'admin' && $_SESSION['estaLogueado']){
+            include __DIR__ . "/profileOptionAdmin_view.php";
+
+          } else{
+            include __DIR__ . "/profileOptionAndLogin_view.php";
+          }
+        ?>
           
     </div>				
   </nav>

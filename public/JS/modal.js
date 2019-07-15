@@ -15,20 +15,20 @@
 		let formControl = document.createElement("div")
 
 		let p = document.createElement("p")
-		p.innerHTML = "<b>¿Cuantos productos deseas comprar?</b>"
+		p.innerHTML = "<b>¿Cuantos productos desea comprar?</b>"
 
 		let input = document.createElement("input")
 		input.name = "cantidad"
 		input.type = "number"
 
 		let inputRadio = [
-			"A acordar con el vendedor",
+			"Entrega a domicilio",
 			"Retiro en sucursal",
-			"Entregar a domicilio"
+			"A acordar con el vendedor"
 		]
 
 		const pRadio = document.createElement("p")
-		pRadio.innerHTML = "<b>¿Cómo deseas recibir el producto?</b>"
+		pRadio.innerHTML = "<b>¿Cómo desea recibir el producto?</b>"
 
 		let divRadio = document.createElement("div")
 		divRadio.className = "form-group"
@@ -58,7 +58,7 @@
 		}
 
 		let buyButton = document.createElement("button")
-		buyButton.innerHTML = "Comprar!"
+		buyButton.innerHTML = "Comprar"
 		buyButton.className = "btn btn-success"
 
 		ventana.addEventListener("submit", handleBuyConfirmation)

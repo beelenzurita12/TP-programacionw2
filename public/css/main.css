@@ -383,13 +383,13 @@ margin-right: 20px!important;
 margin-left: 20px;
 }
 
-.ventana p {
-  float:left;
+.ventana p{
+  float: left;
 }
 
 .form-group{
-  margin-top:1%;
-  width:100%;
+  margin-top: 1%;
+  width: 100%;
 }
 
 .myModal{
@@ -415,31 +415,25 @@ margin-left: 20px;
   margin-right: 285px;
 }
 
-/*================================= compra */
-
+/*================================= Compra */
 .product-info{
-  border:.5px solid lightgray;
-  border-radius:5px;
-  margin:5% auto 0 auto;
-  width:70%;
-}
-.card-img{
-  padding:1%;
-  height: 100px;
+  border: .5px solid lightgray;
+  border-radius: 5px;
+  margin: 5% auto 0 auto;
+  width: 70%;
 }
 .product-text{
   display:flex;
   justify-content:center;
 }
 .img-user{
-  border-radius:100%;
+  border-radius: 100%;
   height: 70px;
 }
 
 /* ================================ Comentarios */
-
 .coment{
-  width:70%;
+  width: 70%;
 }
 .avatar {
   width: 60px; 

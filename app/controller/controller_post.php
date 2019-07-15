@@ -14,7 +14,7 @@
 
     		$idProducto = $_GET['idProducto'];
     		$idUsuario = isset($_SESSION['idUsuario']) ? $_SESSION["idUsuario"] : -1;
-			$idUsuario = 435;
+			// $idUsuario = 435;
 			
 			$producto = $this->model->obtenerProducto($idProducto);
 			$producto["productosRelacionados"] = $this->model->productosRelacionados($producto["categoria"], $idProducto);

@@ -29,7 +29,7 @@ class Controller_comentarios extends Controller{
         }
 
         $idUsuarioEmisor = $_SESSION["idUsuario"];
-        $idUsuarioReceptor = $_POST["idUsuarioReceptor"]; // dueño del productor
+        $idUsuarioReceptor = $_POST["idUsuarioReceptor"]; // Dueño del producto
 
         $this->model->enviarMensaje($_POST["idCompra"], $_POST["mensaje"], $idUsuarioEmisor, $idUsuarioReceptor);
 
