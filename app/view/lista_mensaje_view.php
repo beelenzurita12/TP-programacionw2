@@ -23,7 +23,7 @@
         }
 
         if(sizeof($data) == 0){
-            echo "<h2>Aún no tienes compras</h2>";
+            echo '<hr/><h2>Aún no tienes compras</h2>';
         }
     ?>
 </div>

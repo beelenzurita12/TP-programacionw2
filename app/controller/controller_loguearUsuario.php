@@ -16,8 +16,8 @@
 			$password = $_POST["password"];
 
 			$existeUsuario = $this->model->validar($email, $password);
-
-			if($existeUsuario['isValid']){
+			var_dump($existeUsuario);
+			if($existeUsuario['isValid'] && ($existeUsuario["estaHabilitado"] == 1)){
 				$_SESSION['estaLogueado'] = $existeUsuario["isValid"];
 				$_SESSION['idUsuario'] = $existeUsuario["idUsuario"];
 				$_SESSION['tipoUsuario'] = $existeUsuario["tipoUsuario"];

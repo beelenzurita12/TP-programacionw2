@@ -17,13 +17,11 @@
 									  	  ':calle' => $calle, ':nroCalle' => $nroCalle, ':localidad' => $localidad, ':telefono' => $telefono,
 								          ':cuil' => $cuil, ':email' => $email, ':password' => $password, ":tipoUsuario" => "comun"]);
 		
-			if($respuesta){
-				return true;
-
-			}else {
-				// Enviar 505.
-				return false;
-			}
+			$idUsuario->lastInsertId();
+			
+			$insertEstado = "INSERT INTO estadoUsuario (idUsuario, habilitado) VALUES (:idUsuario, true)";
+			$queryEstado = $connection->prepare($insertEstado);
+			$queryEstado->execute([":idUsuario" => $idUsuario]);
 		}
 	}
 ?>

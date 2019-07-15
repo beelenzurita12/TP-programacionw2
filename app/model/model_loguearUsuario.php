@@ -7,7 +7,8 @@
 	    }
 
 	    public function validar($email, $password){
-            $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, idUsuario FROM usuario WHERE email = :email AND password = :password";
+            $selectUsuario = "SELECT count(*) as existeUsuario, nombre, tipoUsuario, u.idUsuario, e.habilitado FROM usuario u ";
+            $selectUsuario .= "INNER JOIN estadoUsuario e ON e.idUsuario = u.idUsuario WHERE email = :email AND password = :password";
 		    $connection = $this->getConnection();
 
 		    try {
@@ -24,7 +25,8 @@
                             "tipoUsuario" => $resultadoFila['tipoUsuario'],
                             "nombre" => $resultadoFila['nombre'],
                             "productosEnCarrito" => $productosEnCarrito,
-                            "isValid" => true
+                            "isValid" => true,
+                            "estaHabilitado" => $resultadoFila["habilitado"]
                         );
     
                     } else {

@@ -12,6 +12,7 @@
         // Aquí irán los acction de la URL
         public function index(){
             $_SESSION["estaLogueado"] = empty($_SESSION["estaLogueado"]) ? false : true;
+            $_SESSION["tipoUsuario"] = isset($_SESSION["tipoUsuario"]) ? $_SESSION["tipoUsuario"] : false;
             
             $productos = $this->model->obtenerProductos();
             

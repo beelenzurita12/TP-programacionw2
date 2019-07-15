@@ -16,15 +16,15 @@
                 </thead>
                 <tbody>
                     <?php
-                        for($i = 0; $i < sizeof($data); $i++){
+                        for($i = 0; $i < sizeof($data["habilitados"]); $i++){
 
                             $usuarios = "<tr>
-                                            <th scope='row'>" . $data[$i]['idUsuario'] . "</th>
-                                            <td>" . $data[$i]['tipoUsuario'] . "</td>
-                                            <td>" . $data[$i]['nombre'] . "</td>
-                                            <td>" . $data[$i]['apellido'] . "</td>
-                                            <td>" . $data[$i]['email'] . "</td>
-                                            <td><i class='fas fa-user-times icon-admin' style='color: #f15656;'></i></td>
+                                            <th scope='row'>" . $data["habilitados"][$i]['idUsuario'] . "</th>
+                                            <td>" . $data["habilitados"][$i]['tipoUsuario'] . "</td>
+                                            <td>" . $data["habilitados"][$i]['nombre'] . "</td>
+                                            <td>" . $data["habilitados"][$i]['apellido'] . "</td>
+                                            <td>" . $data["habilitados"][$i]['email'] . "</td>
+                                            // <td><a href='". $GLOBALS['root'] ."admin/bloquearUsuario?idUsuario=". $data["habilitados"][$i]["idUsuario"] ."'><i class='fas fa-user-times icon-admin' style='color: #f15656;'></i></a></td>
                                          </tr>";
 
                             echo $usuarios;
@@ -51,14 +51,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tipo</td>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>Email</td>
-                        <td><i class="fas fa-user-check icon-admin" style='color: #529e52;'></i></td>
-                    </tr>                    
+                <?php
+                    for($i = 0; $i < sizeof($data["deshabilitados"]); $i++){
+
+                        $usuarios = "<tr>
+                                        <th scope='row'>" . $data["deshabilitados"][$i]['idUsuario'] . "</th>
+                                        <td>" . $data["deshabilitados"][$i]['tipoUsuario'] . "</td>
+                                        <td>" . $data["deshabilitados"][$i]['nombre'] . "</td>
+                                        <td>" . $data["deshabilitados"][$i]['apellido'] . "</td>
+                                        <td>" . $data["deshabilitados"][$i]['email'] . "</td>
+                                        <td><a href='". $GLOBALS['root'] ."admin/desbloquearUsuario?idUsuario=". $data["deshabilitados"][$i]["idUsuario"] ."'><i class='fas fa-user-check icon-admin' style='color: #529e52;'></i></a></td>
+                                        </tr>";
+
+                        echo $usuarios;
+                    }
+                ?>                  
                 </tbody>
                 </table>
             </div>

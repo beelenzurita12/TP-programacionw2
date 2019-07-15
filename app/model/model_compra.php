@@ -32,7 +32,7 @@ class Model_compra extends Model{
     
     public function obtenerMensajes($idCompra){
         $selectMensajes = "SELECT m.*, u.nombre, u.apellido FROM mensajeCompra m INNER JOIN usuario u ";
-        $selectMensajes .= "ON m.idReceptor = u.idUsuario WHERE idCompra = :idCompra";
+        $selectMensajes .= "ON m.idEmisor = u.idUsuario WHERE idCompra = :idCompra";
         $conexion = $this->getConnection();
 
         $queryMensajes = $conexion->prepare($selectMensajes);

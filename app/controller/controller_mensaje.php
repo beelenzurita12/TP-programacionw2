@@ -38,5 +38,7 @@ class Controller_mensaje extends Controller{
         $idCompra = $_POST["idCompra"];
 
         $this->model->enviarMensaje($idCompra, $_POST["mensaje"], $idUsuario, $idReceptor);
+
+        header("location: ". $GLOBALS["root"] . "mensaje/mensaje?idCompra=". $idCompra);
     }
 }
