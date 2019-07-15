@@ -60,8 +60,8 @@
 			</div>
 			<div class="full-width post-user-info">
 				<div>
-					<p class="full-width lead"><i class="fas fa-user" aria-hidden="true"></i> <?php echo $data['nombreUsuario']; ?></p>
-					<p class="full-width lead"><i class="fas fa-mobile" aria-hidden="true"></i> {{12345678}}</p>
+					<p class="full-width lead"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> <?php echo $data['localidad']; ?></p>
+					<p class="full-width lead"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i> Cantidad disponible: <?php echo $data['cantidad']; ?></p>
 				</div>
 			</div>
 			<?php 
@@ -70,7 +70,9 @@
 					echo '<a href="' . $GLOBALS['root'] . 'producto/eliminar?id=' . $data['idProducto'] . '" class="btn btn-success btn-block">Eliminar</a>';
 					
 				} else {
-					echo '<a href="" id="compra" class="btn btn-success btn-block">Comprar ahora</a>';
+					$estaDisabled = $data["cantidad"] == 0  ? "disabled" : "" ;
+
+					echo '<button id="compra" class="btn btn-success btn-block" '. $estaDisabled .'>Comprar ahora</button>';
 					echo '<a href="' . $GLOBALS['root'] . 'carrito_de_compras/agregar?idProducto='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar al carrito <i class="fas fa-shopping-cart"></i></a>';
 				}
 			?>
@@ -174,5 +176,4 @@
       	</div>
 	</section>
 </div>
-
 <script src="<?php echo $GLOBALS["root"] . "public/JS/modal.js" ?>"></script>

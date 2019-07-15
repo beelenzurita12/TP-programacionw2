@@ -28,6 +28,7 @@ create table producto (
 	categoria varchar(15) not null,
 	fecha_publicacion datetime not null,
 	duracion_publicacion int,
+    eliminado boolean default false,
 	primary key(idProducto),
     foreign key(idUsuario) references usuario(idUsuario)
 );
@@ -73,10 +74,12 @@ create table compra (
     idCompra int auto_increment,
     idProducto int not null,
     cantidad int not null,
+    idUsuario int not null,
     fecha datetime not null,
     formaDeEntrega varchar(30),
     estado varchar(13) not null default "pendiente",
     foreign key(idProducto) references producto(idProducto),
+    foreign key(idUsuario) references usuario(idUsuario),
     primary key(idCompra)
 );
 
@@ -89,7 +92,7 @@ create table mensajeCompra (
     fechaMensaje datetime not null,
     foreign key(idEmisor) references usuario(idUsuario),
     foreign key(idReceptor) references usuario(idUsuario),
-    foreign key(idCompra) references compra(idCompra),
+    foreign key(idCompra) references compra(idCompra) ON DELETE CASCADE,
     primary key(idMensaje)
 );
 

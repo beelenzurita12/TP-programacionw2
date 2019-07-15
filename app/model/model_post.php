@@ -7,7 +7,7 @@
 	    }
 
 	    public function obtenerProducto($idProducto){
-		    $selectProductos = "SELECT p.*, i.*, u.nombre as nombreUsuario FROM producto as p INNER JOIN imagen as i ";
+		    $selectProductos = "SELECT p.*, i.*, u.nombre as nombreUsuario, u.localidad FROM producto as p INNER JOIN imagen as i ";
 			$selectProductos .= "ON p.idProducto = i.idProducto INNER JOIN usuario u ON p.idUsuario = u.idUsuario";
 			$selectProductos .= " WHERE p.idProducto = :idProducto";
 	        $conexion = $this->getConnection();
@@ -22,6 +22,7 @@
 
 	    	    if($i == 0){
 					$resultadoProducto["nombreUsuario"] = $resultadoFila["nombreUsuario"];
+					$resultadoProducto["localidad"] = $resultadoFila["localidad"];
 	    		    $resultadoProducto["idProducto"] = $resultadoFila["idProducto"];
 		    	    $resultadoProducto["idUsuario"] = $resultadoFila["idUsuario"];
 		    	    $resultadoProducto["nombre"] = $resultadoFila["nombre"];

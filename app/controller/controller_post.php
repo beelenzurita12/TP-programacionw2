@@ -7,7 +7,7 @@
         }
 
         public function index(){
-            
+
             if(!isset($_GET['idProducto'])){
         		$this->view->generate("post_view.php", "template_view.php");
         	}
@@ -25,7 +25,7 @@
 			} else {
 				$producto['mismoUsuario'] = $this->model->esPropietarioDeLaPublicacion($idUsuario, $idProducto);
 				$producto["comentarios"] = $this->model->obtenerComentarios($idProducto);
-				
+
 				$this->view->generate("post_view.php", "template_view.php", $producto);
 			}
         }

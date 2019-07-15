@@ -7,13 +7,13 @@ class Model_compra extends Model{
 
     }
 
-    public function generarCompra($idProducto, $cantidad, $entrega){
-        $insertCompra = "INSERT INTO compra (idProducto, cantidad, formaDeEntrega, fecha) ";
-        $insertCompra .= "VALUES (:idProducto, :cantidad, :entrega, now())";
+    public function generarCompra($idUsuario, $idProducto, $cantidad, $entrega){
+        $insertCompra = "INSERT INTO compra (idUsuario, idProducto, cantidad, formaDeEntrega, fecha) ";
+        $insertCompra .= "VALUES (:idUsuario, :idProducto, :cantidad, :entrega, now())";
         $conexion = $this->getConnection();
 
         $queryCompra = $conexion->prepare($insertCompra);
-        $queryCompra->execute([":idProducto" => $idProducto, ":cantidad" => $cantidad, ":entrega" => $entrega]);
+        $queryCompra->execute([":idUsuario" => $idUsuario, ":idProducto" => $idProducto, ":cantidad" => $cantidad, ":entrega" => $entrega]);
 
         return $conexion->lastInsertId();
     }
@@ -47,15 +47,31 @@ class Model_compra extends Model{
     public function obtenerLasComprasHechas($idUsuario){
         $selectCompra = "SELECT p.nombre as nombreProducto, p.descripcion, p.precio, c.*, i.imagen FROM compra c ";
         $selectCompra .= "INNER JOIN producto p ON p.idProducto = c.idProducto INNER JOIN imagen i ";
-        $selectCompra .= "ON c.idProducto = i.idProducto GROUP BY c.idCompra";
+        $selectCompra .= "ON c.idProducto = i.idProducto WHERE c.idUsuario = :idUsuario GROUP BY c.idCompra";
         $conexion = $this->getConnection();
 
         $queryCompra = $conexion->prepare($selectCompra);
-        $queryCompra->execute();
+        $queryCompra->execute([":idUsuario" => $idUsuario]);
 
         $resultado = $queryCompra->fetchAll(PDO::FETCH_ASSOC);
         $this->closeConnection();
 
         return $resultado;
+    }
+
+    public function modificarCantidad($idProducto, $cantidad){
+        $selectCantidad = "SELECT cantidad FROM producto WHERE idProducto = :idProducto";
+        $conexion = $this->getConnection();
+
+        $queryCantidad = $conexion->prepare($selectCantidad);
+        $queryCantidad->execute([":idProducto" => $idProducto]);
+
+        $cantidadDisponible = $queryCantidad->fetchAll(PDO::FETCH_ASSOC)[0]["cantidad"];
+
+        $updateProducto = "UPDATE producto SET cantidad = :cantidad WHERE idProducto = :idProducto";
+        $cantidadRestante = intval($cantidadDisponible) - intval($cantidad);
+
+        $queryProducto = $conexion->prepare($updateProducto);
+        $queryProducto->execute([":cantidad" => $cantidadRestante, ":idProducto" => $idProducto]);
     }
 }

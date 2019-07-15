@@ -29,11 +29,14 @@ class Controller_compra extends Controller{
             $this->view->generate("404_view.php", "template_view.php");
 
         } else {
+            $idUsuario = $_SESSION["idUsuario"];
             $idProducto = $_GET["id"];
             $cantidad = $_GET["cantidad"];
             $entrega = $_GET["entrega"];
 
-            $idCompra = $this->model->generarCompra($idProducto, $cantidad, $entrega);
+            $idCompra = $this->model->generarCompra($idUsuario, $idProducto, $cantidad, $entrega);
+            $this->model->modificarCantidad($idProducto, $cantidad);
+
             header("location: ". $GLOBALS["root"] . "compra/index?idCompra=". $idCompra);
         }
     }
@@ -44,7 +47,7 @@ class Controller_compra extends Controller{
         $idUsuario = $_SESSION["idUsuario"];
 
         $compras = $this->model->obtenerLasComprasHechas($idUsuario);
-        
+
         $this->view->generate("compras_hechas_view.php", "template_view.php", $compras);
     }
 }
