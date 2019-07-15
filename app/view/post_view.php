@@ -87,17 +87,18 @@
 
 					} else {
 						for($i = 0 ; $i < sizeof($data["productosRelacionados"]); $i++){
-							$productoRelacionado = '<div class="full-width post">
-														<figure class="full-width post-img">
-															<img src="'. $GLOBALS['root'] . "public/upload/" . $data["productosRelacionados"][$i]["imagen"] .'" alt="" class="img-responsive">
-														</figure>
-														<div class="full-width post-info">
-															<a href="#!" class="full-width post-info-title">'. $data["productosRelacionados"][$i]["nombre"] .'</a>
-															<p class="full-width post-info-price">'. $data["productosRelacionados"][$i]["precio"] .'</p>
-															<i class="far fa-heart post-info-like"></i>
-														</div>
-													</div>';
-						}
+							$productoRelacionado = '
+							  <div class="full-width post">
+								<figure class="full-width post-img">
+									<img src="'. $GLOBALS['root'] . "public/upload/" . $data["productosRelacionados"][$i]["imagen"] .'" alt="" class="img-responsive">
+								</figure>
+								<div class="full-width post-info">
+									<a href="/post/index?idProducto='. $data["productosRelacionados"][$i]["idProducto"] .'" class="full-width post-info-title">'. $data["productosRelacionados"][$i]["nombre"] .'</a>
+									<p class="full-width post-info-price">'. $data["productosRelacionados"][$i]["precio"] .'</p>
+									<i class="far fa-heart post-info-like"></i>
+								</div>
+							</div>';
+					}
 
 						echo $productoRelacionado;
 					}

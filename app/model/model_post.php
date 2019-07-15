@@ -61,7 +61,7 @@
 		}
 
 		public function productosRelacionados($categoria, $idProducto){
-			$selectProductos = "SELECT p.nombre, p.precio, i.imagen FROM producto p";
+			$selectProductos = "SELECT p.nombre, p.precio, p.idProducto, i.imagen FROM producto p";
 			$selectProductos .= " INNER JOIN imagen i ON p.idProducto = i.idProducto ";
 			$selectProductos .= " WHERE p.categoria = :categoria AND p.idProducto != :idProducto ";
 			$selectProductos .= " GROUP BY p.idProducto LIMIT 4";
