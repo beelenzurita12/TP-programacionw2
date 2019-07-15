@@ -104,7 +104,9 @@
   <h2 class="text-center text-h2">Te puede interesar</h2>
   <div class="row section-3 margin">
     <?php
+
       include_once __DIR__ . "/componentes/componente_productos_card_view.php";
+    
     ?>
   </div>
 

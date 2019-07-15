@@ -85,7 +85,7 @@
 			  	<div class="full-width">
 				  <?php 
 					if(sizeof($data["productosRelacionados"]) == 0){
-						$productoRelacionado = "<h2><i>No hay productos relacionados por el momento</i></h2>";
+						$productoRelacionado = "<h2><i>No hay productos relacionados por el momento.</i></h2>";
 
 					} else {
 						for($i = 0 ; $i < sizeof($data["productosRelacionados"]); $i++){
@@ -114,7 +114,7 @@
 			<h2 class="title-section-h2">Comentarios</h2>
       		<div class="card py-5 px-4">
 						
-			<?php 
+			<?php
 
 				for($i = 0; $i < sizeof($data["comentarios"]); $i++){
 					$comentario = 
@@ -122,33 +122,33 @@
 							<div class="media">
 								<img class="avatar mr-3" src=" ' . $GLOBALS['root'] . "public/image/man.png" . '" alt="User">
 								<div class="media-body">
-								<div class="d-flex justify-content-between">
-									<h5 class="mt-0 mb-1 font-weight-bold">' . $data["comentarios"][$i]["nombre"] . ' ' . $data["comentarios"][$i]["apellido"] . '</h5>
-									<ul class="list-unstyled mb-1 pb-2">
-										<li class="comment-date font-small font-weight-normal"><i class="far fa-clock pr-2"></i>' . $data["comentarios"][$i]["fechaPublicacion"] . '</li>
-									</ul>
-								</div>
-								<p class="font-weight-light mt-2 mb-4">' . $data["comentarios"][$i]["comentario"] . '</p>';
+									<div class="d-flex justify-content-between">
+										<h5 class="mt-0 mb-1 font-weight-bold">' . $data["comentarios"][$i]["nombre"] . ' ' . $data["comentarios"][$i]["apellido"] . '</h5>
+										<ul class="list-unstyled mb-1 pb-2">
+											<li class="comment-date font-small font-weight-normal"><i class="far fa-clock pr-2"></i>' . $data["comentarios"][$i]["fechaPublicacion"] . '</li>
+										</ul>
+									</div>
+									<p class="font-weight-light mt-2 mb-4">' . $data["comentarios"][$i]["comentario"] . '</p>';
 					
 					$responder = 
-					'<div>
-						<button type="button" class="btn btn-success btn-sm" data-toggle="collapse" href="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'"><i class="fas fa-share pr-1"></i>Responder</button>
-						<div class="collapse" id="collapseExample-'.$i.'">
-							<div class="card-body px-0">
-								<form action="' . $GLOBALS["root"] . "respuesta/responder" . '" method="post">
-									<input type="text" name="idComentario" value="'. $data["comentarios"][$i]["idComentario"] .'" hidden>
-									<textarea class="md-textarea form-control" rows="3" placeholder="Añadir comentario..."></textarea>
-									<div class="d-flex justify-content-end mt-3">
-										<button type="button" class="btn btn-flat btn-sm waves-effect" data-toggle="collapse" data-target="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'">Cancelar</button>
-										<button type="button" class="btn btn-success btn-sm mr-0" data-toggle="collapse" data-target="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'">Enviar</button>
+									'<div>
+										<button type="button" class="btn btn-success btn-sm" data-toggle="collapse" href="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'"><i class="fas fa-share pr-1"></i>Responder</button>
+										<div class="collapse" id="collapseExample-'.$i.'">
+											<div class="card-body px-0">
+												<form action="' . $GLOBALS["root"] . "respuesta/responder" . '" method="post">
+													<input type="text" name="idComentario" value="'. $data["comentarios"][$i]["idComentario"] .'" hidden>
+													<textarea class="md-textarea form-control" rows="3" placeholder="Responder..."></textarea>
+													<div class="d-flex justify-content-end mt-3">
+														<button type="button" class="btn btn-flat btn-sm waves-effect" data-toggle="collapse" data-target="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'">Cancelar</button>
+														<button type="button" class="btn btn-success btn-sm mr-0" data-toggle="collapse" data-target="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'">Enviar</button>
+													</div>
+												</form>
+											</div>
+										</div>
 									</div>
-								</form>
+								</div>
 							</div>
-						</div>
-					</div>
-					</div>
-					</div>
-					</div>';
+						</div>';
 					
 					if($data["mismoUsuario"]){
 						$comentario .= $responder;
@@ -165,9 +165,8 @@
 				<div class="card-body px-0">
 					<form action="<?php echo $GLOBALS['root'] . 'comentarios/enviar'?>" method="post">
 						<input type="text" name="idProducto" value="<?php echo $data['idProducto'] ?>" hidden/>
-						<textarea class="md-textarea form-control" rows="3" name="comentario" placeholder="Escribe tu pregunta..."></textarea>
+						<textarea class="md-textarea form-control" rows="3" name="comentario" placeholder="Añadir un comentario..."></textarea>
 						<div class="d-flex justify-content-end mt-3">
-							<button type="button" class="btn btn-flat btn-sm waves-effect" aria-expanded="true">Cancelar</button>
 							<button type="submit" class="btn btn-success btn-sm mr-0" aria-expanded="true">Enviar</button>
 						</div>
 					</form>

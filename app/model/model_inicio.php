@@ -8,7 +8,7 @@
         
         public function obtenerProductos(){
             $selectProductos = "SELECT p.*, i.* FROM producto p INNER JOIN imagen i";
-            $selectProductos .= " ON p.idProducto = i.idProducto GROUP BY p.idProducto";
+            $selectProductos .= " ON p.idProducto = i.idProducto GROUP BY p.idProducto LIMIT 4";
             $conexion = $this->getConnection();
 
             $queryProducto = $conexion->prepare($selectProductos);
