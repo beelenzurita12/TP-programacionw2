@@ -72,7 +72,7 @@
 				} else {
 					$estaDisabled = $data["cantidad"] == 0  ? "disabled" : "" ;
 
-					echo '<button id="compra" class="btn btn-success btn-block" '. $estaDisabled .'>Comprar ahora</button>';
+					echo '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter" '. $estaDisabled .'>Comprar ahora</button>';
 					echo '<a href="' . $GLOBALS['root'] . 'carrito_de_compras/agregar?idProducto='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar al carrito <i class="fas fa-shopping-cart"></i></a>';
 				}
 			?>
@@ -175,4 +175,45 @@
       	</div>
 	</section>
 </div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Comprar ahora</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?php echo $GLOBALS["root"] . "compra/producto" ?>" method="post">
+					<input type="number" name="idProducto" class="form-control" value="<?php echo $data["idProducto"] ?>" hidden>
+          <div class="form-group">
+            <label for="cantidadProd" class="col-form-label">¿Cuantos productos desea comprar?</label>
+            <input type="number" name="cantidad" class="form-control" id="cantidadProd">
+          </div>
+          <div class="form-group">
+              <label class="col-form-label">¿Cómo desea recibir el producto?</label>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" value="Entrega a domicilio" name="entrega" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Entrega a domicilio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="entrega" value="Retiro en sucursal" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Retiro en sucursal</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" name="entrega" value="A acordar con el vendedor" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">A acordar con el vendedor</label>
+              </div>
+          </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-success">Comprar</button>
+					</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="<?php echo $GLOBALS["root"] . "public/JS/modal.js" ?>"></script>

@@ -25,14 +25,14 @@ class Controller_compra extends Controller{
     public function producto(){
         $this->irAHomeSiNoEstaLogueado();
 
-        if(empty($_GET["id"]) || empty($_GET["cantidad"]) || empty($_GET["entrega"]) ){
+        if(empty($_POST["idProducto"]) || empty($_POST["cantidad"]) || empty($_POST["entrega"]) ){
             $this->view->generate("404_view.php", "template_view.php");
 
         } else {
             $idUsuario = $_SESSION["idUsuario"];
-            $idProducto = $_GET["id"];
-            $cantidad = $_GET["cantidad"];
-            $entrega = $_GET["entrega"];
+            $idProducto = $_POST["idProducto"];
+            $cantidad = $_POST["cantidad"];
+            $entrega = $_POST["entrega"];
 
             $idCompra = $this->model->generarCompra($idUsuario, $idProducto, $cantidad, $entrega);
             $this->model->modificarCantidad($idProducto, $cantidad);
