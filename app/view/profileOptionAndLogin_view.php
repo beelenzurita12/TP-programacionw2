@@ -18,7 +18,7 @@
                       <a class="dropdown-item" href="#!">Tu perfil</a>
                       <a class="dropdown-item" href="' . $GLOBALS['root'] . 'mis_publicaciones/">Tus anuncios</a>
                       <a class="dropdown-item" href="'. $GLOBALS["root"] .'compra/listado">Tus compras</a>
-                      <a class="dropdown-item" href="'. $GLOBALS["root"] .'mensaje/misMensajes">Tus Mensajes</a>
+                      <a class="dropdown-item" href="'. $GLOBALS["root"] .'mensaje/misMensajes">Mensajes</a>
                       <a class="dropdown-item" href="#!">Configuración</a>
                       <a class="dropdown-item" href="' . $GLOBALS['root'] . 'loguearUsuario/desloguearUsuario">Salir</a>
                     </div>

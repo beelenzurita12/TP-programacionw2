@@ -14,11 +14,10 @@ $(document).ready(function () {
                 $('#ubicacion').attr("data-latitude", startPos.coords.latitude);
             };
             navigator.geolocation.getCurrentPosition(geoSuccess);
-        }
-        else{
+            
+        } else{
             $('#ubicacion').attr("data-longitude", "");
             $('#ubicacion').attr("data-latitude", "");
         }
     });
-
 });

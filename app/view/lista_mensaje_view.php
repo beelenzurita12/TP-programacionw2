@@ -23,7 +23,9 @@
         }
 
         if(sizeof($data) == 0){
-            echo '<hr/><h2>Aún no tienes compras</h2>';
+            echo "<div class='alert alert-danger' role='alert'>
+                    Aún no tienes mensajes.
+                  </div>";
         }
     ?>
 </div>
