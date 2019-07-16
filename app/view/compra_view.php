@@ -37,7 +37,7 @@
 
 	<hr/>
 
-    <?php 
+    <?php
       for($i = 0; $i < sizeof($data["mensajes"]); $i++){
         $mensaje = '<div class="tab-pane fade active show my-2" role="tabpanel" aria-labelledby="comments-tab-classic">
                       <div class="media">
@@ -54,7 +54,7 @@
                       </div>
                     </div>';
         echo $mensaje;
-      } 
+      }
     
     ?>
 
@@ -76,8 +76,71 @@
   </div>
 
   <div class="mx-2">
-    <button class="btn btn-primary" id="calificar">Calificar</button>
+    <?php
+      if($data["realizoCalificacion"]){
+        $calificar = "";
+
+      } else {
+        $calificar = '<button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#optionCalificar">
+                        Calificar
+                      </button>';
+      }
+
+      echo $calificar;
+    ?>
   </div>
 
+</div>
+
+<!-- Modal: Calificar -->
+<div class="modal fade" id="optionCalificar" tabindex="-1" role="dialog" aria-labelledby="optionCalificarTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header m-1">
+        <h5 class="modal-title" id="optionCalificarTitle">Calificar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?php echo $GLOBALS["root"] . "calificar/calificarUsuario"?>" method="post">
+          <div class="form-group">
+            <input type="text" name="idCompra" value="<?php echo $data[0]["idCompra"] ?>" hidden/>
+            <input type="text" name="idProducto" value="<?php echo $data[0]["idProducto"] ?>" hidden/>
+            <input type="text" name="idVendedor" value="<?php echo $data[0]["idUsuario"] ?>" hidden/>
+            <label for="dejaComent" class="col-form-label">Deja tu comentario:</label>
+            <textarea class="form-control" name="comentario" id="dejaComent"></textarea>
+          </div>
+          <div class="form-group">
+              <label class="col-form-label">Seleccione una opción para calificar al vendedor, teniendo en cuenta que va de 1 para "Muy mal vendedor" a 5 para "Muy buen vendedor":</label>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadio1" name="calificacion" value="1" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">1</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadio2" name="calificacion" value="2" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">2</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadio3" name="calificacion" value="3" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">3</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadio4" name="calificacion" value="4" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio4">4</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadio5" name="calificacion" value="5" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio5">5</label>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button class="btn btn-success">Calificar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="<?php echo $GLOBALS["root"] . "public/JS/modalCalificar.js" ?>"></script>

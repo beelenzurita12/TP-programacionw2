@@ -62,14 +62,6 @@ create table comentario (
     foreign key(idUsuario) references usuario(idUsuario)
 );
 
-create table respuesta (
-    idRespuesta int auto_increment,
-    idComentario int not null,
-    respuesta varchar(500) not null,
-    foreign key(idComentario) references comentario(idComentario) ON DELETE CASCADE,
-    primary key(idRespuesta)
-);
-
 create table compra (
     idCompra int auto_increment,
     idProducto int not null,
@@ -102,6 +94,28 @@ create table estadoUsuario (
     habilitado boolean not null,
     foreign key(idUsuario) references usuario(idUsuario),
     primary key(idEstado)
+);
+
+create table pagosComision (
+    idPago int auto_increment,
+    idVendedor int not null,
+    montoComision double(6,2) not null,
+    estado varchar(12) default "pendiente",
+    foreign key(idVendedor) references usuario(idUsuario),
+    primary key(idPago)
+);
+
+create table calificacion (
+    idCalificacion int auto_increment,
+    idCompra int not null,
+    idUsuario int not null,
+    idProducto int,
+    comentario varchar(300) not null,
+    calificacion int(1) not null,
+    foreign key(idUsuario) references usuario(idUsuario),
+    foreign key(idCompra) references compra(idCompra),
+    foreign key(idProducto) references producto(idProducto) ON DELETE CASCADE,
+    primary key(idCalificacion)
 );
 
 insert into usuario (tipoUsuario, nombre, apellido, dni, calle, nroCalle, localidad, telefono, cuil, email, password) values 

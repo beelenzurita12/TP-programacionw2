@@ -59,7 +59,7 @@ anychart.onDocumentLoad(function() {
         {x: 'Ago', value :211},
         {x: 'Sep', value :254},
         {x: 'Oct', value :289},
-        {x: 'Nob', value :300},
+        {x: 'Nov', value :300},
         {x: 'Dic', value :500}
     ]);
     chart3.title("Ventas por mes en el ultimo año");

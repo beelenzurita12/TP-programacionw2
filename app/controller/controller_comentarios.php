@@ -35,4 +35,4 @@ class Controller_comentarios extends Controller{
 
         header("location: " . $GLOBALS["root"] . "compra/index?idCompra=" . $_POST["idCompra"]);
     }
-} 
+}

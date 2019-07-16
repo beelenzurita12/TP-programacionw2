@@ -14,5 +14,9 @@
                 return header("location: ". $GLOBALS["root"] . "inicio/");
             }
         }
+
+        public function paginaNoEncontrada(){
+            return $this->view->generate("404_view.php", "template_view.php");
+        }
     }
 ?>

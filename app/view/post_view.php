@@ -62,6 +62,13 @@
 				<div>
 					<p class="full-width lead"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> <?php echo $data['localidad']; ?></p>
 					<p class="full-width lead"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i> Cantidad disponible: <?php echo $data['cantidad']; ?></p>
+					<p class="full-width lead">Calificación del usuario:
+						<?php
+							for($i = 0; $i < round($data['calificacion']); $i++){
+								echo '<i class="fas fa-star" style="color:#efb810 ;"></i>';
+							}
+						?>
+					</p>
 				</div>
 			</div>
 			<?php 
@@ -71,7 +78,7 @@
 					
 					
 				} else {
-					$estaDisabled = $data["cantidad"] == 0  ? "disabled" : "" ;
+					$estaDisabled = $data["cantidad"] == 0  ? "disabled" : "";
 
 					echo '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#optionComprarAhora" '. $estaDisabled .'>Comprar ahora</button>';
 					echo '<a href="' . $GLOBALS['root'] . 'carrito_de_compras/agregar?idProducto='. $data['idProducto'] . '" class="btn btn-success btn-block">Agregar al carrito <i class="fas fa-shopping-cart"></i></a>';
@@ -110,57 +117,33 @@
         	</div>
       	</div>
 	</section>
-  	<section class="my-5">
+	<section class="my-5">
     	<div class="classic-tabs">
 			<h2 class="title-section-h2">Comentarios</h2>
       		<div class="card py-5 px-4">
 						
-			<?php
+			  <?php
 
-				for($i = 0; $i < sizeof($data["comentarios"]); $i++){
-					$comentario = 
-						'<div class="tab-pane fade active show" role="tabpanel" aria-labelledby="comments-tab-classic">
-							<div class="media">
-								<img class="avatar mr-3" src=" ' . $GLOBALS['root'] . "public/image/man.png" . '" alt="User">
-								<div class="media-body">
-									<div class="d-flex justify-content-between">
-										<h5 class="mt-0 mb-1 font-weight-bold">' . $data["comentarios"][$i]["nombre"] . ' ' . $data["comentarios"][$i]["apellido"] . '</h5>
-										<ul class="list-unstyled mb-1 pb-2">
-											<li class="comment-date font-small font-weight-normal"><i class="far fa-clock pr-2"></i>' . $data["comentarios"][$i]["fechaPublicacion"] . '</li>
-										</ul>
-									</div>
-									<p class="font-weight-light mt-2 mb-4">' . $data["comentarios"][$i]["comentario"] . '</p>';
-					
-					$responder = 
-									'<div>
-										<button type="button" class="btn btn-success btn-sm" data-toggle="collapse" href="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'"><i class="fas fa-share pr-1"></i>Responder</button>
-										<div class="collapse" id="collapseExample-'.$i.'">
-											<div class="card-body px-0">
-												<form action="' . $GLOBALS["root"] . "respuesta/responder" . '" method="post">
-													<input type="text" name="idComentario" value="'. $data["comentarios"][$i]["idComentario"] .'" hidden>
-													<textarea class="md-textarea form-control" rows="3" placeholder="Responder..."></textarea>
-													<div class="d-flex justify-content-end mt-3">
-														<button type="button" class="btn btn-flat btn-sm waves-effect" data-toggle="collapse" data-target="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'">Cancelar</button>
-														<button type="button" class="btn btn-success btn-sm mr-0" data-toggle="collapse" data-target="#collapseExample-'.$i.'" aria-expanded="false" aria-controls="collapseExample-'.$i.'">Enviar</button>
-													</div>
-												</form>
-											</div>
+					for($i = 0; $i < sizeof($data["comentarios"]); $i++){
+						$comentario = 
+							'<div class="tab-pane fade active show my-2" role="tabpanel" aria-labelledby="comments-tab-classic">
+								<div class="media">
+									<img class="avatar mr-3" src=" ' . $GLOBALS['root'] . "public/image/man.png" . '" alt="User">
+									<div class="media-body">
+										<div class="d-flex justify-content-between">
+											<h5 class="mt-0 mb-1 font-weight-bold">' . $data["comentarios"][$i]["nombre"] . ' ' . $data["comentarios"][$i]["apellido"] . '</h5>
+											<ul class="list-unstyled mb-1 pb-2">
+												<li class="comment-date font-small font-weight-normal"><i class="far fa-clock pr-2"></i>' . $data["comentarios"][$i]["fechaPublicacion"] . '</li>
+											</ul>
 										</div>
+										<p class="font-weight-light mt-2 mb-4">' . $data["comentarios"][$i]["comentario"] . '</p>
 									</div>
 								</div>
-							</div>
-						</div>';
-					
-					if($data["mismoUsuario"]){
-						$comentario .= $responder;
-
-					} else{
-						$comentario .= "</div></div></div>";
+							</div>';
+						
+						echo $comentario;
 					}
-					 
-					echo $comentario;
-				}
-			?>
+				?>
         	</div>
 			<div>
 				<div class="card-body px-0">
@@ -181,13 +164,13 @@
 <div class="modal fade" id="optionEliminar" tabindex="-1" role="dialog" aria-labelledby="optionEliminarTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header m-1">
         <h5 class="modal-title" id="optionEliminarTitle">Eliminar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-center">
         <form action="<?php echo $GLOBALS["root"] . "producto/eliminar?id=" . $data["idProducto"] . "" ?>" method="post">
 			<div class="form-group">
               <label class="col-form-label">¿Está seguro de que desea eliminar este producto?</label>
@@ -206,7 +189,7 @@
 <div class="modal fade" id="optionComprarAhora" tabindex="-1" role="dialog" aria-labelledby="optionComprarAhoraTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header m-1">
         <h5 class="modal-title" id="optionComprarAhoraTitle">Comprar ahora</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

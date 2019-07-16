@@ -56,10 +56,10 @@
 								?>
 							</tbody>
 						</table>
+						<a href="<?php echo $GLOBALS['root'] . "envio/" ?>" class="btn btn-lg btn-secondary float-right">Continuar</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<a href="<?php echo $GLOBALS['root'] . "formas_de_pago/" ?>" class="btn btn-lg btn-secondary botoncito">Continuar</a>
 	</div>
 </section>

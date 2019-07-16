@@ -57,9 +57,9 @@
                 ":precio" => $_POST["precio"], ":cantidad" => $_POST["cantidad"], ":categoria" => $_POST["categoria"], ":idProducto" => $idProducto]);
 
             // Si no hay imagenes termina
-            var_dump(empty($_FILES['imagenes']['name'][0]));
+            // var_dump(empty($_FILES['imagenes']['name'][0]));
             if(empty($_FILES['imagenes']['name'][0])){
-                echo "no imagen";
+                // echo "no imagen";
                 return;
 
             } else {

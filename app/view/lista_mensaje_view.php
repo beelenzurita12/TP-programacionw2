@@ -6,7 +6,7 @@
                     <div class="card mb-3 product-info" style="max-width: 50vw;">
                         <div class="row no-gutters">
                             <div class="col-sm-3">
-                                <img src="'. $GLOBALS["root"] . "public/upload/" . $data[$i]["imagen"] .'" width="90%" class="card-img" alt="">
+                                <img src="'. $GLOBALS["root"] . "public/upload/" . $data[$i]["imagen"] .'" width="90%" class="m-3" alt="Img">
                             </div>
                             <div class="col-md-9 product-text">
                                 <div class="card-body">

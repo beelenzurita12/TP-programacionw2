@@ -8,24 +8,21 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- Primera imagen -->
-      <div class="carousel-item active" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background4.jpg" ?>')">
+      <div class="carousel-item active" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background1.jpg" ?>');">
         <div class="carousel-caption d-none d-md-block">
           <h3>Compra</h3>
-          <p>This is a description for the first slide.</p>
         </div>
       </div>
       <!-- Segunda imagen -->
-      <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background4.jpg" ?>')">
+      <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background2.jpg" ?>');">
         <div class="carousel-caption d-none d-md-block">
           <h3>Vende</h3>
-          <p>This is a description for the second slide.</p>
         </div>
       </div>
       <!-- Tercera imagen -->
-      <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background4.jpg" ?>')">
+      <div class="carousel-item" style="background-image: url('<?php echo $GLOBALS['root'] . "public/image/background3.jpg" ?>');">
         <div class="carousel-caption d-none d-md-block">
           <h3>Disfruta</h3>
-          <p>This is a description for the third slide.</p>
         </div>
       </div>
     </div>
@@ -48,47 +45,47 @@
   <section class="section section-3">
     <div class="container">
       <div class="full-width container-category">
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-1" class="list-group-item">
           <i id="vehiculos" class="fa fa-car" aria-hidden="true"></i>
           <span>VEHÍCULOS</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-2" class="list-group-item">
           <i id="inmobiliaria" class="fa fa-building" aria-hidden="true"></i>
           <span>INMOBILIARIA</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-3" class="list-group-item">
           <i id="hogar" class="fa fa-home" aria-hidden="true"></i>
           <span>HOGAR</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-4" class="list-group-item">
           <i id="moda-y-belleza" class="fa fa-shopping-bag" aria-hidden="true"></i>
           <span>MODA Y BELLEZA</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-5" class="list-group-item">
           <i id="para-niños-y-bebes" class="fa fa-child" aria-hidden="true"></i>
           <span>PARA NIÑOS Y BEBES</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-6" class="list-group-item">
           <i id="electronica" class="fa fa-plug" aria-hidden="true"></i>
           <span>ELECTRÓNICA</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-7" class="list-group-item">
           <i id="ocio-y-deporte" class="fa fa-bicycle" aria-hidden="true"></i>
           <span>OCIO Y DEPORTE</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-8" class="list-group-item">
           <i id="mascota-y-animales" class="fa fa-paw" aria-hidden="true"></i>
           <span>MASCOTAS Y ANIMALES</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-9" class="list-group-item">
           <i id="trabajo-y-formacion" class="fa fa-graduation-cap" aria-hidden="true"></i>
           <span>TRABAJO Y FORMACIÓN</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-10" class="list-group-item">
           <i id="negocio-y-servicios" class="fa fa-suitcase" aria-hidden="true"></i>
           <span>NEGOCIOS Y SERVICIOS</span>
         </a>
-        <a href="#!" class="list-group-item">
+        <a href="#!" id="categori-11" class="list-group-item">
           <i id="otros" class="fa fa-shopping-basket" aria-hidden="true"></i>
           <span>OTROS</span>
         </a>

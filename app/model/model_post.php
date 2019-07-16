@@ -80,5 +80,33 @@
 
 			return $modelComentarios->obtenerComentarios($idProducto);
 		}
+
+		public function obtenerCalificacionDelUsuario($idProducto){
+			$idVendedor = $this->obtenerInfoDelProducto($idProducto)[0]["idUsuario"];
+
+			$selectCalificaciones = "SELECT sum(calificacion) as calificacion, count(*) as cantidad ";
+			$selectCalificaciones .= "FROM calificacion WHERE idUsuario = :idUsuario GROUP BY idUsuario";
+			$conexion = $this->getConnection();
+
+			$queryCalificaciones = $conexion->prepare($selectCalificaciones);
+			$queryCalificaciones->execute([":idUsuario" => $idVendedor]);
+			$calificaciones = $queryCalificaciones->fetchAll(PDO::FETCH_ASSOC);
+
+			if(sizeof($calificaciones)){
+				$calificacionPromedio = intval($calificaciones[0]["calificacion"]) / intval($calificaciones[0]["cantidad"]);
+				
+				return $calificacionPromedio;
+
+			} else {
+				return "No tiene aún calificaciones";
+			}
+		}
+
+		public function obtenerInfoDelProducto($idProducto){
+			include_once __DIR__ . "/model_producto.php";
+			$modelProducto = new Model_producto();
+
+			return $modelProducto->obtenerProducto($idProducto);
+		}
     }
 ?>

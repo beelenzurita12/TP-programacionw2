@@ -16,7 +16,9 @@ class Controller_compra extends Controller{
             $idCompra = $_GET["idCompra"];
 
             $compra = $this->model->obtenerInfoDeCompra($idCompra);
+
             $compra["mensajes"] = $this->model->obtenerMensajes($idCompra);
+            $compra["realizoCalificacion"] = $this->model->comprobarSiCalifico($idCompra);
 
             $this->view->generate("compra_view.php", "template_view.php", $compra);
         }
@@ -35,6 +37,7 @@ class Controller_compra extends Controller{
             $entrega = $_POST["entrega"];
 
             $idCompra = $this->model->generarCompra($idUsuario, $idProducto, $cantidad, $entrega);
+            $this->model->obtenerPorcentajeDeVenta($idProducto, $cantidad);
             $this->model->modificarCantidad($idProducto, $cantidad);
 
             header("location: ". $GLOBALS["root"] . "compra/index?idCompra=". $idCompra);

@@ -24,7 +24,7 @@
                                             <td>" . $data["habilitados"][$i]['nombre'] . "</td>
                                             <td>" . $data["habilitados"][$i]['apellido'] . "</td>
                                             <td>" . $data["habilitados"][$i]['email'] . "</td>
-                                            // <td><a href='". $GLOBALS['root'] ."admin/bloquearUsuario?idUsuario=". $data["habilitados"][$i]["idUsuario"] ."'><i class='fas fa-user-times icon-admin' style='color: #f15656;'></i></a></td>
+                                            <td><a href='". $GLOBALS['root'] ."admin/bloquearUsuario?idUsuario=". $data["habilitados"][$i]["idUsuario"] ."'><i class='fas fa-user-times icon-admin' style='color: #f15656;'></i></a></td>
                                          </tr>";
 
                             echo $usuarios;
@@ -61,7 +61,7 @@
                                         <td>" . $data["deshabilitados"][$i]['apellido'] . "</td>
                                         <td>" . $data["deshabilitados"][$i]['email'] . "</td>
                                         <td><a href='". $GLOBALS['root'] ."admin/desbloquearUsuario?idUsuario=". $data["deshabilitados"][$i]["idUsuario"] ."'><i class='fas fa-user-check icon-admin' style='color: #529e52;'></i></a></td>
-                                        </tr>";
+                                    </tr>";
 
                         echo $usuarios;
                     }

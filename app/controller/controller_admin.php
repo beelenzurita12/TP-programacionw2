@@ -6,14 +6,14 @@
             parent::__construct();
         }
 
-        public function index(){
+        /*public function index(){
             $this->irAHomeSiNoEstaLogueado();
 
             // esta vista no existe aún ¿qué se va a hacer?
             $this->comprobarSiEsAdmin();
 
             $this->view->generate("admin_view.php", "template_view.php");
-        }
+        }*/
 
         public function usuarios(){
             $this->irAHomeSiNoEstaLogueado();

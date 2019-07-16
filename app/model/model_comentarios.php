@@ -29,11 +29,7 @@ class Model_comentarios extends Model{
         $resultado = $queryComentario->fetchAll(PDO::FETCH_ASSOC);
         $this->closeConnection();
 
-        return $resultado; 
-    }
-
-    public function responderComentario(){
-        
+        return $resultado;
     }
 
     public function enviarMensaje($idCompra, $mensaje, $idEmisor, $idReceptor){

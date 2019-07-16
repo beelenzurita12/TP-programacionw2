@@ -19,7 +19,8 @@ class Model_compra extends Model{
     }
 
     public function obtenerInfoDeCompra($idCompra){
-        $selectCompra = "SELECT p.nombre as nombreProducto, p.descripcion, p.precio, u.*, c.*, i.imagen FROM compra c INNER JOIN producto p ";
+        $selectCompra = "SELECT p.nombre as nombreProducto, p.descripcion, p.precio, u.*, c.fecha, c.formaDeEntrega, ";
+        $selectCompra .= "c.idCompra, c.idProducto, i.imagen FROM compra c INNER JOIN producto p ";
         $selectCompra .= "ON p.idProducto = c.idProducto INNER JOIN usuario u ON u.idUsuario = p.idUsuario ";
         $selectCompra .= "INNER JOIN imagen i ON c.idProducto = i.idProducto WHERE idCompra = :idCompra ";
         $selectCompra .= "GROUP BY p.idProducto";
@@ -73,5 +74,50 @@ class Model_compra extends Model{
 
         $queryProducto = $conexion->prepare($updateProducto);
         $queryProducto->execute([":cantidad" => $cantidadRestante, ":idProducto" => $idProducto]);
+    }
+
+    public function obtenerPorcentajeDeVenta($idProducto, $cantidad){
+        $respuesta = $this->obtenerInfoDelProducto($idProducto);
+
+        $idVendedor = $respuesta["idUsuario"];
+        $precio = $respuesta["precio"];
+
+        $montoComision = $this->obtenerComision($precio, $cantidad);
+
+        $insertComision = "INSERT INTO pagosComision (idVendedor, montoComision) ";
+        $insertComision .= "VALUES (:idVendedor, :montoComision)";
+        $conexion = $this->getConnection();
+
+        $queryComision = $conexion->prepare($insertComision);
+        $queryComision->execute([":idVendedor" => $idVendedor, ":montoComision" => $montoComision]);
+    }
+
+    public function comprobarSiCalifico($idCompra){
+        $selectCalifico = "SELECT count(*) as califico FROM calificacion WHERE idCompra = :idCompra";
+        $conexion = $this->getConnection();
+
+        $queryCalifico = $conexion->prepare($selectCalifico);
+        $queryCalifico->execute([":idCompra" => $idCompra]);
+
+        $califico = $queryCalifico->fetchAll(PDO::FETCH_ASSOC)[0]["califico"];
+        $this->closeConnection();
+
+        return ($califico == 1) ? true : false;
+    }
+
+    private function obtenerInfoDelProducto($idProducto){
+        $selectIdVendedor = "SELECT idUsuario, precio FROM producto WHERE idProducto = :idProducto";
+        $conexion = $this->getConnection();
+
+        $queryIdVendedor = $conexion->prepare($selectIdVendedor);
+        $queryIdVendedor->execute([":idProducto" => $idProducto]);
+
+        return $queryIdVendedor->fetchAll(PDO::FETCH_ASSOC)[0];
+    }
+
+    private function obtenerComision($precio, $cantidad){
+        $montoTotal = intval($precio) * intval($cantidad);
+        
+        return 0.04 * $montoTotal;
     }
 }
