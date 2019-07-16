@@ -48,53 +48,49 @@
   <section class="section section-3">
     <div class="container">
       <div class="full-width container-category">
-        <a href="#!" id="categori-1">
-          <i class="fa fa-car" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="vehiculos" class="fa fa-car" aria-hidden="true"></i>
           <span>VEHÍCULOS</span>
         </a>
-        <a href="#!" id="categori-2">
-          <i class="fa fa-building" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="inmobiliaria" class="fa fa-building" aria-hidden="true"></i>
           <span>INMOBILIARIA</span>
         </a>
-        <a href="#!" id="categori-3">
-          <i class="fa fa-home" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="hogar" class="fa fa-home" aria-hidden="true"></i>
           <span>HOGAR</span>
         </a>
-        <a href="#!" id="categori-4">
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="moda-y-belleza" class="fa fa-shopping-bag" aria-hidden="true"></i>
           <span>MODA Y BELLEZA</span>
         </a>
-        <a href="#!" id="categori-5">
-          <i class="fa fa-child" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="para-niños-y-bebes" class="fa fa-child" aria-hidden="true"></i>
           <span>PARA NIÑOS Y BEBES</span>
         </a>
-        <a href="#!" id="categori-6">
-          <i class="fa fa-plug" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="electronica" class="fa fa-plug" aria-hidden="true"></i>
           <span>ELECTRÓNICA</span>
         </a>
-        <a href="#!" id="categori-7">
-          <i class="fa fa-bicycle" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="ocio-y-deporte" class="fa fa-bicycle" aria-hidden="true"></i>
           <span>OCIO Y DEPORTE</span>
         </a>
-        <a href="#!" id="categori-8">
-          <i class="fa fa-paw" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="mascota-y-animales" class="fa fa-paw" aria-hidden="true"></i>
           <span>MASCOTAS Y ANIMALES</span>
         </a>
-        <a href="#!" id="categori-9">
-          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="trabajo-y-formacion" class="fa fa-graduation-cap" aria-hidden="true"></i>
           <span>TRABAJO Y FORMACIÓN</span>
         </a>
-        <a href="#!" id="categori-10">
-          <i class="fa fa-suitcase" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="negocio-y-servicios" class="fa fa-suitcase" aria-hidden="true"></i>
           <span>NEGOCIOS Y SERVICIOS</span>
         </a>
-        <a href="#!" id="categori-11">
-          <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        <a href="#!" class="list-group-item">
+          <i id="otros" class="fa fa-shopping-basket" aria-hidden="true"></i>
           <span>OTROS</span>
-        </a>
-        <a href="#!" id="categori-12">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <span>TODAS LAS CATEGORIAS</span>
         </a>
       </div>
     </div>
@@ -167,3 +163,19 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+	function getProductByCategory(event){
+		event.preventDefault()
+		let busqueda = event.target.id.replace(/-/g, " ")
+		let path = window.location.origin + "/" + window.location.pathname.split("/")[1]
+
+		window.location.replace(`${path}/resultados_de_busqueda/buscarPorCategoria?categoria=${busqueda}`)
+	}
+
+	let botonCategorias = document.getElementsByClassName("list-group-item")
+
+	for(let i = 0; i < botonCategorias.length; i++){
+		botonCategorias[i].addEventListener("click", getProductByCategory)
+	}
+</script>

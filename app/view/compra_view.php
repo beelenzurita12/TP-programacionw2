@@ -35,21 +35,8 @@
 		</div>
   </div>
 
-<<<<<<< HEAD
-		<hr/>
-
-=======
 	<hr/>
->>>>>>> origin/mvc
 
-      <!-- sección de comentario -->
-  </div>
-
-  <hr/>
-
-  <!-- Contacto con el vendedor -->
-  <div class="row mx-2">
-    <h2>¡Contacta con el vendedor!</h2>
     <?php 
       for($i = 0; $i < sizeof($data["mensajes"]); $i++){
         $mensaje = '<div class="tab-pane fade active show my-2" role="tabpanel" aria-labelledby="comments-tab-classic">
@@ -66,7 +53,6 @@
                         </div>
                       </div>
                     </div>';
-
         echo $mensaje;
       } 
     

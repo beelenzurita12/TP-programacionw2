@@ -41,9 +41,6 @@
 						<a href="" class="list-group-item" id="otros">
 							<i class="fa fa-shopping-basket fa-fw" aria-hidden="true"></i> Otros
 						</a>
-						<a href="" class="list-group-item" id="todas-las-categorias">
-							<i class="fa fa-star fa-fw" aria-hidden="true"></i> Todas las categorías
-						</a>
 					</div>
 				</div>
 			</div>
@@ -67,17 +64,7 @@
 		
 		console.log(busqueda, path)
 
-		let resultado = fetch(`${path}/resultados_de_busqueda/buscar`, {
-			method: "post",
-
-			data: JSON.stringify({
-				busqueda
-			})
-		})
-
-		resultado.then(data =>{
-			console.log(data)
-		})
+		window.location.replace(`${path}/resultados_de_busqueda/buscarPorCategoria?categoria=${busqueda}`)
 	}
 
 	let botonCategorias = document.getElementsByClassName("list-group-item")

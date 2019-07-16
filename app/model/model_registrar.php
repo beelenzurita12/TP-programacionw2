@@ -17,7 +17,7 @@
 									  	  ':calle' => $calle, ':nroCalle' => $nroCalle, ':localidad' => $localidad, ':telefono' => $telefono,
 								          ':cuil' => $cuil, ':email' => $email, ':password' => $password, ":tipoUsuario" => "comun"]);
 		
-			$idUsuario->lastInsertId();
+			$idUsuario = $connection->lastInsertId();
 			
 			$insertEstado = "INSERT INTO estadoUsuario (idUsuario, habilitado) VALUES (:idUsuario, true)";
 			$queryEstado = $connection->prepare($insertEstado);

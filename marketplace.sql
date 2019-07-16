@@ -38,7 +38,7 @@ create table imagen (
 	idProducto int not null,
 	imagen varchar(100) not null,
 	primary key(idImagen),
-	foreign key(idProducto) references producto(idProducto)
+	foreign key(idProducto) references producto(idProducto) ON DELETE CASCADE
 );
 
 create table carrito (
@@ -46,7 +46,7 @@ create table carrito (
     idProducto int not null,
     fechaInsercion datetime not null,
     idUsuario int not null,
-    foreign key(idProducto) references producto(idProducto),
+    foreign key(idProducto) references producto(idProducto) ON DELETE CASCADE,
     foreign key(idUsuario) references usuario(idUsuario),
     primary key(id)
 );
@@ -58,7 +58,7 @@ create table comentario (
     comentario varchar(500) not null,
     fechaPublicacion datetime not null,
     primary key(idComentario),
-    foreign key(idProducto) references producto(idProducto),
+    foreign key(idProducto) references producto(idProducto) ON DELETE CASCADE,
     foreign key(idUsuario) references usuario(idUsuario)
 );
 
@@ -66,7 +66,7 @@ create table respuesta (
     idRespuesta int auto_increment,
     idComentario int not null,
     respuesta varchar(500) not null,
-    foreign key(idComentario) references comentario(idComentario),
+    foreign key(idComentario) references comentario(idComentario) ON DELETE CASCADE,
     primary key(idRespuesta)
 );
 
@@ -78,7 +78,7 @@ create table compra (
     fecha datetime not null,
     formaDeEntrega varchar(30),
     estado varchar(13) not null default "pendiente",
-    foreign key(idProducto) references producto(idProducto),
+    foreign key(idProducto) references producto(idProducto) ON DELETE CASCADE,
     foreign key(idUsuario) references usuario(idUsuario),
     primary key(idCompra)
 );

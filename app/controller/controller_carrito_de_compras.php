@@ -63,5 +63,17 @@
                 }
             }
         }
+
+        public function comprar(){
+            $this->irAHomeSiNoEstaLogueado();
+
+            $idUsuario = $_SESSION["idUsuario"];
+
+            $this->model->comprarTodosLosProductos($idUsuario, $_POST["entrega"]);
+            $this->model->vaciarCarritoDeCompra($idUsuario);
+            $_SESSION["productosEnCarrito"] = 0;
+
+            header("location: ". $GLOBALS["root"] . "compra/listado");
+        }
     }
 ?>

@@ -92,5 +92,41 @@
             $queryDelete = $conexion->prepare($deleteProducto);
             $queryDelete->execute([":idUsuario" => $idUsuario, ":idCarrito" => $idCarrito]);
         }
+
+        public function vaciarCarritoDeCompra($idUsuario){
+            $deleteCarrito = "DELETE FROM carrito WHERE idUsuario = :idUsuario";
+            $conexion = $this->getConnection();
+
+            $queryDelete = $conexion->prepare($deleteCarrito);
+            $queryDelete->execute([":idUsuario" => $idUsuario]);
+
+            $this->closeConnection();
+        }
+
+        public function comprarTodosLosProductos($idUsuario, $entrega){
+            include_once __DIR__ . "/model_compra.php";
+            $modelCompra = new Model_compra();
+
+            $selectCarrito = "SELECT count(*) as cantidad, idUsuario, idProducto FROM carrito WHERE idUsuario = :idUsuario GROUP BY idProducto";
+            $conexion = $this->getConnection();
+
+            $queryCarrito = $conexion->prepare($selectCarrito);
+            $queryCarrito->execute([":idUsuario" => $idUsuario]);
+
+            $resultado = $queryCarrito->fetchAll(PDO::FETCH_ASSOC);
+
+            $selectCompra = "INSERT INTO compra (idProducto, cantidad, idUsuario, fecha, formaDeEntrega) ";
+            $selectCompra .= "VALUES (:idProducto, :cantidad, :idUsuario, now(), :entrega)";
+            $queryCompra = $conexion->prepare($selectCompra);
+
+            for($i = 0; $i < sizeof($resultado); $i++){
+                $modelCompra->modificarCantidad($resultado[$i]["idProducto"], $resultado[$i]["cantidad"]);
+
+                $queryCompra->execute([":idProducto" => $resultado[$i]["idProducto"], 
+                    ":cantidad" => $resultado[$i]["cantidad"], ":idUsuario" => $idUsuario, ":entrega" => $entrega]);
+            }
+
+            $this->closeConnection();
+        }
     }
 ?>

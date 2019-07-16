@@ -6,23 +6,23 @@
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<div class="card mb-3">
 					<div class="card-header"><h4 class="legend card-title"><i class="fas fa-truck"></i> Envío</h4></div>
-					<div class="card-body">
+					<form action="<?php echo $GLOBALS["root"] . "carrito_de_compras/comprar" ?>" method="post" class="card-body">
 						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio1" name="customRadioX" class="custom-control-input">
+							<input type="radio" id="customRadio1" value="entrega a domicilio" name="entrega" class="custom-control-input">
 							<label class="custom-control-label" for="customRadio1">Entrega a domicilio</label>
 						</div>
 						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio2" name="customRadioX" class="custom-control-input">
+							<input type="radio" id="customRadio2" value="retiro en sucursal" name="entrega" class="custom-control-input">
 							<label class="custom-control-label" for="customRadio2">Retiro en sucursal</label>
 						</div>
 						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio3" name="customRadioX" class="custom-control-input">
+							<input type="radio" id="customRadio3" value="a acordar con el vendedor" name="entrega" class="custom-control-input">
 							<label class="custom-control-label" for="customRadio3">A acordar con el vendedor</label>
 						</div>
-					</div>
+						<button class="btn btn-lg btn-secondary botoncito">Finalizar compra</button>
+					</form>
 				</div>
 			</div>
 		</div>
-		<a href="#!" class="btn btn-lg btn-secondary botoncito">Finalizar compra</a>
 	</div>
 </section>
