@@ -16,7 +16,7 @@ class Controller_calificar extends Controller{
         $this->irAHomeSiNoEstaLogueado();
 
         if(empty($_POST["comentario"] || empty($_POST["calificacion"]) || empty($_POST["idCompra"]))){
-        $this->paginaNoEncontrada();
+            return $this->paginaNoEncontrada();
         }
 
         $idProducto = $_POST["idProducto"];

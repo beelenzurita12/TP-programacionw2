@@ -36,6 +36,12 @@ anychart.onDocumentLoad(function() {
     chart.title("Productos publicados por categoría");
     chart.container("container-graphic").draw();
 
+    let pdf1 = document.getElementById("button1")
+
+    pdf1.addEventListener("click", () => {
+        chart.saveAsPdf("a4", true, 100, 50, "grafico1");
+    })
+
     // GRAPHIC 2 //
     var chart2 = anychart.pie([
         ["Vehiculos", 200],

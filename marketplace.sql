@@ -99,7 +99,7 @@ create table estadoUsuario (
 create table pagosComision (
     idPago int auto_increment,
     idVendedor int not null,
-    montoComision double(6,2) not null,
+    montoComision double(10,2) not null,
     estado varchar(12) default "pendiente",
     foreign key(idVendedor) references usuario(idUsuario),
     primary key(idPago)

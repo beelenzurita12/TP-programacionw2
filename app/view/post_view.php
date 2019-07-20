@@ -93,7 +93,7 @@
 			  	<div class="full-width">
 				  <?php 
 					if(sizeof($data["productosRelacionados"]) == 0){
-						$productoRelacionado = "<h2><i>No hay productos relacionados por el momento.</i></h2>";
+						$productoRelacionado = "<h2>No hay productos relacionados por el momento.</h2>";
 
 					} else {
 						for($i = 0 ; $i < sizeof($data["productosRelacionados"]); $i++){
@@ -113,9 +113,9 @@
 						echo $productoRelacionado;
 					}
 				  ?>
-				</div>
-        	</div>
-      	</div>
+				  </div>
+          </div>
+      </div>
 	</section>
 	<section class="my-5">
     	<div class="classic-tabs">

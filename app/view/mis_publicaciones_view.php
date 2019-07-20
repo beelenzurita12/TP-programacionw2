@@ -6,18 +6,9 @@
 				<div class="full-width user-menu-xs">
 					<div class="full-width post-user-info">
 						<img src="<?php echo $GLOBALS['root'] . "public/image/man.png" ?>" class="NavBar-Nav-icon" alt="User">
-						<p class="full-width"><small>{{Nombre de usuario}}</small></p>
+						<p class="full-width"><small><?php echo $_SESSION["nombre"] ?></small></p>
 						<div class="full-width div-table">
-							<div class="full-width div-table-row">
-								<div class="div-table-cell div-table-cell-xs" style="height: auto !important; line-height: inherit; border:none;">
-									{{0}} <br>
-									<small>En venta</small>
-								</div>
-								<div class="div-table-cell div-table-cell-xs" style="height: auto !important; line-height: inherit; border:none;">
-									{{0}} <br>
-									<small>Vendidos</small>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<div class="full-width list-group" style="border-radius: 0;">
