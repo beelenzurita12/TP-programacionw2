@@ -7,9 +7,6 @@
 					<div class="full-width post-user-info">
 						<img src="<?php echo $GLOBALS['root'] . "public/image/man.png" ?>" class="NavBar-Nav-icon" alt="User">
 						<p class="full-width"><small><?php echo $_SESSION["nombre"] ?></small></p>
-						<div class="full-width div-table">
-							
-						</div>
 					</div>
 					<div class="full-width list-group" style="border-radius: 0;">
 						<a href="#!" class="list-group-item">

@@ -41,7 +41,7 @@ anychart.onDocumentLoad(function() {
     pdf1.addEventListener("click", () => {
         chart.saveAsPdf("a4", true, 100, 50, "grafico1");
     })
-
+    
     // GRAPHIC 2 //
     var chart2 = anychart.pie([
         ["Vehiculos", 200],
@@ -52,6 +52,12 @@ anychart.onDocumentLoad(function() {
     ]);
     chart2.title("Top 5 productos más vendidos");
     chart2.container("container-graphic2").draw();
+
+    let pdf2 = document.getElementById("button2")
+
+    pdf2.addEventListener("click", () => {
+        chart.saveAsPdf("a4", true, 100, 50, "grafico2");
+    })
 
     // GRAPHIC 3 //
     var chart3 = anychart.column([
@@ -70,4 +76,10 @@ anychart.onDocumentLoad(function() {
     ]);
     chart3.title("Ventas por mes en el ultimo año");
     chart3.container("container-graphic3").draw();
+
+    let pdf3 = document.getElementById("button3")
+
+    pdf3.addEventListener("click", () => {
+        chart.saveAsPdf("a4", true, 100, 50, "grafico3");
+    })
 });

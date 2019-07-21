@@ -14,9 +14,5 @@
 
 			$this->view->generate("mis_publicaciones_view.php", "template_view.php", $publicaciones);
 		}
-		
-		public function editar(){
-            
-        }
     }
 ?>

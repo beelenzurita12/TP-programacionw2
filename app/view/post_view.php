@@ -94,7 +94,6 @@
 				  <?php 
 					if(sizeof($data["productosRelacionados"]) == 0){
 						$productoRelacionado = "<h2>No hay productos relacionados por el momento.</h2>";
-
 					} else {
 						for($i = 0 ; $i < sizeof($data["productosRelacionados"]); $i++){
 							$productoRelacionado = '
@@ -103,25 +102,23 @@
 									<img src="'. $GLOBALS['root'] . "public/upload/" . $data["productosRelacionados"][$i]["imagen"] .'" alt="" class="img-responsive">
 								</figure>
 								<div class="full-width post-info">
-									<a href="/post/index?idProducto='. $data["productosRelacionados"][$i]["idProducto"] .'" class="full-width post-info-title">'. $data["productosRelacionados"][$i]["nombre"] .'</a>
+									<a href="'. $GLOBALS['root'] . 'post/index?idProducto='. $data["productosRelacionados"][$i]["idProducto"] .'" class="full-width post-info-title">'. $data["productosRelacionados"][$i]["nombre"] .'</a>
 									<p class="full-width post-info-price">'. $data["productosRelacionados"][$i]["precio"] .'</p>
 									<i class="far fa-heart post-info-like"></i>
 								</div>
 							</div>';
 					}
-
 						echo $productoRelacionado;
 					}
 				  ?>
-				  </div>
-          </div>
-      </div>
+				</div>
+        	</div>
+      	</div>
 	</section>
 	<section class="my-5">
     	<div class="classic-tabs">
 			<h2 class="title-section-h2">Comentarios</h2>
-      		<div class="card py-5 px-4">
-						
+      		<div class="card py-5 px-4">		
 			  <?php
 
 					for($i = 0; $i < sizeof($data["comentarios"]); $i++){
